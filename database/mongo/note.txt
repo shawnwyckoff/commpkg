@@ -1,0 +1,2 @@
+// note: time.Time precision in MongoDB is Milliseconds, but in Go it is Nanoseconds,
+// if time.Time used to be _id of document, please note the precision lost!
