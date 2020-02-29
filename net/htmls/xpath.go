@@ -7,15 +7,18 @@ import (
 )
 
 type (
+	// html node
 	Node struct {
 		// use struct member instead of "type Node html.Node", because need to hide methods of html.Node
 		raw *html.Node
 	}
 
+	// nodes list with it's own methods
 	Nodes struct {
 		items []*Node
 	}
 
+	// callback function of Each()
 	NodeEachCallback func(i int, n *Node)
 )
 
