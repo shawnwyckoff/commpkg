@@ -23,8 +23,10 @@ func (i64s int64Slice) Swap(i, j int) {
 
 type bigIntSlice []big.Int
 
-func (bis bigIntSlice) Len() int           { return len(([]big.Int)(bis)) }
-func (bis bigIntSlice) Less(i, j int) bool { return ([]big.Int)(bis)[i].Cmp(&([]big.Int)(bis)[j]) == -1 }
+func (bis bigIntSlice) Len() int { return len(([]big.Int)(bis)) }
+func (bis bigIntSlice) Less(i, j int) bool {
+	return ([]big.Int)(bis)[i].Cmp(&([]big.Int)(bis)[j]) == -1
+}
 func (bis bigIntSlice) Swap(i, j int) {
 	([]big.Int)(bis)[i], ([]big.Int)(bis)[j] = ([]big.Int)(bis)[j], ([]big.Int)(bis)[i]
 }
