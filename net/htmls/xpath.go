@@ -11,22 +11,24 @@ type (
 		// use struct member instead of "type Node html.Node", because need to hide methods of html.Node
 		raw *html.Node
 	}
-	
+
 	Nodes struct {
 		items []*Node
-	}
-
-	HtmlDoc struct {
-		node *html.Node
-	}
-
-	HtmlNodes struct {
-		nodes []*html.Node
 	}
 
 	NodeEachCallback func(i int, n *Node)
 )
 
+// build node from HTML string
+func NewFromString(s string) (*Node, error) {
+	node, err := htmlquery.Parse(strings.NewReader(s))
+	if err != nil {
+		return nil, err
+	}
+	return &Node{raw:node}, nil
+}
+
+// get attribute value by key
 func (n *Node) Attr(attrKey string) string {
 	if n == nil {
 		return ""
@@ -39,6 +41,7 @@ func (n *Node) Attr(attrKey string) string {
 	return ""
 }
 
+// get text of node
 func (n *Node) Text() string {
 	if n == nil {
 		return ""
@@ -46,11 +49,12 @@ func (n *Node) Text() string {
 	return htmlquery.InnerText(n.raw)
 }
 
-func (n *Node) Query(expr string) *Nodes {
+// query with xpath expr
+func (n *Node) Query(xpathExpr string) *Nodes {
 	if n == nil {
 		return nil
 	}
-	ns := htmlquery.Find(n.raw, expr)
+	ns := htmlquery.Find(n.raw, xpathExpr)
 	res := &Nodes{}
 	for _, v := range ns {
 		if v == nil {
@@ -61,6 +65,7 @@ func (n *Node) Query(expr string) *Nodes {
 	return res
 }
 
+// query nodes by element + attribute key + attribute full value
 func (n *Node) QueryByElementAndFullAttrVal(element, attrKey, fullAttrVal string) *Nodes {
 	if n == nil {
 		return nil
@@ -79,6 +84,7 @@ func (n *Node) QueryByElementAndFullAttrVal(element, attrKey, fullAttrVal string
 	return res
 }
 
+// query nodes by element + attribute key + attribute part value
 func (n *Node) QueryByElementAndPartAttrVal(element, attrKey, partAttrVal string) *Nodes {
 	if n == nil {
 		return nil
@@ -97,10 +103,12 @@ func (n *Node) QueryByElementAndPartAttrVal(element, attrKey, partAttrVal string
 	return res
 }
 
+// get father node
 func (n *Node) Parent() *Node {
 	return &Node{raw:n.raw.Parent}
 }
 
+// get by index, return nil if index not exist
 func (ns *Nodes) Get(i int) *Node {
 	if ns == nil || len(ns.items) == 0 || i > ns.Len() - 1 {
 		return nil
@@ -108,6 +116,7 @@ func (ns *Nodes) Get(i int) *Node {
 	return ns.items[i]
 }
 
+// get first node, return nil if index not exist
 func (ns *Nodes) First() *Node {
 	if ns == nil || len(ns.items) == 0 {
 		return nil
@@ -115,6 +124,7 @@ func (ns *Nodes) First() *Node {
 	return ns.items[0]
 }
 
+// get last node, return nil if index not exist
 func (ns *Nodes) Last() *Node {
 	if ns == nil || len(ns.items) == 0 {
 		return nil
@@ -122,6 +132,7 @@ func (ns *Nodes) Last() *Node {
 	return ns.items[ns.Len() - 1]
 }
 
+// get length
 func (ns *Nodes) Len() int {
 	if ns == nil {
 		return 0
@@ -129,12 +140,14 @@ func (ns *Nodes) Len() int {
 	return len(ns.items)
 }
 
+// loop through all members
 func (ns *Nodes) Each(cb NodeEachCallback) {
 	for i := 0; i < ns.Len(); i++ {
 		cb(i, ns.Get(i))
 	}
 }
 
+// get attribute values of all nodes by attribute key
 func (ns *Nodes) Attrs(attrKey string) []string {
 	var res []string
 	for i := 0; i < ns.Len(); i++ {
@@ -143,18 +156,11 @@ func (ns *Nodes) Attrs(attrKey string) []string {
 	return res
 }
 
+// get texts of all nodes
 func (ns *Nodes) Texts() []string {
 	var res []string
 	for i := 0; i < ns.Len(); i++ {
 		res = append(res, ns.Get(i).Text())
 	}
 	return res
-}
-
-func NewFromString(s string) (*Node, error) {
-	node, err := htmlquery.Parse(strings.NewReader(s))
-	if err != nil {
-		return nil, err
-	}
-	return &Node{raw:node}, nil
 }
