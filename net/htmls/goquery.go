@@ -5,11 +5,6 @@ import (
 	"strings"
 )
 
-type (
-	SelectorBuilder struct{}
-	Doc goquery.Document
-)
-
 func NewDocFromHtmlSrc(htmlSrc *string) (*goquery.Document, error) {
 	sr := strings.NewReader(*htmlSrc)
 	doc, err := goquery.NewDocumentFromReader(sr)
