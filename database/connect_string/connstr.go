@@ -3,7 +3,7 @@ package connect_string
 import (
 	"github.com/jackc/pgx"
 	"github.com/pkg/errors"
-	. "github.com/shawnwyckoff/commpkg/database/driver"
+	. "github.com/shawnwyckoff/gpkg/database/driver"
 	"net"
 	"strconv"
 	"upper.io/db.v3/mongo"

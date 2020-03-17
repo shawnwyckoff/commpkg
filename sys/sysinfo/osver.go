@@ -7,8 +7,8 @@ package sysinfo
 import (
 	"github.com/getlantern/osversion"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/dsa/stringz"
-	"github.com/shawnwyckoff/commpkg/sys/sysinfo/util"
+	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/sys/sysinfo/util"
 	"runtime"
 	"strconv"
 	"strings"

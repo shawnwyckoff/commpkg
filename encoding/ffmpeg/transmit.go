@@ -2,10 +2,10 @@ package ffmpeg
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/apputil/std_logger"
-	"github.com/shawnwyckoff/commpkg/sys/cmd"
-	"github.com/shawnwyckoff/commpkg/sys/fs"
-	"github.com/shawnwyckoff/commpkg/sys/proc"
+	"github.com/shawnwyckoff/gpkg/apputil/std_logger"
+	"github.com/shawnwyckoff/gpkg/sys/cmd"
+	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/proc"
 	"strconv"
 	"strings"
 )

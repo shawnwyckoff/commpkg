@@ -2,7 +2,7 @@ package mail
 
 import (
 	"github.com/badoux/checkmail"
-	"github.com/shawnwyckoff/commpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/stringz"
 	"strings"
 )
 

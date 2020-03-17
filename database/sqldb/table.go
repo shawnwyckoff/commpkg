@@ -1,7 +1,7 @@
 package sqldb
 
 import (
-	"github.com/shawnwyckoff/commpkg/dsa/interfaces"
+	"github.com/shawnwyckoff/gpkg/dsa/interfaces"
 )
 
 func (c *Conn) TableExists(name string) (bool, error) {

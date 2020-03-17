@@ -1,7 +1,7 @@
 package speedtest
 
 import (
-	"github.com/shawnwyckoff/commpkg/dsa/speed"
+	"github.com/shawnwyckoff/gpkg/dsa/speed"
 )
 
 func TestDownloadSpeed() (speed.Speed, error) {

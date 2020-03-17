@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/dsa/volume"
+	"github.com/shawnwyckoff/gpkg/dsa/volume"
 )
 
 func main() {

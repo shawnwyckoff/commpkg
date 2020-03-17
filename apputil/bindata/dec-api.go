@@ -3,7 +3,7 @@ package bindata
 import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/fs"
 )
 
 func Dec(fileHexString *string, output_binary_filename string) error {

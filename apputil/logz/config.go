@@ -2,9 +2,9 @@ package logz
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/sys/machine_id"
-	"github.com/shawnwyckoff/commpkg/sys/proc"
-	"github.com/shawnwyckoff/commpkg/sys/sysinfo"
+	"github.com/shawnwyckoff/gpkg/sys/machine_id"
+	"github.com/shawnwyckoff/gpkg/sys/proc"
+	"github.com/shawnwyckoff/gpkg/sys/sysinfo"
 	"path"
 )
 

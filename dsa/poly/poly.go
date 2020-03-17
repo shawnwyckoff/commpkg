@@ -2,7 +2,7 @@ package poly
 
 import (
 	"github.com/openacid/slim/polyfit"
-	"github.com/shawnwyckoff/commpkg/dsa/geometry"
+	"github.com/shawnwyckoff/gpkg/dsa/geometry"
 	"math"
 )
 

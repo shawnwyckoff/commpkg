@@ -3,7 +3,7 @@ package clock
 import (
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/stringz"
 	"math"
 	"time"
 )

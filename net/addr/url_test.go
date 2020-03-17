@@ -2,7 +2,7 @@ package addr_test
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/net/addr"
+	"github.com/shawnwyckoff/gpkg/net/addr"
 	"testing"
 )
 

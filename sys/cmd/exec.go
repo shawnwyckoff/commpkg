@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/sys/proc"
+	"github.com/shawnwyckoff/gpkg/sys/proc"
 	"os"
 	"os/exec"
 	"strings"

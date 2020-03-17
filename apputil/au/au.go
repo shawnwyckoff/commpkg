@@ -2,8 +2,8 @@ package au
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/net/httpz"
-	"github.com/shawnwyckoff/commpkg/spider/util/downloader/xhttpclient"
+	"github.com/shawnwyckoff/gpkg/net/httpz"
+	"github.com/shawnwyckoff/gpkg/spider/util/downloader/xhttpclient"
 	"sync"
 	"sync/atomic"
 	"time"

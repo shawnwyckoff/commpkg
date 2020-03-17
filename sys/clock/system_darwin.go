@@ -2,7 +2,7 @@ package clock
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/sys/users"
+	"github.com/shawnwyckoff/gpkg/sys/users"
 	"syscall"
 	"time"
 )

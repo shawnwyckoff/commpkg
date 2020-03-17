@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/apputil/logz"
-	"github.com/shawnwyckoff/commpkg/dsa/stringz"
-	"github.com/shawnwyckoff/commpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/apputil/logz"
+	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/sys/fs"
 	"os"
 	"path/filepath"
 	"strings"
@@ -14,7 +14,7 @@ func main()  {
 	goPath := os.Getenv("GOPATH")
 	logz.AssertTrue(goPath != "")
 
-	repoPath := "github.com/shawnwyckoff/commpkg"
+	repoPath := "github.com/shawnwyckoff/gpkg"
 	commpkgPath := filepath.Join(goPath, "src", repoPath)
 	dirs, _, err := fs.ListDir(commpkgPath)
 	logz.AssertOk(err, "ListDir")

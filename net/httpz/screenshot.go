@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/chromedp/cdproto/dom"
-	"github.com/shawnwyckoff/commpkg/apputil/errorz"
+	"github.com/shawnwyckoff/gpkg/apputil/errorz"
 	"io/ioutil"
 	"math"
 	"time"

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/sys/syncs"
+	"github.com/shawnwyckoff/gpkg/sys/syncs"
 	"log"
 	"time"
 )

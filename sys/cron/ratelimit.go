@@ -6,7 +6,7 @@ package cron
 // then, MarkAndWaitBlock() before every http request.
 
 import (
-	"github.com/shawnwyckoff/commpkg/sys/clock"
+	"github.com/shawnwyckoff/gpkg/sys/clock"
 	"sync"
 	"time"
 )

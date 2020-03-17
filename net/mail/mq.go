@@ -3,7 +3,7 @@ package mail
 import (
 	"github.com/mikaa123/imapmq"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/dsa/random2"
+	"github.com/shawnwyckoff/gpkg/dsa/random2"
 )
 
 // Used email account to implement a simple message queue

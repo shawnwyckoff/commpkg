@@ -3,8 +3,8 @@ package decimals
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/apputil/test"
-	"github.com/shawnwyckoff/commpkg/dsa/jsons"
+	"github.com/shawnwyckoff/gpkg/apputil/test"
+	"github.com/shawnwyckoff/gpkg/dsa/jsons"
 	"github.com/shopspring/decimal"
 	"go.mongodb.org/mongo-driver/bson"
 	"testing"

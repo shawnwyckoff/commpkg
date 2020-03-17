@@ -4,7 +4,7 @@ package taskqueue
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/sys/clock"
+	"github.com/shawnwyckoff/gpkg/sys/clock"
 	"sync"
 	"time"
 )

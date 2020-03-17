@@ -2,10 +2,10 @@ package deploy
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/net/httpz/client"
-	"github.com/shawnwyckoff/commpkg/spider/github"
-	"github.com/shawnwyckoff/commpkg/sys/fs"
-	"github.com/shawnwyckoff/commpkg/sys/proc"
+	"github.com/shawnwyckoff/gpkg/net/httpz/client"
+	"github.com/shawnwyckoff/gpkg/spider/github"
+	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/proc"
 	"os"
 	"syscall"
 )

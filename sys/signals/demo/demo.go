@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/xsystils/xsys/xexit"
-	"github.com/shawnwyckoff/commpkg/xsystils/xsys/xfs"
+	"github.com/shawnwyckoff/gpkg/xsystils/xsys/xexit"
+	"github.com/shawnwyckoff/gpkg/xsystils/xsys/xfs"
 	"os"
 	"time"
 )

@@ -3,8 +3,8 @@ package desktop
 import (
 	"github.com/go-vgo/robotgo"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/sys/fs"
-	"github.com/shawnwyckoff/commpkg/sys/proc"
+	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/proc"
 	"strings"
 )
 

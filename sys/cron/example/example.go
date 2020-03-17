@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/sys/cron"
+	"github.com/shawnwyckoff/gpkg/sys/cron"
 	"sync"
 	"time"
 )

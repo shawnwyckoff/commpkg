@@ -3,9 +3,9 @@ package proxy
 import (
 	"github.com/pkg/errors"
 	// "github.com/GameXG/ProxyClient" // http client using socks5 proxy supported not well
-	"github.com/shawnwyckoff/commpkg/dsa/speed"
-	"github.com/shawnwyckoff/commpkg/net/addr"
-	"github.com/shawnwyckoff/commpkg/net/httpz"
+	"github.com/shawnwyckoff/gpkg/dsa/speed"
+	"github.com/shawnwyckoff/gpkg/net/addr"
+	"github.com/shawnwyckoff/gpkg/net/httpz"
 	"time"
 )
 

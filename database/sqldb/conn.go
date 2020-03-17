@@ -26,8 +26,8 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/database/connstr"
-	. "github.com/shawnwyckoff/commpkg/database/driver"
+	"github.com/shawnwyckoff/gpkg/database/connstr"
+	. "github.com/shawnwyckoff/gpkg/database/driver"
 )
 
 type DbNotExistOpt int

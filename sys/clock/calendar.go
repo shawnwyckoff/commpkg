@@ -1,8 +1,8 @@
 package clock
 
 import (
-	"github.com/shawnwyckoff/commpkg/apputil/errorz"
-	"github.com/shawnwyckoff/commpkg/dsa/num"
+	"github.com/shawnwyckoff/gpkg/apputil/errorz"
+	"github.com/shawnwyckoff/gpkg/dsa/num"
 	"time"
 )
 

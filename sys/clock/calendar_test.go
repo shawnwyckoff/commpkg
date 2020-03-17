@@ -1,7 +1,7 @@
 package clock
 
 import (
-	"github.com/shawnwyckoff/commpkg/apputil/test"
+	"github.com/shawnwyckoff/gpkg/apputil/test"
 	"testing"
 	"time"
 )

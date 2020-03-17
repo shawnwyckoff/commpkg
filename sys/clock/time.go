@@ -1,7 +1,7 @@
 package clock
 
 import (
-	"github.com/shawnwyckoff/commpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/stringz"
 	"time"
 )
 

@@ -1,23 +1,23 @@
 [![Minimum Go version](https://img.shields.io/badge/go-1.13.0+-9cf.svg)](#go-version-requirements)
-[![Go Report Card](https://goreportcard.com/badge/github.com/shawnwyckoff/commpkg)](https://goreportcard.com/report/github.com/shawnwyckoff/commpkg)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/shawnwyckoff/commpkg/pulls)
+[![Go Report Card](https://goreportcard.com/badge/github.com/shawnwyckoff/gpkg)](https://goreportcard.com/report/github.com/shawnwyckoff/gpkg)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/shawnwyckoff/gpkg/pulls)
 [![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-**commpkg** is a general purpose Go utility with 100+ packages.
+**gpkg** is a general purpose Go utility with 100+ packages.
 
 *NOTE: it is still in active development and may not be stable at all times.*
 
-![commpkg logo from golang.org](https://github.com/shawnwyckoff/commpkg/raw/master/gophermart.png)
+![gpkg logo from golang.org](https://github.com/shawnwyckoff/gpkg/raw/master/gophermart.png)
 
 # Usage
 
 **Install**
 
 ```
-go get -u github.com/shawnwyckoff/commpkg
+go get -u github.com/shawnwyckoff/gpkg
 ```
 
-**commpkg** has a lot of dependencies, if go compiler tell they are required, please install them.
+**gpkg** has a lot of dependencies, if go compiler tell they are required, please install them.
 
 **Example**
 
@@ -26,7 +26,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/dsa/volume"
+	"github.com/shawnwyckoff/gpkg/dsa/volume"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
 # Contributors
 
-**commpkg** was developed by [shawnwyckoff](https://github.com/shawnwyckoff) and it requires **a lot of dependencies**.
+**gpkg** was developed by [shawnwyckoff](https://github.com/shawnwyckoff) and it requires **a lot of dependencies**.
 
 # In Production
 

@@ -1,7 +1,7 @@
 package cron
 
 import (
-	"github.com/shawnwyckoff/commpkg/sys/clock"
+	"github.com/shawnwyckoff/gpkg/sys/clock"
 	"time"
 )
 

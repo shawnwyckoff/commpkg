@@ -2,7 +2,7 @@ package addr
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/dsa/randoms"
+	"github.com/shawnwyckoff/gpkg/dsa/randoms"
 	"net"
 	"strconv"
 	"strings"

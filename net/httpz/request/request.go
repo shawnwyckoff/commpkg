@@ -3,8 +3,8 @@ package request
 // Detect as much information as possible from http client request
 
 import (
-	"github.com/shawnwyckoff/commpkg/net/addr"
-	"github.com/shawnwyckoff/commpkg/net/httpz"
+	"github.com/shawnwyckoff/gpkg/net/addr"
+	"github.com/shawnwyckoff/gpkg/net/httpz"
 	"github.com/valyala/fasthttp"
 	"strings"
 )

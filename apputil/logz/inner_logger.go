@@ -1,7 +1,7 @@
 package logz
 
 import (
-	"github.com/shawnwyckoff/commpkg/sys/clock"
+	"github.com/shawnwyckoff/gpkg/sys/clock"
 	"sync/atomic"
 )
 

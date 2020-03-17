@@ -3,7 +3,7 @@ package sqldb
 import (
 	"fmt"
 	"github.com/pkg/errors"
-	. "github.com/shawnwyckoff/commpkg/database/driver"
+	. "github.com/shawnwyckoff/gpkg/database/driver"
 )
 
 // https://github.com/samonzeweb/godb

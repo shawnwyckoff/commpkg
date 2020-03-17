@@ -2,11 +2,11 @@ package tunc
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/apputil/logger"
-	"github.com/shawnwyckoff/commpkg/net/dialers"
-	"github.com/shawnwyckoff/commpkg/net/mux"
-	"github.com/shawnwyckoff/commpkg/net/smux"
-	"github.com/shawnwyckoff/commpkg/sys/ios"
+	"github.com/shawnwyckoff/gpkg/apputil/logger"
+	"github.com/shawnwyckoff/gpkg/net/dialers"
+	"github.com/shawnwyckoff/gpkg/net/mux"
+	"github.com/shawnwyckoff/gpkg/net/smux"
+	"github.com/shawnwyckoff/gpkg/sys/ios"
 	"io"
 	"math/rand"
 	"net"

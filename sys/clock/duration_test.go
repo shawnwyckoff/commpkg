@@ -2,7 +2,7 @@ package clock
 
 import (
 	"encoding/json"
-	"github.com/shawnwyckoff/commpkg/dsa/jsons"
+	"github.com/shawnwyckoff/gpkg/dsa/jsons"
 	"testing"
 	"time"
 )

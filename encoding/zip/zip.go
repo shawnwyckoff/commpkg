@@ -3,7 +3,7 @@ package zip
 import (
 	"archive/zip"
 	"bytes"
-	"github.com/shawnwyckoff/commpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/fs"
 	"io"
 	"io/ioutil"
 	"os"

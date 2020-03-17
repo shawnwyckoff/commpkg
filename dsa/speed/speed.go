@@ -3,7 +3,7 @@ package speed
 import (
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/stringz"
 	"strconv"
 	"strings"
 	"time"

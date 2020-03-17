@@ -2,7 +2,7 @@ package htmls
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/sys/clock"
+	"github.com/shawnwyckoff/gpkg/sys/clock"
 	"time"
 )
 

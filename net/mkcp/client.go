@@ -5,7 +5,7 @@ package mkcp
 
 import (
 	"context"
-	"github.com/shawnwyckoff/commpkg/net/addr"
+	"github.com/shawnwyckoff/gpkg/net/addr"
 	"net"
 	"time"
 	v2net "v2ray.com/core/common/net"

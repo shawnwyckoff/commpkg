@@ -3,7 +3,7 @@ package htmls
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/sys/clock"
+	"github.com/shawnwyckoff/gpkg/sys/clock"
 	"sort"
 	"testing"
 	"time"

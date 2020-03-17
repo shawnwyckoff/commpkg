@@ -2,8 +2,8 @@ package addr
 
 import (
 	"github.com/mohong122/ip2region/binding/golang"
-	"github.com/shawnwyckoff/commpkg/net/httpz"
-	"github.com/shawnwyckoff/commpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/net/httpz"
+	"github.com/shawnwyckoff/gpkg/sys/fs"
 	"net"
 	"os"
 	"time"

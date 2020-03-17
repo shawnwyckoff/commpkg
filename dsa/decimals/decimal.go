@@ -2,7 +2,7 @@ package decimals
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/dsa/num"
+	"github.com/shawnwyckoff/gpkg/dsa/num"
 	"github.com/shopspring/decimal"
 	"go.mongodb.org/mongo-driver/bson/bsontype"
 	"go.mongodb.org/mongo-driver/bson/primitive"

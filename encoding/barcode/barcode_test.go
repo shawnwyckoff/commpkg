@@ -1,7 +1,7 @@
 package barcode
 
 import (
-	"github.com/shawnwyckoff/commpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/fs"
 	"os"
 	"testing"
 )

@@ -30,7 +30,7 @@ For input slice {"A", "B", "C", "D"} there are 2^4 - 1 = 15 binary combinations,
 package combinations
 
 import (
-	"github.com/shawnwyckoff/commpkg/dsa/bits"
+	"github.com/shawnwyckoff/gpkg/dsa/bits"
 )
 
 // All returns all combinations for a given interface array.

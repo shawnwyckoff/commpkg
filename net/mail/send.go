@@ -4,7 +4,7 @@ import (
 	"fmt"
 	gomail "github.com/go-mail/mail"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/sys/clock"
+	"github.com/shawnwyckoff/gpkg/sys/clock"
 	"strings"
 )
 

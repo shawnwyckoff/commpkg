@@ -2,7 +2,7 @@ package mem
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/dsa/volume"
+	"github.com/shawnwyckoff/gpkg/dsa/volume"
 	"github.com/shirou/gopsutil/mem"
 )
 

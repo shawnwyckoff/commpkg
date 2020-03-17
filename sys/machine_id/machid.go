@@ -2,9 +2,9 @@ package machine_id
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/crypto/hash"
-	"github.com/shawnwyckoff/commpkg/dsa/stringz"
-	"github.com/shawnwyckoff/commpkg/net/addr"
+	"github.com/shawnwyckoff/gpkg/crypto/hash"
+	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/net/addr"
 	"os/exec"
 	"runtime"
 	"strings"

@@ -3,7 +3,7 @@ package clock
 import (
 	"github.com/bcampbell/fuzzytime"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/stringz"
 	"github.com/tkuchiki/parsetime"
 	"strings"
 	"time"

@@ -1,8 +1,8 @@
 package xonline
 
 import (
-	"github.com/shawnwyckoff/commpkg/dsa/stringz"
-	"github.com/shawnwyckoff/commpkg/net/httpz"
+	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/net/httpz"
 	"time"
 )
 

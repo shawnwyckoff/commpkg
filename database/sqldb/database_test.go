@@ -1,7 +1,7 @@
 package sqldb
 
 import (
-	"github.com/shawnwyckoff/commpkg/database/driver"
+	"github.com/shawnwyckoff/gpkg/database/driver"
 	"os"
 	"testing"
 )

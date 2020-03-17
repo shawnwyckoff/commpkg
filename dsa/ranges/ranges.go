@@ -2,7 +2,7 @@ package ranges
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/dsa/num"
+	"github.com/shawnwyckoff/gpkg/dsa/num"
 	"sort"
 	"strings"
 )

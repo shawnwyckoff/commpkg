@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/chromedp/cdproto/dom"
 	"github.com/chromedp/chromedp"
-	phantomgo "github.com/shawnwyckoff/commpkg/net/httpz/phantom"
+	phantomgo "github.com/shawnwyckoff/gpkg/net/httpz/phantom"
 	"gopkg.in/headzoo/surf.v1"
 	"io/ioutil"
 )

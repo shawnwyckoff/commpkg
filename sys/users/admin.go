@@ -3,8 +3,8 @@ package users
 import (
 	"fmt"
 	"github.com/google/uuid"
-	"github.com/shawnwyckoff/commpkg/sys/fs"
-	"github.com/shawnwyckoff/commpkg/sys/sysinfo"
+	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/sysinfo"
 	"os"
 )
 

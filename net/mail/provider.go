@@ -3,8 +3,8 @@ package mail
 import (
 	"encoding/json"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/dsa/stringz"
-	"github.com/shawnwyckoff/commpkg/xnettils/xnet/xaddr"
+	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/xnettils/xnet/xaddr"
 	"strings"
 )
 

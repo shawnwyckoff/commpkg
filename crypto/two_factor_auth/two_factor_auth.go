@@ -9,7 +9,7 @@ import (
 	"crypto/sha1"
 	"encoding/base32"
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/apputil/errorz"
+	"github.com/shawnwyckoff/gpkg/apputil/errorz"
 	"strings"
 	"time"
 )

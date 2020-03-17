@@ -2,7 +2,7 @@ package hdd
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/dsa/volume"
+	"github.com/shawnwyckoff/gpkg/dsa/volume"
 	"github.com/shirou/gopsutil/disk"
 )
 

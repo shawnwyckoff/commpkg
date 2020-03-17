@@ -7,8 +7,8 @@ import (
 	"encoding/hex"
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/dsa/stringz"
-	"github.com/shawnwyckoff/commpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/sys/fs"
 	"os"
 )
 

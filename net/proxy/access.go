@@ -2,7 +2,7 @@ package proxy
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/net/probe"
+	"github.com/shawnwyckoff/gpkg/net/probe"
 	"time"
 )
 

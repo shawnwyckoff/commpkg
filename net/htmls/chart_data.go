@@ -1,10 +1,10 @@
 package htmls
 
 import (
-	"github.com/shawnwyckoff/commpkg/dsa/decimals"
-	"github.com/shawnwyckoff/commpkg/dsa/num"
-	"github.com/shawnwyckoff/commpkg/encoding/color"
-	"github.com/shawnwyckoff/commpkg/sys/clock"
+	"github.com/shawnwyckoff/gpkg/dsa/decimals"
+	"github.com/shawnwyckoff/gpkg/dsa/num"
+	"github.com/shawnwyckoff/gpkg/encoding/color"
+	"github.com/shawnwyckoff/gpkg/sys/clock"
 )
 
 type (

@@ -2,7 +2,7 @@ package two_factor_auth
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/apputil/test"
+	"github.com/shawnwyckoff/gpkg/apputil/test"
 	"testing"
 )
 

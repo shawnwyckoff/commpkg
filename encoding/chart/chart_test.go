@@ -1,7 +1,7 @@
 package chart
 
 import (
-	"github.com/shawnwyckoff/commpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/fs"
 	"github.com/wcharczuk/go-chart"
 	"time"
 )

@@ -3,8 +3,8 @@ package sqldb
 import (
 	"github.com/jinzhu/gorm"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/database/connect_string"
-	. "github.com/shawnwyckoff/commpkg/database/driver"
+	"github.com/shawnwyckoff/gpkg/database/connect_string"
+	. "github.com/shawnwyckoff/gpkg/database/driver"
 )
 
 type Conn struct {

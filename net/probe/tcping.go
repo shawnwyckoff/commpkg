@@ -2,8 +2,8 @@ package probe
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/dsa/num"
-	"github.com/shawnwyckoff/commpkg/net/addr"
+	"github.com/shawnwyckoff/gpkg/dsa/num"
+	"github.com/shawnwyckoff/gpkg/net/addr"
 	"net"
 	"time"
 )

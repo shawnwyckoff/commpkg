@@ -2,10 +2,10 @@ package addr
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/dsa/stringz"
-	"github.com/shawnwyckoff/commpkg/net/htmls"
-	"github.com/shawnwyckoff/commpkg/net/httpz"
-	"github.com/shawnwyckoff/commpkg/net/probe/xonline"
+	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/net/htmls"
+	"github.com/shawnwyckoff/gpkg/net/httpz"
+	"github.com/shawnwyckoff/gpkg/net/probe/xonline"
 	"net"
 	"strings"
 	"time"

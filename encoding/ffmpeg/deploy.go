@@ -1,7 +1,7 @@
 package ffmpeg
 
 import (
-	"github.com/shawnwyckoff/commpkg/sys/cmd"
+	"github.com/shawnwyckoff/gpkg/sys/cmd"
 	"strings"
 )
 

@@ -1,7 +1,7 @@
 package counter
 
 import (
-	"github.com/shawnwyckoff/commpkg/dsa/num"
+	"github.com/shawnwyckoff/gpkg/dsa/num"
 	"testing"
 )
 

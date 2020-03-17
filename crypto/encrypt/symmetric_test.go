@@ -2,7 +2,7 @@ package encrypt
 
 import (
 	"bytes"
-	"github.com/shawnwyckoff/commpkg/dsa/binaries"
+	"github.com/shawnwyckoff/gpkg/dsa/binaries"
 	"testing"
 )
 

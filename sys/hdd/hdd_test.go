@@ -2,7 +2,7 @@ package hdd
 
 import (
 	"encoding/json"
-	"github.com/shawnwyckoff/commpkg/xsystils/xsys/xproc"
+	"github.com/shawnwyckoff/gpkg/xsystils/xsys/xproc"
 	"log"
 	"testing"
 )

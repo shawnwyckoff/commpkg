@@ -3,8 +3,8 @@ package volume
 import (
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/dsa/speed"
-	"github.com/shawnwyckoff/commpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/speed"
+	"github.com/shawnwyckoff/gpkg/dsa/stringz"
 	"strings"
 )
 

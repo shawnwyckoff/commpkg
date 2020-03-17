@@ -2,7 +2,7 @@ package file
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/apputil/log2"
+	"github.com/shawnwyckoff/gpkg/apputil/log2"
 	"html/template"
 	"io"
 	"log"

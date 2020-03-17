@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/database/driver"
-	"github.com/shawnwyckoff/commpkg/database/sqldb"
+	"github.com/shawnwyckoff/gpkg/database/driver"
+	"github.com/shawnwyckoff/gpkg/database/sqldb"
 	"os"
 )
 

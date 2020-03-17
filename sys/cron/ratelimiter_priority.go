@@ -8,7 +8,7 @@ package cron
 // priority: 0->max_uint (high->low)
 
 import (
-	"github.com/shawnwyckoff/commpkg/dsa/num"
+	"github.com/shawnwyckoff/gpkg/dsa/num"
 	"sync"
 	"time"
 )

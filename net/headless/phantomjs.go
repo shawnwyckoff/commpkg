@@ -2,9 +2,9 @@ package headless
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/dsa/randoms"
-	"github.com/shawnwyckoff/commpkg/sys/cmd"
-	"github.com/shawnwyckoff/commpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/dsa/randoms"
+	"github.com/shawnwyckoff/gpkg/sys/cmd"
+	"github.com/shawnwyckoff/gpkg/sys/fs"
 	"os"
 )
 

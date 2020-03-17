@@ -2,8 +2,8 @@ package sqldb
 
 import (
 	"github.com/pkg/errors"
-	. "github.com/shawnwyckoff/commpkg/database/driver"
-	"github.com/shawnwyckoff/commpkg/database/sql"
+	. "github.com/shawnwyckoff/gpkg/database/driver"
+	"github.com/shawnwyckoff/gpkg/database/sql"
 	"strings"
 )
 

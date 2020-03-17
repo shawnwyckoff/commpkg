@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/dsa/bindata"
+	"github.com/shawnwyckoff/gpkg/dsa/bindata"
 	"os"
 )
 

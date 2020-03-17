@@ -11,7 +11,7 @@ package permutations
 // reference: https://www.zhangshengrong.com/p/7B1LBqRNwp/
 
 import (
-	"github.com/shawnwyckoff/commpkg/sys/counter"
+	"github.com/shawnwyckoff/gpkg/sys/counter"
 	"sync/atomic"
 )
 

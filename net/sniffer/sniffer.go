@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"bytes"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/net/socks5"
+	"github.com/shawnwyckoff/gpkg/net/socks5"
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/hpack"
 	"io"

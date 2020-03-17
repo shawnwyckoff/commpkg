@@ -3,7 +3,7 @@ package bloom
 import (
 	"bufio"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/fs"
 	bloom "github.com/willf/bloom"
 	"os"
 )

@@ -2,7 +2,7 @@ package sysinfo
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/commpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/stringz"
 	"os/exec"
 	"strings"
 )

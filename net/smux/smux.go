@@ -1,7 +1,7 @@
 package smux
 
 import (
-	"github.com/shawnwyckoff/commpkg/net/mux"
+	"github.com/shawnwyckoff/gpkg/net/mux"
 	"github.com/xtaci/smux"
 	"net"
 	"time"

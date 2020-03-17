@@ -4,7 +4,7 @@ package encrypt
 
 import (
 	"github.com/jbenet/go-base58"
-	"github.com/shawnwyckoff/commpkg/crypto/hash"
+	"github.com/shawnwyckoff/gpkg/crypto/hash"
 )
 
 func SonnefesEncrypt(plainText, key string) (string, error) {

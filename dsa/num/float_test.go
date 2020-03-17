@@ -2,7 +2,7 @@ package num
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/dsa/jsons"
+	"github.com/shawnwyckoff/gpkg/dsa/jsons"
 	"math"
 	"testing"
 )
