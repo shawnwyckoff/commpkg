@@ -1,7 +1,7 @@
 package gprobe
 
 import (
-	"github.com/shawnwyckoff/gpkg/dsa/gspeed"
+	"github.com/shawnwyckoff/gpkg/container/gspeed"
 	"github.com/shawnwyckoff/gpkg/net/gprobe/util/speedtest"
 )
 

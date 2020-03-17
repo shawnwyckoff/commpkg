@@ -2,7 +2,7 @@ package gclock
 
 import (
 	"github.com/shawnwyckoff/gpkg/apputil/gerror"
-	"github.com/shawnwyckoff/gpkg/dsa/gnum"
+	"github.com/shawnwyckoff/gpkg/container/gnum"
 	"time"
 )
 

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/shawnwyckoff/gpkg/apputil/glog"
-	"github.com/shawnwyckoff/gpkg/dsa/gstring"
+	"github.com/shawnwyckoff/gpkg/container/gstring"
 	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"os"
 	"path/filepath"

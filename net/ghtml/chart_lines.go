@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/gnum"
+	"github.com/shawnwyckoff/gpkg/container/gnum"
 	"github.com/shawnwyckoff/gpkg/sys/gclock"
 	"time"
 )

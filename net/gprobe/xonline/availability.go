@@ -1,7 +1,7 @@
 package xonline
 
 import (
-	"github.com/shawnwyckoff/gpkg/dsa/gstring"
+	"github.com/shawnwyckoff/gpkg/container/gstring"
 	"github.com/shawnwyckoff/gpkg/net/ghttp"
 	"time"
 )

@@ -3,7 +3,7 @@ package speedtest
 import (
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/gnum"
+	"github.com/shawnwyckoff/gpkg/container/gnum"
 	"io/ioutil"
 	"net/http"
 	"net/url"

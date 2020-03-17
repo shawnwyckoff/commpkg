@@ -3,7 +3,7 @@ package gclock
 import (
 	"github.com/bcampbell/fuzzytime"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/gstring"
+	"github.com/shawnwyckoff/gpkg/container/gstring"
 	"github.com/tkuchiki/parsetime"
 	"strings"
 	"time"

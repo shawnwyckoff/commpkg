@@ -4,7 +4,7 @@ import (
 	"github.com/avct/uasurfer"     // 准确性很高
 	"github.com/mssola/user_agent" // 实测准确性较差
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/gnum"
+	"github.com/shawnwyckoff/gpkg/container/gnum"
 	"strings"
 )
 

@@ -1,7 +1,7 @@
 package gcounter
 
 import (
-	"github.com/shawnwyckoff/gpkg/dsa/gnum"
+	"github.com/shawnwyckoff/gpkg/container/gnum"
 	"testing"
 )
 

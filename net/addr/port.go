@@ -2,7 +2,7 @@ package addr
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/grandom"
+	"github.com/shawnwyckoff/gpkg/container/grandom"
 	"net"
 	"strconv"
 	"strings"

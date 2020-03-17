@@ -9,7 +9,7 @@ import (
 	"github.com/h2non/filetype"
 	"github.com/pkg/errors"
 	"github.com/ross-spencer/sfclassic"
-	"github.com/shawnwyckoff/gpkg/dsa/gvolume"
+	"github.com/shawnwyckoff/gpkg/container/gvolume"
 	"github.com/shawnwyckoff/gpkg/sys/gfs"
 )
 

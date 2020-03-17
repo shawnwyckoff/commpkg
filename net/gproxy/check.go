@@ -3,7 +3,7 @@ package gproxy
 import (
 	"github.com/pkg/errors"
 	// "github.com/GameXG/ProxyClient" // http client using socks5 proxy supported not well
-	"github.com/shawnwyckoff/gpkg/dsa/gspeed"
+	"github.com/shawnwyckoff/gpkg/container/gspeed"
 	"github.com/shawnwyckoff/gpkg/net/addr"
 	"github.com/shawnwyckoff/gpkg/net/ghttp"
 	"time"

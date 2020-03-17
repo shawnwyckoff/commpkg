@@ -7,7 +7,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/gstring"
+	"github.com/shawnwyckoff/gpkg/container/gstring"
 	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"os"
 )

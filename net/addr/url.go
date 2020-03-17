@@ -6,7 +6,7 @@ package addr
 import (
 	"github.com/goware/urlx"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/gstring"
+	"github.com/shawnwyckoff/gpkg/container/gstring"
 	"github.com/shawnwyckoff/gpkg/encoding/gmultimedia"
 	"net/url"
 	"path/filepath"

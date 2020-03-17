@@ -2,7 +2,7 @@ package gclock
 
 import (
 	"encoding/json"
-	"github.com/shawnwyckoff/gpkg/dsa/gjson"
+	"github.com/shawnwyckoff/gpkg/container/gjson"
 	"testing"
 	"time"
 )

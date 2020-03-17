@@ -2,7 +2,7 @@ package gheadless
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/dsa/grandom"
+	"github.com/shawnwyckoff/gpkg/container/grandom"
 	"github.com/shawnwyckoff/gpkg/sys/gcmd"
 	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"os"

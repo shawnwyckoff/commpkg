@@ -3,7 +3,7 @@ package gclock
 import (
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/gstring"
+	"github.com/shawnwyckoff/gpkg/container/gstring"
 	"math"
 	"time"
 )

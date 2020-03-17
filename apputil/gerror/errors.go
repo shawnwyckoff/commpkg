@@ -3,13 +3,14 @@ package gerror
 import (
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/gstring"
+	"github.com/shawnwyckoff/gpkg/container/gstring"
 	"runtime"
 	"strconv"
 	"strings"
 )
 
 var (
+	ErrNil = error(nil)
 	ErrNotFound = errors.Errorf("not found") // this is not a really run error, it means Database/Collection not exist in mongodb.
 )
 

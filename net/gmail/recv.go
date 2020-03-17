@@ -6,7 +6,7 @@ import (
 	"github.com/emersion/go-imap/client"
 	"github.com/emersion/go-message/mail"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/gstring"
+	"github.com/shawnwyckoff/gpkg/container/gstring"
 	"github.com/shawnwyckoff/gpkg/sys/gcharset"
 	"io"
 	"io/ioutil"

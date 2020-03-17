@@ -2,7 +2,7 @@ package gsysinfo
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/gstring"
+	"github.com/shawnwyckoff/gpkg/container/gstring"
 	"os/exec"
 	"strings"
 )

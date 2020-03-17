@@ -2,7 +2,7 @@ package gclock
 
 import (
 	"github.com/beevik/ntp"
-	"github.com/shawnwyckoff/gpkg/dsa/gstring"
+	"github.com/shawnwyckoff/gpkg/container/gstring"
 	"time"
 )
 

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"github.com/laurent22/go-trash"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/gvolume"
+	"github.com/shawnwyckoff/gpkg/container/gvolume"
 	"github.com/shawnwyckoff/gpkg/sys/gio"
 	"io"
 	"io/ioutil"

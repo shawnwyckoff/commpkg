@@ -25,7 +25,7 @@ func Parse(dvr Driver, s string) (*ConnectInfo, error) {
 	res.Options = make(map[string]string)
 
 	switch dvr {
-	case DriverSQLite:
+	case SQLite:
 		slconf, err := sqlite.ParseURL(s)
 		if err != nil {
 			return nil, err
@@ -38,7 +38,7 @@ func Parse(dvr Driver, s string) (*ConnectInfo, error) {
 		res.Options = slconf.Options
 		return &res, nil
 
-	case DriverMySQL:
+	case MySQL:
 		myconf, err := mysql.ParseURL(s)
 		if err != nil {
 			return nil, err
@@ -71,10 +71,10 @@ func Parse(dvr Driver, s string) (*ConnectInfo, error) {
 		}
 		return &res, nil
 
-	case DriverTiDB:
-		return Parse(DriverMySQL, s)
+	case TiDB:
+		return Parse(MySQL, s)
 
-	case DriverMongoDB:
+	case MongoDB:
 		mgconf, err := mongo.ParseURL(s)
 		if err != nil {
 			return nil, err
@@ -102,7 +102,7 @@ func Parse(dvr Driver, s string) (*ConnectInfo, error) {
 func (ci *ConnectInfo) Build(dvr Driver) (string, error) {
 	return "", nil
 	switch dvr {
-	case DriverMySQL:
+	case MySQL:
 		//return fmt.Sprintf("%s:%s@%s/%s?%s", ci.User, ci.Password, ci.Host, ci.Database, ci.Option)
 
 	}

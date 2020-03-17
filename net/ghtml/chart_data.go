@@ -1,8 +1,8 @@
 package ghtml
 
 import (
-	"github.com/shawnwyckoff/gpkg/dsa/gdecimal"
-	"github.com/shawnwyckoff/gpkg/dsa/gnum"
+	"github.com/shawnwyckoff/gpkg/container/gdecimal"
+	"github.com/shawnwyckoff/gpkg/container/gnum"
 	"github.com/shawnwyckoff/gpkg/encoding/gcolor"
 	"github.com/shawnwyckoff/gpkg/sys/gclock"
 )

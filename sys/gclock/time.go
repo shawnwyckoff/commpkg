@@ -1,7 +1,7 @@
 package gclock
 
 import (
-	"github.com/shawnwyckoff/gpkg/dsa/gstring"
+	"github.com/shawnwyckoff/gpkg/container/gstring"
 	"time"
 )
 
