@@ -6,8 +6,8 @@ package addr
 import (
 	"github.com/goware/urlx"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/stringz"
-	"github.com/shawnwyckoff/gpkg/encoding/multimedia"
+	"github.com/shawnwyckoff/gpkg/dsa/gstring"
+	"github.com/shawnwyckoff/gpkg/encoding/gmultimedia"
 	"net/url"
 	"path/filepath"
 	"runtime"
@@ -63,7 +63,7 @@ func IsFilePath(s string) bool {
 		vn := filepath.VolumeName(s)
 		return len(vn) > 0
 	} else {
-		return stringz.StartWith(s, "/")
+		return gstring.StartWith(s, "/")
 	}
 }
 
@@ -199,10 +199,10 @@ func ParseUrlString(u string) (*UrlChunk, error) {
 		usr_pwd := ss[0]
 		ss := strings.Split(usr_pwd, ":")
 		if len(ss) == 1 {
-			if stringz.StartWith(usr_pwd, ":") {
+			if gstring.StartWith(usr_pwd, ":") {
 				r.Password = usr_pwd
 			}
-			if stringz.EndWith(usr_pwd, ":") {
+			if gstring.EndWith(usr_pwd, ":") {
 				r.User = usr_pwd
 			}
 		}
@@ -251,7 +251,7 @@ func ParseUrl(urlStr string) (*AddrSlice, error) {
 
 	// if there is NO scheme in input url string, urlx.Parse will give default scheme "http://"
 	// so I must check urlx.Parse return scheme
-	if stringz.StartWith(strings.ToLower(urlStr), strings.ToLower(u.Scheme)+"://") {
+	if gstring.StartWith(strings.ToLower(urlStr), strings.ToLower(u.Scheme)+"://") {
 		s.Scheme = u.Scheme
 	}
 	if u.User != nil {
@@ -305,8 +305,8 @@ func IsImageUrl(url string) bool {
 		return false
 	}
 	url = strings.ToLower(url)
-	for _, v := range multimedia.SuffixsOfImage {
-		if stringz.EndWith(url, v) {
+	for _, v := range gmultimedia.SuffixsOfImage {
+		if gstring.EndWith(url, v) {
 			return true
 		}
 	}
@@ -319,8 +319,8 @@ func IsVideoUrl(url string) bool {
 		return false
 	}
 	url = strings.ToLower(url)
-	for _, v := range multimedia.SuffixsOfVideo {
-		if stringz.EndWith(url, v) {
+	for _, v := range gmultimedia.SuffixsOfVideo {
+		if gstring.EndWith(url, v) {
 			return true
 		}
 	}
@@ -333,8 +333,8 @@ func IsAudioUrl(url string) bool {
 		return false
 	}
 	url = strings.ToLower(url)
-	for _, v := range multimedia.SuffixsOfAudio {
-		if stringz.EndWith(url, v) {
+	for _, v := range gmultimedia.SuffixsOfAudio {
+		if gstring.EndWith(url, v) {
 			return true
 		}
 	}
@@ -355,7 +355,7 @@ func LastPath(urlstr string) string {
 }
 
 func RemoveDuplicateUrl(urls []string) []string {
-	return stringz.RemoveDuplicate(urls)
+	return gstring.RemoveDuplicate(urls)
 }
 
 // https://video-icn1-1.xx.fbcdn.net/v/t42.9040-2/58467180_2666273813399564_6679224605468524544_n.mp4?_nc_cat=100\u0026efg=eyJybHIiOjY5NCwicmxhIjo1MTIsInZlbmNvZGVfdGFnIjoic3ZlX3NkIn0=\u0026rl=694\u0026vabr=386\u0026_nc_ht=video-icn1-1.xx\u0026oh=881ead117c700970945a89716b3a0b54\u0026oe=5CB9BAA5

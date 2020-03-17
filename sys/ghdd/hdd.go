@@ -2,7 +2,7 @@ package ghdd
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/volume"
+	"github.com/shawnwyckoff/gpkg/dsa/gvolume"
 	"github.com/shirou/gopsutil/disk"
 )
 
@@ -15,9 +15,9 @@ import (
 
 type VolumeInfo struct {
 	FilesystemType string
-	Available      volume.Volume
-	Free           volume.Volume
-	Total          volume.Volume
+	Available      gvolume.Volume
+	Free           gvolume.Volume
+	Total          gvolume.Volume
 }
 
 func GetVolumeInfo(volumePath string) (*VolumeInfo, error) {
@@ -26,15 +26,15 @@ func GetVolumeInfo(volumePath string) (*VolumeInfo, error) {
 	if err != nil {
 		return nil, err
 	}
-	vi.Available, err = volume.FromByteSize(float64(du.Total))
+	vi.Available, err = gvolume.FromByteSize(float64(du.Total))
 	if err != nil {
 		return nil, err
 	}
-	vi.Free, err = volume.FromByteSize(float64(du.Total))
+	vi.Free, err = gvolume.FromByteSize(float64(du.Total))
 	if err != nil {
 		return nil, err
 	}
-	vi.Total, err = volume.FromByteSize(float64(du.Total))
+	vi.Total, err = gvolume.FromByteSize(float64(du.Total))
 	if err != nil {
 		return nil, err
 	}

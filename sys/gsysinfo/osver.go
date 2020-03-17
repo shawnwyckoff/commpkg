@@ -7,7 +7,7 @@ package gsysinfo
 import (
 	"github.com/getlantern/osversion"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/gstring"
 	"github.com/shawnwyckoff/gpkg/sys/gsysinfo/util"
 	"runtime"
 	"strconv"
@@ -44,7 +44,7 @@ func Get() (*SysVer, error) {
 		if cutPos >= 0 {
 			// "kernel: 2.6.32-431.el6.x86_64" -> "2.6.32-431.el6.x86_64"
 			// "Ubuntu 16.04.1 LTS kernel: 4.4.0-57-generic" -> "4.4.0-57-generic"
-			tmp, err := stringz.SubstrAscii(sv.PlatformVer, cutPos+8, len(sv.PlatformVer)-1)
+			tmp, err := gstring.SubstrAscii(sv.PlatformVer, cutPos+8, len(sv.PlatformVer)-1)
 			if err == nil {
 				sv.PlatformVer = tmp
 			}
@@ -72,7 +72,7 @@ func Get() (*SysVer, error) {
 		// "CentOS 6.5" -> "CentOS"
 		spacePos := strings.Index(sv.LinuxDistroName, " ")
 		if spacePos > 0 {
-			tmp, err := stringz.SubstrAscii(sv.LinuxDistroName, 0, spacePos)
+			tmp, err := gstring.SubstrAscii(sv.LinuxDistroName, 0, spacePos)
 			if err == nil {
 				sv.LinuxDistroName = tmp
 			}
@@ -98,7 +98,7 @@ func ForbiddenCentOs5x() error {
 		return err
 	}
 	if sv.LinuxDistroName == "centos" && len(sv.LinuxDistroVer) > 0 {
-		majorVerString, err := stringz.SubstrAscii(sv.LinuxDistroVer, 0, 1)
+		majorVerString, err := gstring.SubstrAscii(sv.LinuxDistroVer, 0, 1)
 		if err != nil {
 			return err
 		}

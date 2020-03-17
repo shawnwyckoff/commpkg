@@ -3,8 +3,8 @@ package decimals
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/apputil/test"
-	"github.com/shawnwyckoff/gpkg/dsa/jsons"
+	"github.com/shawnwyckoff/gpkg/apputil/gtest"
+	"github.com/shawnwyckoff/gpkg/dsa/gjson"
 	"github.com/shopspring/decimal"
 	"go.mongodb.org/mongo-driver/bson"
 	"testing"
@@ -88,13 +88,13 @@ func TestNewDecimalFromUint(t *testing.T) {
 
 func TestDecimal_MarshalJSON(t *testing.T) {
 	s := decimalS1{Name: "Bob", Score: Zero}
-	if jsons.MarshalStringDefault(s, false) != `{"Name":"Bob","Score":"0"}` {
+	if gjson.MarshalStringDefault(s, false) != `{"Name":"Bob","Score":"0"}` {
 		t.Errorf("TestDecimal_MarshalJSON error1")
 		return
 	}
 
 	s2 := decimalS2{Name: "Bob"}
-	if jsons.MarshalStringDefault(s2, false) != `{"Name":"Bob"}` {
+	if gjson.MarshalStringDefault(s2, false) != `{"Name":"Bob"}` {
 		t.Errorf("TestDecimal_MarshalJSON error2")
 		return
 	}
@@ -206,7 +206,7 @@ func TestToElegantFloat64s(t *testing.T) {
 	efs := ToElegantFloat64s(r)
 	for _, v := range efs {
 		if len(v.String()) != 12 {
-			test.PrintlnExit(t, "converted ElegantFloat length should be 12")
+			gtest.PrintlnExit(t, "converted ElegantFloat length should be 12")
 		}
 	}
 }
@@ -227,7 +227,7 @@ func TestDecimal_Div(t *testing.T) {
 }
 
 func TestDecimal_BitsAfterDecimalPoint(t *testing.T) {
-	cl := test.NewCaseList()
+	cl := gtest.NewCaseList()
 	cl.New().Input("1").Expect(0)
 	cl.New().Input("12").Expect(0)
 	cl.New().Input("123").Expect(0)
@@ -265,9 +265,9 @@ func TestDecimal_BitsAfterDecimalPoint(t *testing.T) {
 		s := c.Inputs[0].(string)
 		e := c.Expects[0].(int)
 		d, err := NewFromString(s)
-		test.Assert(t, err)
+		gtest.Assert(t, err)
 		if d.BitsAfterDecimalPoint() != e {
-			test.PrintlnExit(t, "decimal %s expect precision %d, but %d got", d.String(), e, d.BitsAfterDecimalPoint())
+			gtest.PrintlnExit(t, "decimal %s expect precision %d, but %d got", d.String(), e, d.BitsAfterDecimalPoint())
 		}
 	}
 }

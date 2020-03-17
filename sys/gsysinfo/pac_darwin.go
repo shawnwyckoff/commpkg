@@ -2,7 +2,7 @@ package gsysinfo
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/gstring"
 	"os/exec"
 	"strings"
 )
@@ -23,7 +23,7 @@ func GetPacProxy() (pacUrl string, enabled bool, err error) {
 	}
 
 	for _, v := range ss {
-		if stringz.StartWith(v, "Enabled: ") {
+		if gstring.StartWith(v, "Enabled: ") {
 			v = strings.Replace(v, "Enabled: ", "", 1)
 			v = strings.ToLower(v)
 			if v == "yes" {
@@ -34,7 +34,7 @@ func GetPacProxy() (pacUrl string, enabled bool, err error) {
 				return "", false, errors.Errorf("invalid enabled flag(%s)", v)
 			}
 		}
-		if stringz.StartWith(v, "URL: ") {
+		if gstring.StartWith(v, "URL: ") {
 			pacUrl = strings.Replace(v, "URL: ", "", 1)
 		}
 	}

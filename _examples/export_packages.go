@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/apputil/logz"
-	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/apputil/glogz"
+	"github.com/shawnwyckoff/gpkg/dsa/gstring"
 	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"os"
 	"path/filepath"
@@ -12,12 +12,12 @@ import (
 
 func main()  {
 	goPath := os.Getenv("GOPATH")
-	logz.AssertTrue(goPath != "")
+	glogz.AssertTrue(goPath != "")
 
 	repoPath := "github.com/shawnwyckoff/gpkg"
 	commpkgPath := filepath.Join(goPath, "src", repoPath)
 	dirs, _, err := gfs.ListDir(commpkgPath)
-	logz.AssertOk(err, "ListDir")
+	glogz.AssertOk(err, "ListDir")
 
 	res := map[string][]string{}
 	for _, v := range dirs {
@@ -26,7 +26,7 @@ func main()  {
 			continue
 		}
 		subItems := strings.Split(ss[1], "/")
-		subItems = stringz.RemoveByValue(subItems, "")
+		subItems = gstring.RemoveByValue(subItems, "")
 		if len(subItems) == 2 {
 			original := res[subItems[0]]
 			original = append(original, subItems[1])

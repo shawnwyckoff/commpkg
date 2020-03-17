@@ -1,5 +1,0 @@
-package ffmpeg
-
-func Resize() {
-
-}

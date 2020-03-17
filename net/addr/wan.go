@@ -2,10 +2,10 @@ package addr
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/stringz"
-	"github.com/shawnwyckoff/gpkg/net/htmls"
+	"github.com/shawnwyckoff/gpkg/dsa/gstring"
+	"github.com/shawnwyckoff/gpkg/net/ghtml"
 	"github.com/shawnwyckoff/gpkg/net/ghttp"
-	"github.com/shawnwyckoff/gpkg/net/probe/xonline"
+	"github.com/shawnwyckoff/gpkg/net/gprobe/xonline"
 	"net"
 	"strings"
 	"time"
@@ -24,7 +24,7 @@ func GetWanIpOL(proxy string) (net.IP, error) {
 		"http://myip.dnsomatic.com",
 		"http://icanhazip.com",
 		"http://ifconfig.co/ip"}
-	eps := stringz.Shuffle(endpoints)
+	eps := gstring.Shuffle(endpoints)
 	for _, url := range eps {
 		resp, err := ghttp.Get(url, proxy, time.Second*3, true)
 		if err != nil {
@@ -51,7 +51,7 @@ func GetWanIpOL(proxy string) (net.IP, error) {
 	if err != nil {
 		return nil, err
 	}
-	doc, err := htmls.NewDocFromHtmlSrc(&htmlString)
+	doc, err := ghtml.NewDocFromHtmlSrc(&htmlString)
 	if err == nil {
 		ipstr = doc.Text()
 		t := CheckIPString(ipstr)
@@ -63,7 +63,7 @@ func GetWanIpOL(proxy string) (net.IP, error) {
 	if err != nil {
 		return nil, err
 	}
-	doc, err = htmls.NewDocFromHtmlSrc(&htmlString)
+	doc, err = ghtml.NewDocFromHtmlSrc(&htmlString)
 	if err == nil {
 		ipstr, exist = doc.Find("#field").First().Attr("value")
 		if exist {

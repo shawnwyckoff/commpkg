@@ -8,7 +8,7 @@ package gcron
 // priority: 0->max_uint (high->low)
 
 import (
-	"github.com/shawnwyckoff/gpkg/dsa/num"
+	"github.com/shawnwyckoff/gpkg/dsa/gnum"
 	"sync"
 	"time"
 )
@@ -51,14 +51,14 @@ func (r *RateLimiterPriority) TakeWait(priority uint) {
 		currWaitingPriority := r.waitingPriority
 		r.mu.RUnlock()
 
-		if len(currWaitingPriority) > 0 && num.MinUintArray(currWaitingPriority) < priority {
+		if len(currWaitingPriority) > 0 && gnum.MinUintArray(currWaitingPriority) < priority {
 			continue
 		}
 
 		r.mu.Lock()
 		if time.Now().Sub(r.last) >= r.d {
 			r.last = time.Now()
-			r.waitingPriority = num.RemoveUint(r.waitingPriority, priority, 1)
+			r.waitingPriority = gnum.RemoveUint(r.waitingPriority, priority, 1)
 			r.mu.Unlock()
 			return
 		} else {

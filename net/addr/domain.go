@@ -12,9 +12,9 @@ import (
 	"github.com/liamcurry/domains"
 	gowhois "github.com/likexian/whois-go"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/gstring"
 	"github.com/shawnwyckoff/gpkg/sys/gfs"
-	"github.com/shawnwyckoff/gpkg/sys/sysinfo"
+	"github.com/shawnwyckoff/gpkg/sys/gsysinfo"
 	"os"
 	"strings"
 	"time"
@@ -32,7 +32,7 @@ var extractor *tldextract.TLDExtract = nil
 // 当缓存文件不存在，或者修改时间在24小时以前，则重新下载缓存文件
 func updateLtdListAndExtractor() error {
 	var err error
-	home, err := sysinfo.GetHomeDir()
+	home, err := gsysinfo.GetHomeDir()
 	if err != nil {
 		return err
 	}
@@ -93,9 +93,9 @@ func ParseDomain(domain string) (*Domain, error) {
 	if !ret || result.TLD == "" {
 		return nil, errors.Errorf("%s is not a valid domain", domain)
 	}
-	s := stringz.RemoveTail(domain, len(result.TLD))
+	s := gstring.RemoveTail(domain, len(result.TLD))
 	if len(s) > 0 && s[len(s)-1] == '.' {
-		s = stringz.RemoveTail(s, 1)
+		s = gstring.RemoveTail(s, 1)
 	}
 	if len(s) == 0 {
 		return &result, nil

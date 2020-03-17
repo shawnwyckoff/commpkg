@@ -4,7 +4,7 @@ import (
 	"github.com/avct/uasurfer"     // 准确性很高
 	"github.com/mssola/user_agent" // 实测准确性较差
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/num"
+	"github.com/shawnwyckoff/gpkg/dsa/gnum"
 	"strings"
 )
 
@@ -23,11 +23,11 @@ type UserAgnetInfo struct {
 
 func verToString(ver uasurfer.Version) (result string) {
 	if ver.Major >= 0 {
-		result += num.ToString(ver.Major)
+		result += gnum.ToString(ver.Major)
 		if ver.Minor >= 0 {
-			result += "." + num.ToString(ver.Minor)
+			result += "." + gnum.ToString(ver.Minor)
 			if ver.Patch >= 0 {
-				result += "." + num.ToString(ver.Patch)
+				result += "." + gnum.ToString(ver.Patch)
 			}
 		}
 	}

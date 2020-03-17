@@ -2,7 +2,7 @@ package decimals
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/num"
+	"github.com/shawnwyckoff/gpkg/dsa/gnum"
 	"github.com/shopspring/decimal"
 	"go.mongodb.org/mongo-driver/bson/bsontype"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -311,8 +311,8 @@ func MaxPrec(in []Decimal) int {
 	return maxPrec
 }
 
-func ToElegantFloat64s(in []Decimal) []num.ElegantFloat {
-	var r []num.ElegantFloat
+func ToElegantFloat64s(in []Decimal) []gnum.ElegantFloat {
+	var r []gnum.ElegantFloat
 	maxPrec := 0
 	for _, v := range in {
 		prec := v.BitsAfterDecimalPoint()
@@ -321,7 +321,7 @@ func ToElegantFloat64s(in []Decimal) []num.ElegantFloat {
 		}
 	}
 	for _, v := range in {
-		r = append(r, num.NewElegantFloat(v.Float64(), maxPrec))
+		r = append(r, gnum.NewElegantFloat(v.Float64(), maxPrec))
 	}
 	return r
 }
@@ -416,6 +416,6 @@ func (d *Decimal) ToBSONDecimal128() (primitive.Decimal128, error) {
 	return d128, nil
 }
 
-func (d *Decimal) ToElegantFloat() num.ElegantFloat {
-	return num.NewElegantFloat(d.Float64(), d.BitsAfterDecimalPoint())
+func (d *Decimal) ToElegantFloat() gnum.ElegantFloat {
+	return gnum.NewElegantFloat(d.Float64(), d.BitsAfterDecimalPoint())
 }

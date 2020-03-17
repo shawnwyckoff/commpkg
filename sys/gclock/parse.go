@@ -3,7 +3,7 @@ package gclock
 import (
 	"github.com/bcampbell/fuzzytime"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/gstring"
 	"github.com/tkuchiki/parsetime"
 	"strings"
 	"time"
@@ -89,7 +89,7 @@ func fixDateTime(s string) string {
 		s += " pm"
 	}
 	s = strings.Replace(s, "下午", "pm", -1)                    // "下午9:30" -> "9:30 pm"
-	tmp, err := stringz.ReplaceWithTags(s, "(", ")", " ", -1) // "12月20日(二)13:06" -> "12月20日 13:06"
+	tmp, err := gstring.ReplaceWithTags(s, "(", ")", " ", -1) // "12月20日(二)13:06" -> "12月20日 13:06"
 	if err == nil {
 		s = tmp
 	}
@@ -117,7 +117,7 @@ func ParseDatetimeStringFuzz(datetimeString string) (time.Time, error) {
 	if len(datetimeString) == 0 {
 		return time.Time{}, errors.New("empty time string")
 	}
-	if stringz.CountDigit(datetimeString) < 2 {
+	if gstring.CountDigit(datetimeString) < 2 {
 		return time.Time{}, errors.New("invalid time string")
 	}
 

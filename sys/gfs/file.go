@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"github.com/laurent22/go-trash"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/volume"
+	"github.com/shawnwyckoff/gpkg/dsa/gvolume"
 	"github.com/shawnwyckoff/gpkg/sys/gio"
 	"io"
 	"io/ioutil"
@@ -255,7 +255,7 @@ func GetFileByteSize(filename string) (int64, error) {
 	return fi.Size(), nil
 }
 
-func GetFileSize(filename string) (volume.Volume, error) {
+func GetFileSize(filename string) (gvolume.Volume, error) {
 	f, err := os.Open(filename)
 	if err != nil {
 		return 0, err
@@ -265,7 +265,7 @@ func GetFileSize(filename string) (volume.Volume, error) {
 	if err != nil {
 		return 0, err
 	}
-	return volume.FromByteSize(float64(fi.Size()))
+	return gvolume.FromByteSize(float64(fi.Size()))
 }
 
 func MoveToTrash(filename string) error {

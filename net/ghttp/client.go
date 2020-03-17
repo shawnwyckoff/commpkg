@@ -16,8 +16,8 @@ import (
 	"crypto/tls"
 	"github.com/cavaliercoder/grab"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/jsons"
-	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/gjson"
+	"github.com/shawnwyckoff/gpkg/dsa/gstring"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -30,7 +30,7 @@ func VerifyProxyFormat(s string) error {
 
 	hasScheme := func(s string) bool {
 		for _, scheme := range allHTTPProxySchemes {
-			if stringz.StartWith(s, scheme) {
+			if gstring.StartWith(s, scheme) {
 				return true
 			}
 		}
@@ -213,7 +213,7 @@ func DoRequest(req *http.Request, proxy string, timeout time.Duration, output ..
 	resp := newResp(response)
 	if response.StatusCode == 200 && output != nil {
 		for _, v := range output {
-			if err := jsons.JSONDecode(resp.Body, v); err != nil {
+			if err := gjson.JSONDecode(resp.Body, v); err != nil {
 				return nil, err
 			}
 		}

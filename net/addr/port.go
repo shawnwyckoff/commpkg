@@ -2,7 +2,7 @@ package addr
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/randoms"
+	"github.com/shawnwyckoff/gpkg/dsa/grandom"
 	"net"
 	"strconv"
 	"strings"
@@ -112,7 +112,7 @@ func GetRandomAvailablePort(nettype string) (int, error) {
 		return 0, errors.New("unsupported network type " + nettype)
 	}
 	for {
-		port := randoms.RandomInt(1024, 65535)
+		port := grandom.RandomInt(1024, 65535)
 		isUsing, err := IsLocalPortUsing(nettype, port)
 		if err != nil || isUsing {
 			continue

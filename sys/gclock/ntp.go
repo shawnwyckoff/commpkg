@@ -2,7 +2,7 @@ package gclock
 
 import (
 	"github.com/beevik/ntp"
-	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/gstring"
 	"time"
 )
 
@@ -18,7 +18,7 @@ func GetNetTimeInUTCONLINE() (time.Time, error) {
 		"3.jp.pool.ntp.org"}
 	var tm time.Time
 	var err error
-	ntpServers = stringz.Shuffle(ntpServers)
+	ntpServers = gstring.Shuffle(ntpServers)
 	for _, server := range ntpServers {
 		tm, err = ntp.Time(server)
 		if err == nil {

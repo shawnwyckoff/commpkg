@@ -9,7 +9,7 @@ import (
 	"github.com/h2non/filetype"
 	"github.com/pkg/errors"
 	"github.com/ross-spencer/sfclassic"
-	"github.com/shawnwyckoff/gpkg/dsa/volume"
+	"github.com/shawnwyckoff/gpkg/dsa/gvolume"
 	"github.com/shawnwyckoff/gpkg/sys/gfs"
 )
 
@@ -73,7 +73,7 @@ func IsExecutableUnstable2(filename string) (bool, error) {
 func IsExecutable(filename string) (bool, error) {
 	ff, err := DetectFileFormat(filename)
 	if err != nil {
-		if vol, err2 := gfs.GetFileSize(filename); err2 == nil && vol == volume.Volume(0) {
+		if vol, err2 := gfs.GetFileSize(filename); err2 == nil && vol == gvolume.Volume(0) {
 			return false, nil
 		}
 		return false, err

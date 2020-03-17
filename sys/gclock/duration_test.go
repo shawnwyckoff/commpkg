@@ -2,7 +2,7 @@ package gclock
 
 import (
 	"encoding/json"
-	"github.com/shawnwyckoff/gpkg/dsa/jsons"
+	"github.com/shawnwyckoff/gpkg/dsa/gjson"
 	"testing"
 	"time"
 )
@@ -14,7 +14,7 @@ func TestHumanDuration_MarshalJSON(t *testing.T) {
 	s := S{
 		D: HumanDuration(Day*8 + (time.Minute * 24)),
 	}
-	jsonStr := jsons.MarshalStringDefault(s, false)
+	jsonStr := gjson.MarshalStringDefault(s, false)
 	if jsonStr != `{"D":"1 week 1 day 24 minutes"}` {
 		t.Errorf("HumanDuration MarshalJSON error")
 		return

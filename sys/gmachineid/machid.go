@@ -2,8 +2,8 @@ package gmachineid
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/crypto/hash"
-	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/crypto/ghash"
+	"github.com/shawnwyckoff/gpkg/dsa/gstring"
 	"github.com/shawnwyckoff/gpkg/net/addr"
 	"os/exec"
 	"runtime"
@@ -19,7 +19,7 @@ func MacosHardwareUUID() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	uuid, err := stringz.SubstrBetween(string(output), "Hardware UUID:", "\n", true, true, false, false)
+	uuid, err := gstring.SubstrBetween(string(output), "Hardware UUID:", "\n", true, true, false, false)
 	if err != nil {
 		return "", err
 	}
@@ -42,7 +42,7 @@ func nonMacosPhysicalMACs() (string, error) {
 		macs += ni.MAC
 	}
 
-	return hash.Md5Str(macs)
+	return ghash.Md5Str(macs)
 }
 
 func Get() (string, error) {
@@ -60,7 +60,7 @@ func Get() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	md5, err := hash.Md5Str(str + "salt-duck-machid")
+	md5, err := ghash.Md5Str(str + "salt-duck-machid")
 	if err != nil {
 		return "", err
 	}

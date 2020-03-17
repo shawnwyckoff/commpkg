@@ -3,7 +3,7 @@ package gsysinfo
 import (
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/gstring"
 	"os/exec"
 	"strings"
 )
@@ -48,7 +48,7 @@ func GetGlobalSocks5Proxy() (server string, enabled bool, err error) {
 	svr := ""
 	port := ""
 	for _, v := range ss {
-		if stringz.StartWith(v, "Enabled: ") {
+		if gstring.StartWith(v, "Enabled: ") {
 			v = strings.Replace(v, "Enabled: ", "", 1)
 			v = strings.ToLower(v)
 			if v == "yes" {
@@ -59,10 +59,10 @@ func GetGlobalSocks5Proxy() (server string, enabled bool, err error) {
 				return "", false, errors.Errorf("invalid enabled flag(%s)", v)
 			}
 		}
-		if stringz.StartWith(v, "Server: ") {
+		if gstring.StartWith(v, "Server: ") {
 			svr = strings.Replace(v, "Server: ", "", 1)
 		}
-		if stringz.StartWith(v, "Port: ") {
+		if gstring.StartWith(v, "Port: ") {
 			port = strings.Replace(v, "Port: ", "", 1)
 		}
 	}

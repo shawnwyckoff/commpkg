@@ -3,7 +3,7 @@ package gclock
 import (
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/gstring"
 	"math"
 	"time"
 )
@@ -148,8 +148,8 @@ func (d *Date) UnmarshalJSON(b []byte) error {
 	if s[0] != '"' || s[len(s)-1] != '"' {
 		return errors.Errorf("Invalid json date '%s'", s)
 	}
-	s = stringz.RemoveHead(s, 1)
-	s = stringz.RemoveTail(s, 1)
+	s = gstring.RemoveHead(s, 1)
+	s = gstring.RemoveTail(s, 1)
 	dt, err := ParseDateString(s, true)
 	if err != nil {
 		*d = ZeroDate
@@ -218,8 +218,8 @@ func (dr *DateRange) UnmarshalJSON(b []byte) error {
 	if s[0] != '"' || s[len(s)-1] != '"' {
 		return ErrDefault
 	}
-	s = stringz.RemoveHead(s, 1)
-	s = stringz.RemoveTail(s, 1)
+	s = gstring.RemoveHead(s, 1)
+	s = gstring.RemoveTail(s, 1)
 
 	// Parse
 	res, err := ParseDateRangeString(s, true)

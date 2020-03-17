@@ -2,7 +2,7 @@ package gmem
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/dsa/volume"
+	"github.com/shawnwyckoff/gpkg/dsa/gvolume"
 	"github.com/shirou/gopsutil/mem"
 )
 
@@ -14,17 +14,17 @@ type MemUsage struct {
 }
 
 func (mu MemUsage) String() string {
-	total, err := volume.FromByteSize(float64(mu.TotalBytes))
+	total, err := gvolume.FromByteSize(float64(mu.TotalBytes))
 	totalString := total.String()
 	if err != nil {
 		totalString = err.Error()
 	}
-	used, err := volume.FromByteSize(float64(mu.UsedBytes))
+	used, err := gvolume.FromByteSize(float64(mu.UsedBytes))
 	usedString := used.String()
 	if err != nil {
 		usedString = err.Error()
 	}
-	available, err := volume.FromByteSize(float64(mu.AvailableBytes))
+	available, err := gvolume.FromByteSize(float64(mu.AvailableBytes))
 	availableString := available.String()
 	if err != nil {
 		availableString = err.Error()

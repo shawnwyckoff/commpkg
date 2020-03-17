@@ -1,7 +1,7 @@
 package gclock
 
 import (
-	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/gstring"
 	"time"
 )
 
@@ -206,8 +206,8 @@ func DetectBestLayout(in []ElegantTime) string {
 		tmp := v.DetectBestLayout()
 		tmpHead := tmp
 		tmpTZ := ""
-		if stringz.EndWith(tmp, _LAYOUT_TIMEZONE_) {
-			tmpHead = stringz.RemoveTail(tmp, len(_LAYOUT_TIMEZONE_))
+		if gstring.EndWith(tmp, _LAYOUT_TIMEZONE_) {
+			tmpHead = gstring.RemoveTail(tmp, len(_LAYOUT_TIMEZONE_))
 			tmpTZ = _LAYOUT_TIMEZONE_
 		}
 

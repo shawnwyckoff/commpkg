@@ -1,8 +1,8 @@
 package gclock
 
 import (
-	"github.com/shawnwyckoff/gpkg/apputil/errorz"
-	"github.com/shawnwyckoff/gpkg/dsa/num"
+	"github.com/shawnwyckoff/gpkg/apputil/gerror"
+	"github.com/shawnwyckoff/gpkg/dsa/gnum"
 	"time"
 )
 
@@ -45,12 +45,12 @@ func CountDays(begin, end time.Time) int {
 */
 // 'from' is included
 func CountWorkDaysThisWeekFrom(from time.Weekday) int {
-	return num.MinInt(6-int(from), 5)
+	return gnum.MinInt(6-int(from), 5)
 }
 
 // 'to' is included
 func CountWorkDaysThisWeekTo(to time.Weekday) int {
-	return num.MinInt(int(to), 5)
+	return gnum.MinInt(int(to), 5)
 }
 
 // this is not accurate, holidays(christmas, thanks giving day, spring festival...) are marked as workday
@@ -72,7 +72,7 @@ func CountWorkDays(begin, end time.Time) int {
 	}
 	//fmt.Println(daysOfAll, daysOfFirstWeek, daysOfLastWeek)
 	if daysOfMiddle%7 != 0 {
-		panic(errorz.Errorf("daysOfMiddle %d error", daysOfMiddle))
+		panic(gerror.Errorf("daysOfMiddle %d error", daysOfMiddle))
 	}
 	return CountWorkDaysThisWeekFrom(firstWeekday) + ((daysOfMiddle / 7) * 5) + CountWorkDaysThisWeekTo(lastWeekday)
 }

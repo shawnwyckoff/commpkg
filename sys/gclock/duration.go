@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"github.com/hako/durafmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/num"
-	"github.com/shawnwyckoff/gpkg/dsa/stringz"
+	"github.com/shawnwyckoff/gpkg/dsa/gnum"
+	"github.com/shawnwyckoff/gpkg/dsa/gstring"
 	"math"
 	"strconv"
 	"strings"
@@ -47,7 +47,7 @@ func ParseHumanDuration(s string) (*HumanDuration, error) {
 	if len(ss) == 0 {
 		return nil, errors.Errorf("invalid duration (%s)", s)
 	}
-	if num.IsOddInt64(int64(len(ss))) {
+	if gnum.IsOddInt64(int64(len(ss))) {
 		return nil, errors.Errorf("invalid duration (%s)", s)
 	}
 
@@ -139,8 +139,8 @@ func (d *HumanDuration) UnmarshalJSON(b []byte) error {
 	if s[0] != '"' || s[len(s)-1] != '"' {
 		return errors.Errorf("Invalid json HumanDuration '%s'", s)
 	}
-	s = stringz.RemoveHead(s, 1)
-	s = stringz.RemoveTail(s, 1)
+	s = gstring.RemoveHead(s, 1)
+	s = gstring.RemoveTail(s, 1)
 	dura, err := ParseHumanDuration(s)
 	if err != nil {
 		*d = HumanDuration(time.Duration(0))

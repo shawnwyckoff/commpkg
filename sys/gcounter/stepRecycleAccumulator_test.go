@@ -1,7 +1,7 @@
 package gcounter
 
 import (
-	"github.com/shawnwyckoff/gpkg/dsa/num"
+	"github.com/shawnwyckoff/gpkg/dsa/gnum"
 	"testing"
 )
 
@@ -16,7 +16,7 @@ func TestStepRecycleAccumulator_Incr(t *testing.T) {
 	strinfact := ""
 	for i := 0; i < 12; i++ {
 		n := sra.Get()
-		strinfact += num.FormatInt64(n)
+		strinfact += gnum.FormatInt64(n)
 		sra.Incr()
 	}
 

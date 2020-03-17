@@ -1,0 +1,5 @@
+package gffmpeg
+
+func Resize() {
+
+}
