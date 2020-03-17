@@ -1,4 +1,4 @@
-package fs
+package gfs
 
 import (
 	"bufio"
@@ -7,7 +7,7 @@ import (
 	"github.com/laurent22/go-trash"
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/dsa/volume"
-	"github.com/shawnwyckoff/gpkg/sys/ios"
+	"github.com/shawnwyckoff/gpkg/sys/gio"
 	"io"
 	"io/ioutil"
 	"os"
@@ -54,7 +54,7 @@ func CopyFile(src, dst string) (err error) {
 }
 
 // copy file and notify copied size
-func CopyFileEx(src, dst string, sizeCallback ios.CopiedSizeCallback) (size int64, err error) {
+func CopyFileEx(src, dst string, sizeCallback gio.CopiedSizeCallback) (size int64, err error) {
 	in, err := os.Open(src)
 	if err != nil {
 		return 0, err
@@ -71,7 +71,7 @@ func CopyFileEx(src, dst string, sizeCallback ios.CopiedSizeCallback) (size int6
 		}
 	}()
 
-	written, err := ios.CopyEx(out, nil, in, nil, time.Duration(0), sizeCallback)
+	written, err := gio.CopyEx(out, nil, in, nil, time.Duration(0), sizeCallback)
 	if err != nil {
 		return written, err
 	}

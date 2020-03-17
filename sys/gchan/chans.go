@@ -1,4 +1,4 @@
-package chans
+package gchan
 
 import (
 	"github.com/pkg/errors"

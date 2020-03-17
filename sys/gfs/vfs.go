@@ -1,4 +1,4 @@
-package fs
+package gfs
 
 /*
 https://github.com/minio/minfs

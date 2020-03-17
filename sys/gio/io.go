@@ -1,4 +1,4 @@
-package ios
+package gio
 
 import (
 	"github.com/xtaci/kcptun/generic"

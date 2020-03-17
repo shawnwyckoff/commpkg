@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/shawnwyckoff/gpkg/dsa/randoms"
 	"github.com/shawnwyckoff/gpkg/sys/cmd"
-	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"os"
 )
 
@@ -73,7 +73,7 @@ if (system.args.length < 3 || system.args.length > 5) {
 func ScreenshotPhantomJS(urlStr, path string) error {
 	fmt.Println(urlStr)
 	jsFile := randoms.RandomString(10) + ".js"
-	if err := fs.StringToFile(rasterizeJS, jsFile); err != nil {
+	if err := gfs.StringToFile(rasterizeJS, jsFile); err != nil {
 		return err
 	}
 	defer os.Remove(jsFile)

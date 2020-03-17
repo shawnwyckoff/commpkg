@@ -1,4 +1,4 @@
-package cron
+package gcron
 
 import (
 	"github.com/shawnwyckoff/gpkg/sys/clock"

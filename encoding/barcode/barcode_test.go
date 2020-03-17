@@ -1,7 +1,7 @@
 package barcode
 
 import (
-	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"os"
 	"testing"
 )
@@ -23,7 +23,7 @@ func TestDecodeQrCode(t *testing.T) {
 		return
 	}
 
-	r, f, err := fs.FilenameToReader(defFilename)
+	r, f, err := gfs.FilenameToReader(defFilename)
 	if err != nil {
 		t.Error(err)
 		return

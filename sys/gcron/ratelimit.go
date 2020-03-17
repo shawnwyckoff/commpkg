@@ -1,4 +1,4 @@
-package cron
+package gcron
 
 // Frequency limiter designed to limit web api access frequency.
 // For example, **.com http api could be visited 3 times in one second,

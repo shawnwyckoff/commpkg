@@ -1,4 +1,4 @@
-package fs
+package gfs
 
 import (
 	"github.com/pkg/errors"

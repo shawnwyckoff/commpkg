@@ -13,7 +13,7 @@ import (
 	gowhois "github.com/likexian/whois-go"
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/dsa/stringz"
-	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"github.com/shawnwyckoff/gpkg/sys/sysinfo"
 	"os"
 	"strings"
@@ -37,7 +37,7 @@ func updateLtdListAndExtractor() error {
 		return err
 	}
 	cacheFilename := home + "/.ltd.suffix.cache.dat"
-	pi, err := fs.GetPathInfo(cacheFilename)
+	pi, err := gfs.GetPathInfo(cacheFilename)
 	if err != nil {
 		extractor = nil
 		return err

@@ -2,14 +2,14 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/sys/cron"
+	"github.com/shawnwyckoff/gpkg/sys/gcron"
 	"sync"
 	"time"
 )
 
 var wg sync.WaitGroup
 
-func tryFreq(fm *cron.RateLimiter, id int) {
+func tryFreq(fm *gcron.RateLimiter, id int) {
 	defer wg.Add(-1)
 	for i := 0; i < 5; i++ {
 		fm.MarkAndWaitBlock()
@@ -18,7 +18,7 @@ func tryFreq(fm *cron.RateLimiter, id int) {
 }
 
 func main() {
-	fm := cron.NewRateLimiter(time.Millisecond * 1000)
+	fm := gcron.NewRateLimiter(time.Millisecond * 1000)
 
 	count := 10
 	wg.Add(count)
