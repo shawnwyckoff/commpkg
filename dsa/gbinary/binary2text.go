@@ -1,4 +1,4 @@
-package binaries
+package gbinary
 
 import (
 	"encoding/base64"

@@ -1,4 +1,4 @@
-package apriori
+package gapriori
 
 import (
 	"bufio"

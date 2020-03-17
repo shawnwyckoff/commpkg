@@ -1,4 +1,4 @@
-package bits
+package gbit
 
 import (
 	"testing"

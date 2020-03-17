@@ -1,4 +1,4 @@
-package combinations
+package gcombination
 
 import (
 	"fmt"

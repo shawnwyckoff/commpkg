@@ -1,4 +1,4 @@
-package bytez
+package gbyte
 
 func Index(p []byte, toSearch byte) int {
 	for i, bt := range p {

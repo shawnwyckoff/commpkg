@@ -27,10 +27,10 @@ For input slice {"A", "B", "C", "D"} there are 2^4 - 1 = 15 binary combinations,
 15	=	1111	=>	DCBA	=>	{"A", "B", "C", "D"}
 */
 
-package combinations
+package gcombination
 
 import (
-	"github.com/shawnwyckoff/gpkg/dsa/bits"
+	"github.com/shawnwyckoff/gpkg/dsa/gbit"
 )
 
 // All returns all combinations for a given interface array.
@@ -68,7 +68,7 @@ func AllWithLen(set []interface{}, minLen, maxLen int) (subsets [][]interface{})
 	// Go through all possible combinations of objects
 	// from 1 (only first object in subset) to 2^length (all objects in subset)
 	for subsetBits := 1; subsetBits < (1 << length); subsetBits++ {
-		bit1Count := int(bits.Count1BitsHamming32(uint32(subsetBits)))
+		bit1Count := int(gbit.Count1BitsHamming32(uint32(subsetBits)))
 		if bit1Count < minLen || bit1Count > maxLen {
 			continue
 		}

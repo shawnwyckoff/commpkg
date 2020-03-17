@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/dsa/geo"
+	"github.com/shawnwyckoff/gpkg/dsa/ggeo"
 	"github.com/shawnwyckoff/gpkg/dsa/gnum"
 	"io/ioutil"
 	"net/http"
@@ -87,7 +87,7 @@ func getAllTestServers(user *User) (*TestServerList, error) {
 		sLon, _ := strconv.ParseFloat(server.Lon, 64)
 		uLat, _ := strconv.ParseFloat(user.Lat, 64)
 		uLon, _ := strconv.ParseFloat(user.Lon, 64)
-		server.Distance = geo.GeoDistance(sLat, sLon, uLat, uLon)
+		server.Distance = ggeo.GeoDistance(sLat, sLon, uLat, uLon)
 	}
 
 	return &l, nil

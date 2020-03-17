@@ -1,4 +1,4 @@
-package decimals
+package gdecimal
 
 import (
 	"encoding/json"

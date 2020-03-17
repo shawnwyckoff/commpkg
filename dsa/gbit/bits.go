@@ -1,6 +1,6 @@
 // author - 2019: https://github.com/howeih/Day-4-Counting-1-bits  https://github.com/barnybug/popcount
 
-package bits
+package gbit
 
 func Count1BitsSlow32(value uint32) int {
 	n := 0

@@ -1,4 +1,4 @@
-package decimals
+package gdecimal
 
 import (
 	"github.com/pkg/errors"

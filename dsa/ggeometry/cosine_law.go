@@ -1,4 +1,4 @@
-package geometry
+package ggeometry
 
 import (
 	"math"

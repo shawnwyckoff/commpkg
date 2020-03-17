@@ -1,4 +1,4 @@
-package bytez
+package gbyte
 
 import (
 	"bytes"
