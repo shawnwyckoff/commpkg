@@ -2,7 +2,7 @@ package xonline
 
 import (
 	"github.com/shawnwyckoff/gpkg/dsa/stringz"
-	"github.com/shawnwyckoff/gpkg/net/httpz"
+	"github.com/shawnwyckoff/gpkg/net/ghttp"
 	"time"
 )
 
@@ -19,7 +19,7 @@ func IsWanOnline(proxy string) (online bool) {
 
 	ds := stringz.Shuffle(domains)
 	for _, domain := range ds {
-		_, err := httpz.Get(domain, proxy, time.Second*3, true)
+		_, err := ghttp.Get(domain, proxy, time.Second*3, true)
 		if err == nil {
 			return true
 		}

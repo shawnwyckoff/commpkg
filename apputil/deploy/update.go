@@ -2,7 +2,7 @@ package deploy
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/net/httpz/client"
+	"github.com/shawnwyckoff/gpkg/net/ghttp/client"
 	"github.com/shawnwyckoff/gpkg/spider/github"
 	"github.com/shawnwyckoff/gpkg/sys/fs"
 	"github.com/shawnwyckoff/gpkg/sys/proc"

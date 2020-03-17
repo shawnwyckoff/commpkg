@@ -4,7 +4,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/dsa/stringz"
 	"github.com/shawnwyckoff/gpkg/net/htmls"
-	"github.com/shawnwyckoff/gpkg/net/httpz"
+	"github.com/shawnwyckoff/gpkg/net/ghttp"
 	"github.com/shawnwyckoff/gpkg/net/probe/xonline"
 	"net"
 	"strings"
@@ -26,7 +26,7 @@ func GetWanIpOL(proxy string) (net.IP, error) {
 		"http://ifconfig.co/ip"}
 	eps := stringz.Shuffle(endpoints)
 	for _, url := range eps {
-		resp, err := httpz.Get(url, proxy, time.Second*3, true)
+		resp, err := ghttp.Get(url, proxy, time.Second*3, true)
 		if err != nil {
 			if firstCheckWanOnline {
 				if !xonline.IsWanOnline(proxy) {
@@ -36,7 +36,7 @@ func GetWanIpOL(proxy string) (net.IP, error) {
 			}
 			continue
 		}
-		ipstr, _ = httpz.ReadBodyString(resp)
+		ipstr, _ = ghttp.ReadBodyString(resp)
 		resp.Body.Close()
 		ipstr = strings.Trim(ipstr, "\r") // icanhazip.com 的返回结果会带换行符
 		ipstr = strings.Trim(ipstr, "\n")
@@ -47,7 +47,7 @@ func GetWanIpOL(proxy string) (net.IP, error) {
 	}
 
 	// backup choices
-	htmlString, err := httpz.GetString("http://bot.whatismyipaddress.com", proxy, time.Second*5)
+	htmlString, err := ghttp.GetString("http://bot.whatismyipaddress.com", proxy, time.Second*5)
 	if err != nil {
 		return nil, err
 	}
@@ -59,7 +59,7 @@ func GetWanIpOL(proxy string) (net.IP, error) {
 			return ParseIP(ipstr)
 		}
 	}
-	htmlString, err = httpz.GetString("http://network-tools.com", proxy, time.Second*5)
+	htmlString, err = ghttp.GetString("http://network-tools.com", proxy, time.Second*5)
 	if err != nil {
 		return nil, err
 	}
