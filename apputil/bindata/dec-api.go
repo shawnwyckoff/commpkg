@@ -3,7 +3,7 @@ package bindata
 import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
 )
 
 func Dec(fileHexString *string, output_binary_filename string) error {
@@ -17,5 +17,5 @@ func Dec(fileHexString *string, output_binary_filename string) error {
 	if err != nil {
 		return err
 	}
-	return fs.BytesToFile(buf, output_binary_filename)
+	return gfs.BytesToFile(buf, output_binary_filename)
 }

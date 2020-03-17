@@ -3,7 +3,7 @@ package addr
 import (
 	"github.com/mohong122/ip2region/binding/golang"
 	"github.com/shawnwyckoff/gpkg/net/ghttp"
-	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"net"
 	"os"
 	"time"
@@ -42,7 +42,7 @@ func NewGeoFinderONLINE() (*GeoFinder, error) {
 		return nil, err
 	}
 	os.Remove("ip2region.db")
-	fs.BytesToFile(buf, "ip2region.db")
+	gfs.BytesToFile(buf, "ip2region.db")
 
 	gf.finder, err = ip2region.New("ip2region.db")
 	if err != nil {

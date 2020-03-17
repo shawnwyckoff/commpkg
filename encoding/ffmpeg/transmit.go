@@ -3,9 +3,9 @@ package ffmpeg
 import (
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/apputil/std_logger"
-	"github.com/shawnwyckoff/gpkg/sys/cmd"
-	"github.com/shawnwyckoff/gpkg/sys/fs"
-	"github.com/shawnwyckoff/gpkg/sys/proc"
+	"github.com/shawnwyckoff/gpkg/sys/gcmd"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
+	"github.com/shawnwyckoff/gpkg/sys/gproc"
 	"strconv"
 	"strings"
 )
@@ -24,7 +24,7 @@ func Rtsp2RtmpWait(rtspUrl, rtmpUrl string) {
 }*/
 
 type Transmitter struct {
-	cmder        *cmd.Cmder
+	cmder        *gcmd.Cmder
 	cmds         []string
 	transmitType TransmitType
 }
@@ -42,7 +42,7 @@ func NewTransmitter(inputUrl, outputUrl string, transmitType TransmitType, logge
 	if transmitType == TransmitRtsp2Rtmp {
 		t.cmds = []string{"ffmpeg", "-rtsp_transport", "tcp", "-i", inputUrl, "-stimeout", "100000", "-c:v", "copy", "-c:a libfdk_aac", "-b:a", "64k", "-bt", "64k", "-ac", "2", "-ar", "44100", "-f", "flv", "rtmp://" + outputUrl}
 	} else if transmitType == TransmitFile2Rtmp {
-		pi, err := fs.GetPathInfo(inputUrl)
+		pi, err := gfs.GetPathInfo(inputUrl)
 		if err == nil && !pi.Exist {
 			return nil, errors.New("Not exist input file " + inputUrl)
 		}
@@ -59,18 +59,18 @@ func NewTransmitter(inputUrl, outputUrl string, transmitType TransmitType, logge
 
 func (t *Transmitter) RunNowait(retry bool) {
 	for {
-		t.cmder = cmd.ExecNowait(true, t.cmds[0], t.cmds[1:]...)
+		t.cmder = gcmd.ExecNowait(true, t.cmds[0], t.cmds[1:]...)
 		if !retry {
 			break
 		}
 	}
 }
 
-func (t *Transmitter) GetPid() proc.ProcId {
+func (t *Transmitter) GetPid() gproc.ProcId {
 	if t.cmder == nil {
-		return proc.InvalidProcId
+		return gproc.InvalidProcId
 	} else {
-		return proc.ProcId(t.cmder.GetPid())
+		return gproc.ProcId(t.cmder.GetPid())
 	}
 }
 
@@ -82,8 +82,8 @@ func (t *Transmitter) Wait() {
 
 func (t *Transmitter) Close() {
 	pid := t.GetPid()
-	if pid != proc.InvalidProcId {
-		proc.Terminate(pid)
+	if pid != gproc.InvalidProcId {
+		gproc.Terminate(pid)
 		t.cmder = nil
 	}
 }

@@ -5,8 +5,8 @@ import (
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/apputil/errorz"
 	"github.com/shawnwyckoff/gpkg/apputil/logger"
-	"github.com/shawnwyckoff/gpkg/sys/clock"
-	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/gclock"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"github.com/sttts/color"
 	"io"
 	"os"
@@ -17,7 +17,7 @@ import (
 
 type (
 	Logz struct {
-		clock           clock.Clock
+		clock           gclock.Clock
 		conf            *Config
 		currLogFilename string
 		currLogFile     *os.File
@@ -26,11 +26,11 @@ type (
 	}
 )
 
-func NewLogz(c clock.Clock) *Logz {
+func NewLogz(c gclock.Clock) *Logz {
 	return &Logz{clock: c}
 }
 
-func (lgz *Logz) SetClock(c clock.Clock) {
+func (lgz *Logz) SetClock(c gclock.Clock) {
 	lgz.clock = c
 }
 
@@ -60,7 +60,7 @@ func (lgz *Logz) getFile(tm time.Time) (*os.File, error) {
 		}
 
 		for {
-			pi, err := fs.GetPathInfo(newLogFilename)
+			pi, err := gfs.GetPathInfo(newLogFilename)
 			if err != nil {
 				return nil, err
 			}
@@ -107,7 +107,7 @@ func (lgz *Logz) Init(config *Config) error {
 	}
 
 	lgz.conf = config
-	lgz.clock = clock.GetSysClock()
+	lgz.clock = gclock.GetSysClock()
 
 	if lgz.conf.SaveDisk {
 		fmt.Println(fmt.Sprintf("items logging into %s", lgz.conf.SaveDir))
@@ -116,7 +116,7 @@ func (lgz *Logz) Init(config *Config) error {
 		if err := os.MkdirAll(lgz.conf.SaveDir, os.ModePerm); err != nil {
 			return err
 		}
-		pi, err := fs.GetPathInfo(lgz.conf.SaveDir)
+		pi, err := gfs.GetPathInfo(lgz.conf.SaveDir)
 		if err != nil {
 			return err
 		}

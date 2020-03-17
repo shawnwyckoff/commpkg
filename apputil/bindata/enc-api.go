@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/dsa/stringz"
-	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"os"
 )
 
@@ -26,7 +26,7 @@ var templateEnd = `"`
 // packageName: 生成的包名
 // varName: 生成的包含文件数据的变量名
 func Enc(binary_filename, encoded_go_filename, packageName, varName string) error {
-	if !fs.FileExits(binary_filename) {
+	if !gfs.FileExits(binary_filename) {
 		return errors.Errorf("file %s not exists", binary_filename)
 	}
 	if !stringz.EndWith(encoded_go_filename, ".go") {

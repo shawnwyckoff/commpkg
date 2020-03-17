@@ -6,7 +6,7 @@ import (
 	"github.com/shawnwyckoff/gpkg/net/dialers"
 	"github.com/shawnwyckoff/gpkg/net/mux"
 	"github.com/shawnwyckoff/gpkg/net/smux"
-	"github.com/shawnwyckoff/gpkg/sys/ios"
+	"github.com/shawnwyckoff/gpkg/sys/gio"
 	"io"
 	"math/rand"
 	"net"
@@ -48,7 +48,7 @@ func handleClient(muxer mux.Mux, p1 net.Conn, lg logger.Logger) {
 		die := make(chan struct{})
 		go func() {
 			buf := xmitBuf.Get().([]byte)
-			if _, err := ios.CopyBuffer(dst, src, buf); err != nil {
+			if _, err := gio.CopyBuffer(dst, src, buf); err != nil {
 				if s2, ok := p2.(mux.Stream); ok {
 					// verbose error handling
 					cause := err

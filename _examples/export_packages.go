@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/shawnwyckoff/gpkg/apputil/logz"
 	"github.com/shawnwyckoff/gpkg/dsa/stringz"
-	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"os"
 	"path/filepath"
 	"strings"
@@ -16,7 +16,7 @@ func main()  {
 
 	repoPath := "github.com/shawnwyckoff/gpkg"
 	commpkgPath := filepath.Join(goPath, "src", repoPath)
-	dirs, _, err := fs.ListDir(commpkgPath)
+	dirs, _, err := gfs.ListDir(commpkgPath)
 	logz.AssertOk(err, "ListDir")
 
 	res := map[string][]string{}

@@ -6,14 +6,14 @@ package gcron
 // then, MarkAndWaitBlock() before every http request.
 
 import (
-	"github.com/shawnwyckoff/gpkg/sys/clock"
+	"github.com/shawnwyckoff/gpkg/sys/gclock"
 	"sync"
 	"time"
 )
 
 type RateLimiter struct {
 	d      time.Duration
-	c      clock.Clock
+	c      gclock.Clock
 	last   time.Time
 	lastMu sync.Mutex
 }
@@ -22,12 +22,12 @@ func NewRateLimiter(d time.Duration) *RateLimiter {
 	return NewRateLimiterEx(d, nil)
 }
 
-func NewRateLimiterEx(d time.Duration, c clock.Clock) *RateLimiter {
+func NewRateLimiterEx(d time.Duration, c gclock.Clock) *RateLimiter {
 	/*if d < time.Millisecond {
 		return nil, errors.Errorf("Unacceptable too small duration %s for frequency limiter", d.String())
 	}*/
 	if c == nil {
-		c = clock.GetSysClock()
+		c = gclock.GetSysClock()
 	}
 	return &RateLimiter{d: d, c: c}
 }

@@ -3,7 +3,7 @@ package htmls
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/sys/clock"
+	"github.com/shawnwyckoff/gpkg/sys/gclock"
 	"sort"
 	"testing"
 	"time"
@@ -95,18 +95,18 @@ func TestLinesSync_Sync(t *testing.T) {
 		return &v
 	}
 
-	date, _ := clock.NewDate(2019, 1, 1)
+	date, _ := gclock.NewDate(2019, 1, 1)
 	ds1.Items = append(ds1.Items, _dot_{Time: date.ToTime(0, 0, 0, 0, time.UTC), Value: newFloat(1)})
-	date, _ = clock.NewDate(2019, 1, 2)
+	date, _ = gclock.NewDate(2019, 1, 2)
 	ds1.Items = append(ds1.Items, _dot_{Time: date.ToTime(0, 0, 0, 0, time.UTC), Value: newFloat(2)})
-	date, _ = clock.NewDate(2019, 1, 3)
+	date, _ = gclock.NewDate(2019, 1, 3)
 	ds1.Items = append(ds1.Items, _dot_{Time: date.ToTime(0, 0, 0, 0, time.UTC), Value: newFloat(3)})
 
-	date, _ = clock.NewDate(2019, 1, 2)
+	date, _ = gclock.NewDate(2019, 1, 2)
 	ds2.Items = append(ds2.Items, _dot_{Time: date.ToTime(0, 0, 0, 0, time.UTC), Value: newFloat(2)})
-	date, _ = clock.NewDate(2019, 1, 3)
+	date, _ = gclock.NewDate(2019, 1, 3)
 	ds2.Items = append(ds2.Items, _dot_{Time: date.ToTime(0, 0, 0, 0, time.UTC), Value: newFloat(3)})
-	date, _ = clock.NewDate(2019, 1, 4)
+	date, _ = gclock.NewDate(2019, 1, 4)
 	ds2.Items = append(ds2.Items, _dot_{Time: date.ToTime(0, 0, 0, 0, time.UTC), Value: newFloat(4)})
 
 	ls := NewXAxisSync()

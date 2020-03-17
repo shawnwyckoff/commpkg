@@ -3,7 +3,7 @@ package bloom
 import (
 	"bufio"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	bloom "github.com/willf/bloom"
 	"os"
 )
@@ -30,11 +30,11 @@ func New(maxCount uint, maxFp float64, autoSave bool, savePath string) (*BloomFi
 		return nil, err
 	}
 
-	pi, err := fs.GetPathInfo(savePath)
+	pi, err := gfs.GetPathInfo(savePath)
 	if err != nil {
 		return nil, err
 	}
-	fileSize, err := fs.GetFileByteSize(savePath)
+	fileSize, err := gfs.GetFileByteSize(savePath)
 	if err != nil {
 		return nil, err
 	}

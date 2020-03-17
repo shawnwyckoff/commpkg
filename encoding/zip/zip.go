@@ -3,7 +3,7 @@ package zip
 import (
 	"archive/zip"
 	"bytes"
-	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"io"
 	"io/ioutil"
 	"os"
@@ -86,7 +86,7 @@ func UnZip(r io.ReadCloser, outputDir string) error {
 			if err != nil {
 				continue
 			}
-			fs.BytesToFile(unzippedFileBytes, filepath.Join(outputDir, v.Name))
+			gfs.BytesToFile(unzippedFileBytes, filepath.Join(outputDir, v.Name))
 		}
 	}
 

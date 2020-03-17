@@ -5,7 +5,7 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/extrame/xls"
-	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"github.com/tealeg/xlsx"
 	"strconv"
 	"strings"
@@ -48,7 +48,7 @@ type (
 )
 
 func OpenPath(path string) (*XlsDoc, error) {
-	buf, err := fs.FileToBytes(path)
+	buf, err := gfs.FileToBytes(path)
 	if err != nil {
 		return nil, err
 	}

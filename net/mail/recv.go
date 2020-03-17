@@ -7,7 +7,7 @@ import (
 	"github.com/emersion/go-message/mail"
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/dsa/stringz"
-	"github.com/shawnwyckoff/gpkg/sys/charset"
+	"github.com/shawnwyckoff/gpkg/sys/gcharset"
 	"io"
 	"io/ioutil"
 	"strings"
@@ -203,7 +203,7 @@ func decode(s string) string {
 	s = string(decodeBytes)
 
 	if gbk {
-		s2, err := charset.GbkToUtf8([]byte(s))
+		s2, err := gcharset.GbkToUtf8([]byte(s))
 		if err == nil {
 			s = string(s2)
 		}

@@ -5,8 +5,8 @@ import (
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/dsa/interfaces"
 	"github.com/shawnwyckoff/gpkg/dsa/stringz"
-	"github.com/shawnwyckoff/gpkg/sys/fs"
-	"github.com/shawnwyckoff/gpkg/sys/proc"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
+	"github.com/shawnwyckoff/gpkg/sys/gproc"
 	"io/ioutil"
 	"runtime"
 	"strings"
@@ -15,7 +15,7 @@ import (
 // Same Dir Same Name
 func DefaultConfig() (string, error) {
 	surffix := ".json"
-	fn, err := proc.SelfPath()
+	fn, err := gproc.SelfPath()
 	if err != nil {
 		return "", err
 	}
@@ -46,7 +46,7 @@ func Unmarshal(filename string, v interface{}) error {
 		return errors.Errorf("pointer needed for json.Unmarshal, but type %s is NOT a pointer", typeName)
 	}
 
-	pi, err := fs.GetPathInfo(filename)
+	pi, err := gfs.GetPathInfo(filename)
 	if err != nil {
 		return err
 	}

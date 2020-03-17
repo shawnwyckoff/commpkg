@@ -1,7 +1,7 @@
 package gcron
 
 import (
-	"github.com/shawnwyckoff/gpkg/sys/clock"
+	"github.com/shawnwyckoff/gpkg/sys/gclock"
 	"time"
 )
 
@@ -17,10 +17,10 @@ func (sc *SysCron) Wait() {
 	for {
 		sleepMillis := 100 // default sleep 5000 milliseconds for each loop
 		dur := time.Now().Sub(sc.triggerTime)
-		durMillis := clock.NsecToMillis(dur.Nanoseconds())
+		durMillis := gclock.NsecToMillis(dur.Nanoseconds())
 		if durMillis < 100 {
 			break
 		}
-		time.Sleep(clock.MillisToDuration(int64(sleepMillis)))
+		time.Sleep(gclock.MillisToDuration(int64(sleepMillis)))
 	}
 }

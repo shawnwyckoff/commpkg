@@ -3,7 +3,7 @@ package mongo
 import (
 	"fmt"
 	"github.com/mongodb/mongo-go-driver/x/bsonx"
-	"github.com/shawnwyckoff/gpkg/sys/clock"
+	"github.com/shawnwyckoff/gpkg/sys/gclock"
 	"time"
 
 	//"github.com/shawnwyckoff/finance"
@@ -174,7 +174,7 @@ func TestColl_FindCmp(t *testing.T) {
 		return
 	}
 
-	date, err := clock.NewDate(2018, 11, 1)
+	date, err := gclock.NewDate(2018, 11, 1)
 	if err != nil {
 		t.Error(err)
 		return
@@ -202,7 +202,7 @@ func TestColl_RemoveCmp(t *testing.T) {
 		return
 	}
 
-	date, err := clock.NewDate(2019, 1, 1)
+	date, err := gclock.NewDate(2019, 1, 1)
 	if err != nil {
 		t.Error(err)
 		return

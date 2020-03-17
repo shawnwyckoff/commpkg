@@ -1,7 +1,7 @@
 package chart
 
 import (
-	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"github.com/wcharczuk/go-chart"
 	"time"
 )
@@ -21,5 +21,5 @@ func sample() {
 		{Time: time.Now().AddDate(0, 0, 1), YValue: 5}}
 	line.LineColor = chart.ColorAlternateGreen
 	buf, _ := DrawTimeSeriesLines("x", "y", 1000, 600, []TimeSeriesLine{line})
-	fs.BytesToFile(buf, "sample.png")
+	gfs.BytesToFile(buf, "sample.png")
 }

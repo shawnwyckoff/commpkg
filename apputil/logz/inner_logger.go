@@ -1,7 +1,7 @@
 package logz
 
 import (
-	"github.com/shawnwyckoff/gpkg/sys/clock"
+	"github.com/shawnwyckoff/gpkg/sys/gclock"
 	"sync/atomic"
 )
 
@@ -31,7 +31,7 @@ func Init(saveDisk bool) {
 // 这里不可以返回logger, 因为Init/WriteMsg/Destory/Flush函数都属于*logger而不是logger,
 // 所以logger不符合logs.Logger接口要求，*logger才符合
 
-func SetClock(c clock.Clock) {
+func SetClock(c gclock.Clock) {
 	DefaultLogger.SetClock(c)
 }
 

@@ -2,12 +2,12 @@ package sqldb
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/sys/fs"
+	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"os"
 )
 
 func _sqliteIsDatabaseEixsts(name string) (bool, error) {
-	pi, err := fs.GetPathInfo(name)
+	pi, err := gfs.GetPathInfo(name)
 	if err != nil {
 		return false, err
 	}
@@ -18,7 +18,7 @@ func _sqliteIsDatabaseEixsts(name string) (bool, error) {
 }
 
 func _sqliteRemoveDatabase(name string) error {
-	if !fs.FileExits(name) {
+	if !gfs.FileExits(name) {
 		return errors.Errorf("SQLite database file '%s' not exists", name)
 	}
 	return os.Remove(name)
