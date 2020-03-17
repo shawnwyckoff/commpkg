@@ -26,11 +26,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/dsa/volume"
+	"github.com/shawnwyckoff/gpkg/dsa/gvolume"
 )
 
 func main() {
-	vol, err := volume.ParseString("10 MB")
+	vol, err := gvolume.ParseString("10 MB")
 	fmt.Println(vol.String(), err)
 }
 ```
