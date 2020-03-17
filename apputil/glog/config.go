@@ -1,4 +1,4 @@
-package glogz
+package glog
 
 import (
 	"fmt"

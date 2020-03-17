@@ -2,7 +2,7 @@ package gpoly
 
 import (
 	"github.com/openacid/slim/polyfit"
-	"github.com/shawnwyckoff/gpkg/dsa/geometry"
+	"github.com/shawnwyckoff/gpkg/dsa/ggeometry"
 	"math"
 )
 
@@ -51,5 +51,5 @@ func PolyAngle(ys []float64) float64 {
 		xs[i] = float64(i + 1)
 	}
 	coffs := PolyFit(xs, ys, 2)
-	return geometry.SlopeToAngle(coffs[0], coffs[1])
+	return ggeometry.SlopeToAngle(coffs[0], coffs[1])
 }

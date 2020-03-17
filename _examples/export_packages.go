@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/apputil/glogz"
+	"github.com/shawnwyckoff/gpkg/apputil/glog"
 	"github.com/shawnwyckoff/gpkg/dsa/gstring"
 	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"os"
@@ -12,12 +12,12 @@ import (
 
 func main()  {
 	goPath := os.Getenv("GOPATH")
-	glogz.AssertTrue(goPath != "")
+	glog.AssertTrue(goPath != "")
 
 	repoPath := "github.com/shawnwyckoff/gpkg"
 	commpkgPath := filepath.Join(goPath, "src", repoPath)
 	dirs, _, err := gfs.ListDir(commpkgPath)
-	glogz.AssertOk(err, "ListDir")
+	glog.AssertOk(err, "ListDir")
 
 	res := map[string][]string{}
 	for _, v := range dirs {

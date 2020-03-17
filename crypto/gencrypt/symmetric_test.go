@@ -2,7 +2,7 @@ package gencrypt
 
 import (
 	"bytes"
-	"github.com/shawnwyckoff/gpkg/dsa/binaries"
+	"github.com/shawnwyckoff/gpkg/dsa/gbinary"
 	"testing"
 )
 
@@ -40,7 +40,7 @@ func TestSymmetricEncryptDecrypt(t *testing.T) {
 			t.Error(err)
 			return
 		}
-		b58CipherText, _ := binaries.Encode("base58", cipherText)
+		b58CipherText, _ := gbinary.Encode("base58", cipherText)
 		t.Logf("cipherText(%s), base58(%s)", string(cipherText), b58CipherText)
 		plainText, err := SymmetricDecrypt(v.alg, cipherText, v.key)
 		if err != nil {

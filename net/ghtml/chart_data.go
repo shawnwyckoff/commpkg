@@ -1,7 +1,7 @@
 package ghtml
 
 import (
-	"github.com/shawnwyckoff/gpkg/dsa/decimals"
+	"github.com/shawnwyckoff/gpkg/dsa/gdecimal"
 	"github.com/shawnwyckoff/gpkg/dsa/gnum"
 	"github.com/shawnwyckoff/gpkg/encoding/gcolor"
 	"github.com/shawnwyckoff/gpkg/sys/gclock"
@@ -19,18 +19,18 @@ type (
 	// 矩形色块
 	Rect struct {
 		X1    string           // 矩形第一个点的X坐标，即时间
-		Y1    decimals.Decimal // 矩形第一个点的Y坐标
+		Y1    gdecimal.Decimal // 矩形第一个点的Y坐标
 		X2    string           // 矩形第二个点的X坐标，即时间
-		Y2    decimals.Decimal // 矩形第二个点的Y坐标
+		Y2    gdecimal.Decimal // 矩形第二个点的Y坐标
 		Color gcolor.Color     // 样式，默认半透明的
 	}
 
 	// 直线
 	StraightLine struct {
 		X1    string           // 直线第一个点的X坐标，即时间
-		Y1    decimals.Decimal // 直线第一个点的Y坐标
+		Y1    gdecimal.Decimal // 直线第一个点的Y坐标
 		X2    string           // 直线第二个点的X坐标
-		Y2    decimals.Decimal // 直线第二个点的Y坐标
+		Y2    gdecimal.Decimal // 直线第二个点的Y坐标
 		Color gcolor.Color     // 样式
 	}
 
