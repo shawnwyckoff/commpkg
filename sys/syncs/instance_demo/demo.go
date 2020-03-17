@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/commpkg/xsystils/xsys/xmutex"
+	"github.com/shawnwyckoff/commpkg/sys/syncs"
 	"log"
 	"time"
 )
 
 func main() {
-	lock := xmutex.NewSingleInstanceLock("your-app-name")
+	lock := syncs.NewSingleInstanceLock("your-app-name")
 	defer lock.UnLock()
 
 	ok, err := lock.IsUnique()
