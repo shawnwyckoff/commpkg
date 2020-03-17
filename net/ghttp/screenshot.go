@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/chromedp/cdproto/dom"
-	"github.com/shawnwyckoff/gpkg/apputil/errorz"
+	"github.com/shawnwyckoff/gpkg/apputil/gerror"
 	"io/ioutil"
 	"math"
 	"time"
@@ -100,7 +100,7 @@ func Screenshot(urlStr, proxyServer, waitVisibleByQuery string, timeout time.Dur
 	ctx, cancel := chromedp.NewContext(context.Background())
 	defer cancel()
 	if ctx == nil {
-		return nil, "", errorz.Errorf("nil chromedp ctx")
+		return nil, "", gerror.Errorf("nil chromedp ctx")
 	}
 
 	// force max timeout for retrieving and processing the data
