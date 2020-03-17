@@ -6,6 +6,15 @@ import (
 	"strings"
 )
 
+/**
+xpath samples:
+
+find all A elements: "//a"
+find all A elements that have href attribute: "//a[@href]"
+find all A elements with href attribute and only return href value: "//a/@href"
+find the third A element: "//a[3]"
+*/
+
 type (
 	// html node
 	Node struct {
