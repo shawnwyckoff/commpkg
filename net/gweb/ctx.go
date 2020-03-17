@@ -1,4 +1,4 @@
-package web
+package gweb
 
 import (
 	"encoding/json"

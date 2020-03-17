@@ -1,4 +1,4 @@
-package httpz
+package ghttp
 
 import (
 	"net/http"

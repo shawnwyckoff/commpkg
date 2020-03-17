@@ -1,4 +1,4 @@
-package httpz
+package ghttp
 
 import (
 	"github.com/avct/uasurfer"     // 准确性很高

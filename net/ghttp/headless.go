@@ -1,10 +1,10 @@
-package httpz
+package ghttp
 
 import (
 	"context"
 	"github.com/chromedp/cdproto/dom"
 	"github.com/chromedp/chromedp"
-	phantomgo "github.com/shawnwyckoff/gpkg/net/httpz/phantom"
+	phantomgo "github.com/shawnwyckoff/gpkg/net/ghttp/phantom"
 	"gopkg.in/headzoo/surf.v1"
 	"io/ioutil"
 )

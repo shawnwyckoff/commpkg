@@ -1,4 +1,4 @@
-package httpz
+package ghttp
 
 // Command screenshot is a chromedp example demonstrating how to take a
 // screenshot of a specific element and of the entire browser viewport.

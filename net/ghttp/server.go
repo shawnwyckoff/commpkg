@@ -1,4 +1,4 @@
-package httpz
+package ghttp
 
 import (
 	"github.com/pkg/errors"

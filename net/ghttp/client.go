@@ -1,4 +1,4 @@
-package httpz
+package ghttp
 
 /*
   其实fasthttp也有client的支持，但是不支持代理、验证等等

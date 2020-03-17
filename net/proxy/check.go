@@ -5,7 +5,7 @@ import (
 	// "github.com/GameXG/ProxyClient" // http client using socks5 proxy supported not well
 	"github.com/shawnwyckoff/gpkg/dsa/speed"
 	"github.com/shawnwyckoff/gpkg/net/addr"
-	"github.com/shawnwyckoff/gpkg/net/httpz"
+	"github.com/shawnwyckoff/gpkg/net/ghttp"
 	"time"
 )
 
@@ -35,14 +35,14 @@ func CheckProxy(hostAddr string, t string) (*ProxyQuality, error) {
 
 	if t == "http" || t == "https" || t == "socks5" {
 		counter.BeginCount()
-		resp, err := httpz.Get(proxyDetectURL, t+"://"+hostAddr, time.Second*5, true)
+		resp, err := ghttp.Get(proxyDetectURL, t+"://"+hostAddr, time.Second*5, true)
 		if err != nil {
 			return nil, err
 		}
 		if resp.StatusCode != 200 {
 			return &pq, nil
 		}
-		s, err := httpz.ReadBodyString(resp)
+		s, err := ghttp.ReadBodyString(resp)
 		if err != nil {
 			return nil, err
 		}

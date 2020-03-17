@@ -4,7 +4,7 @@ package request
 
 import (
 	"github.com/shawnwyckoff/gpkg/net/addr"
-	"github.com/shawnwyckoff/gpkg/net/httpz"
+	"github.com/shawnwyckoff/gpkg/net/ghttp"
 	"github.com/valyala/fasthttp"
 	"strings"
 )
@@ -24,7 +24,7 @@ type RequestInfo struct {
 	ClientIP        string
 	ProxyDetected   bool
 	ProxyIP         string
-	UserAgentDetect *httpz.UserAgnetInfo
+	UserAgentDetect *ghttp.UserAgnetInfo
 }
 
 /*
@@ -142,7 +142,7 @@ func ParseRequest(ctx *fasthttp.RequestCtx) (*RequestInfo, error) {
 		ri.ProxyIP = ""
 	}
 
-	ri.UserAgentDetect, _ = httpz.ParseUserAgent(string(ctx.UserAgent()))
+	ri.UserAgentDetect, _ = ghttp.ParseUserAgent(string(ctx.UserAgent()))
 
 	return &ri, nil
 }

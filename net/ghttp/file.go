@@ -1,4 +1,4 @@
-package httpz
+package ghttp
 
 import "github.com/mushroomsir/httpfile" // 大文件的上传下载，做得很好
 

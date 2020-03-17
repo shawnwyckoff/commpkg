@@ -2,7 +2,7 @@ package addr
 
 import (
 	"github.com/mohong122/ip2region/binding/golang"
-	"github.com/shawnwyckoff/gpkg/net/httpz"
+	"github.com/shawnwyckoff/gpkg/net/ghttp"
 	"github.com/shawnwyckoff/gpkg/sys/fs"
 	"net"
 	"os"
@@ -33,11 +33,11 @@ func NewGeoFinderONLINE() (*GeoFinder, error) {
 	var err error
 
 	// Download to local disk
-	resp, err := httpz.Get(ip2RegionDbUrl, "", time.Minute*2, true)
+	resp, err := ghttp.Get(ip2RegionDbUrl, "", time.Minute*2, true)
 	if err != nil {
 		return nil, err
 	}
-	buf, err := httpz.ReadBodyBytes(resp)
+	buf, err := ghttp.ReadBodyBytes(resp)
 	if err != nil {
 		return nil, err
 	}

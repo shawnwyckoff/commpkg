@@ -2,7 +2,7 @@ package au
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/net/httpz"
+	"github.com/shawnwyckoff/gpkg/net/ghttp"
 	"github.com/shawnwyckoff/gpkg/spider/util/downloader/xhttpclient"
 	"sync"
 	"sync/atomic"
@@ -33,7 +33,7 @@ type (
 
 func GetLatestConf(name, proxy string, timeout time.Duration) (string, error) {
 	path := fmt.Sprintf(AU_CONF, name)
-	return httpz.GetString(path, proxy, timeout)
+	return ghttp.GetString(path, proxy, timeout)
 }
 
 func GetLatestConfTime(name, proxy string, timeout time.Duration) (time.Time, error) {

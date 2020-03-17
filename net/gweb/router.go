@@ -1,4 +1,4 @@
-package web
+package gweb
 
 import "github.com/gin-gonic/gin"
 
