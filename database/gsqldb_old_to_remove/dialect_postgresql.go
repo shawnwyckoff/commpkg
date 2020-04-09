@@ -17,7 +17,7 @@ func _pgIsDatabaseExists(connectString, database string) (bool, error) {
 
 	// Database exists.
 	if err == nil {
-		conn.Close()
+		conn.C()
 		return true, nil
 	}
 	// Database doesn't exist.

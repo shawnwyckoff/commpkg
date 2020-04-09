@@ -1,30 +1,53 @@
 package gzk
 
 import (
+	"encoding/json"
+	"fmt"
 	"github.com/samuel/go-zookeeper/zk"
+	"github.com/shawnwyckoff/gpkg/apputil/gerror"
+	"strconv"
 	"time"
 )
 
 type (
 	ZK struct {
-		conn *zk.Conn
-		chEvt <-chan zk.Event
+		conn  *zk.Conn
 	}
 )
 
 func Dial(servers []string, timeout time.Duration) (*ZK, error) {
-	conn, chEvt, err := zk.Connect(servers, timeout)
+	conn, _, err := zk.Connect(servers, timeout)
 	if err != nil {
+		fmt.Println("connect error", servers)
 		return nil, err
 	}
-	return &ZK{conn:conn, chEvt:chEvt}, nil
+	return &ZK{conn: conn}, nil
 }
 
-func (zk *ZK) RegisterService(name, addr string) error {
-	return nil
+func (zk *ZK) Ls(path string) ([]string, error) {
+	res, _, err := zk.conn.Children(path)
+	return res, err
 }
 
-func (zk *ZK) QueryService(name string) ([]string, error) {
-	return nil, nil
+func (zk *ZK) GetAddr(path string) (string, error) {
+	buf, _, err := zk.conn.Get(path)
+	if err != nil {
+		return "", err
+	}
+	addr := struct {
+		Address string `json:"address"`
+		Port    int    `json:"port"`
+	}{}
+	fmt.Println(string(buf))
+	if err := json.Unmarshal(buf, &addr); err != nil {
+		return "", err
+	}
+	if addr.Address == "" || addr.Port == 0 {
+		return "", gerror.Errorf("address parse error")
+	}
+	return addr.Address + ":" + strconv.Itoa(addr.Port), nil
 }
 
+func (zk *ZK) Close() {
+	zk.conn.Close()
+}

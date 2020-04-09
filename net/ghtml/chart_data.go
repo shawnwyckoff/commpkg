@@ -4,7 +4,7 @@ import (
 	"github.com/shawnwyckoff/gpkg/container/gdecimal"
 	"github.com/shawnwyckoff/gpkg/container/gnum"
 	"github.com/shawnwyckoff/gpkg/encoding/gcolor"
-	"github.com/shawnwyckoff/gpkg/sys/gclock"
+	"github.com/shawnwyckoff/gpkg/sys/gtime"
 )
 
 type (
@@ -37,7 +37,7 @@ type (
 	// 蜡烛图
 	CandleStick struct {
 		Name          string                 // 值名称，光标放在绘图区时在绘图区上沿要显示值名称和值
-		Ohlc          [4][]gnum.ElegantFloat // Open,High,Low,Close
+		Ohlc          [4][]gnum.ElegantFloat // O,H,L,C
 		DownColor     gcolor.Color           // 阴线样式，支持背景颜色
 		UpColor       gcolor.Color           // 阳线样式，支持背景颜色
 		Tips          []Tip                  // 文字注释
@@ -69,10 +69,10 @@ type (
 
 	// 一个绘图模板，包含了整个页面需要的数据，包括一个共享的时间轴和多个绘图区域，多种数据显示样式
 	ChartTemplate struct {
-		Title   string               // 整个图表的大标题
-		Times   []gclock.ElegantTime // 时间轴
-		Series  []Series             // 所有子图表
-		Heights []int                // 比如有4个Series，那么就用[60,10,10,20]表示每个Series的显示百分比
+		Title   string              // 整个图表的大标题
+		Times   []gtime.ElegantTime // 时间轴
+		Series  []Series            // 所有子图表
+		Heights []int               // 比如有4个Series，那么就用[60,10,10,20]表示每个Series的显示百分比
 	}
 )
 

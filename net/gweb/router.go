@@ -1,13 +1,11 @@
 package gweb
 
-import "github.com/gin-gonic/gin"
-
-const (
-	GET Method = "GET"
-	POST Method = "POST"
-	PUT Method = "PUT"
-	DELETE Method = "DELETE"
+import (
+	"github.com/gin-gonic/gin"
+	"github.com/shawnwyckoff/gpkg/net/ghttp"
 )
+
+
 
 type (
 	Router struct{
@@ -15,19 +13,26 @@ type (
 	}
 
  	HandlerFunc func(*Ctx)
-
-	Method string
 )
 
 func NewRouter() *Router {
+	gin.SetMode(gin.ReleaseMode)
 	return &Router{ng:gin.Default()}
 }
 
-func (r *Router) Handle(m Method, relativePath string, fn HandlerFunc) {
+func (r *Router) Handle(m ghttp.Method, relativePath string, fn HandlerFunc) {
 	fn2 := func(c *gin.Context) {
 		fn(&Ctx{ctx:c})
 	}
 	r.ng.Handle(string(m), relativePath, fn2)
+}
+
+func (r *Router) Static(relativePath, root string)  {
+	r.ng.Static(relativePath, root)
+}
+
+func (r *Router) StaticFile(relativePath, filepath string)  {
+	r.ng.StaticFile(relativePath, filepath)
 }
 
 func (r *Router) Serve(addr string) error {

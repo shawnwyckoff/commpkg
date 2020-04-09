@@ -1,7 +1,7 @@
 package gcron
 
 import (
-	"github.com/shawnwyckoff/gpkg/sys/gclock"
+	"github.com/shawnwyckoff/gpkg/sys/gtime"
 	"sync"
 	"time"
 )
@@ -32,7 +32,7 @@ type DurCron struct {
 // The d is cron interval.
 func NewDurCron(origin *time.Time, returnTrueFirstCheck bool, d time.Duration) *DurCron {
 	if origin == nil {
-		now := gclock.RoundEarlier(time.Now(), d)
+		now := gtime.RoundEarlier(time.Now(), d)
 		origin = &now
 	}
 	c := DurCron{
@@ -65,7 +65,7 @@ func (c *DurCron) CheckNowUnblock() (triggerCount int, trigger bool) {
 	if count <= 0 {
 		return 0, false
 	} else {
-		c.lastReturn = c.lastReturn.Add(gclock.MulDuration(int64(count), c.duration))
+		c.lastReturn = c.lastReturn.Add(gtime.MulDuration(int64(count), c.duration))
 		return count, true
 	}
 }

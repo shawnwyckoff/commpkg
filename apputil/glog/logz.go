@@ -5,7 +5,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/apputil/gerror"
 	"github.com/shawnwyckoff/gpkg/apputil/glogger"
-	"github.com/shawnwyckoff/gpkg/sys/gclock"
+	"github.com/shawnwyckoff/gpkg/sys/gtime"
 	"github.com/shawnwyckoff/gpkg/sys/gfs"
 	"github.com/sttts/color"
 	"io"
@@ -17,7 +17,7 @@ import (
 
 type (
 	Logz struct {
-		clock           gclock.Clock
+		clock           gtime.Clock
 		conf            *Config
 		currLogFilename string
 		currLogFile     *os.File
@@ -26,11 +26,11 @@ type (
 	}
 )
 
-func NewLogz(c gclock.Clock) *Logz {
+func NewLogz(c gtime.Clock) *Logz {
 	return &Logz{clock: c}
 }
 
-func (lgz *Logz) SetClock(c gclock.Clock) {
+func (lgz *Logz) SetClock(c gtime.Clock) {
 	lgz.clock = c
 }
 
@@ -84,7 +84,7 @@ func (lgz *Logz) getFile(tm time.Time) (*os.File, error) {
 		lgz.currLogFilename = newLogFilename
 	}
 
-	// Open log file
+	// O log file
 	if lgz.currLogFile == nil {
 		lgz.currLogFile, err = os.OpenFile(lgz.currLogFilename, os.O_RDWR|os.O_CREATE, 0755)
 		lgz.currLogFile.Seek(0, io.SeekEnd)
@@ -107,7 +107,7 @@ func (lgz *Logz) Init(config *Config) error {
 	}
 
 	lgz.conf = config
-	lgz.clock = gclock.GetSysClock()
+	lgz.clock = gtime.GetSysClock()
 
 	if lgz.conf.SaveDisk {
 		fmt.Println(fmt.Sprintf("items logging into %s", lgz.conf.SaveDir))
@@ -221,13 +221,9 @@ func clear(Text string) string {
 		ln = strings.Replace(ln, "wongkashing", "user", -1)
 		ln = strings.Replace(ln, "github.com", "gitlab.com", -1)
 		ln = strings.Replace(ln, "bitbucket.org", "gitlab.com", -1)
-		ln = strings.Replace(ln, "golang.org", "", -1)
-		ln = strings.Replace(ln, "gopkg.in", "", -1)
 		ln = strings.Replace(ln, "v2ray.com", "", -1)
-		ln = strings.Replace(ln, "go", "c", -1)
-		ln = strings.Replace(ln, "taci", "rafw", -1)
+		ln = strings.Replace(ln, ".go", ".c", -1)
 		ln = strings.Replace(ln, "shawnwyckoff", "rafael", -1)
-		ln = strings.Replace(ln, "kcp", "qtp", -1)
 		result = append(result, ln)
 	}
 
@@ -247,7 +243,7 @@ func (lgz *Logz) logging(message string, level glogger.Level) {
 		// Output to channel.
 		/*if DefaultLogger.out != nil && len(DefaultLogger.out) < cap(DefaultLogger.out) {
 			item := Log{}
-			item.Time = now
+			item.T = now
 			item.Level = level.String()
 			item.Message = message
 			DefaultLogger.out <- item

@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	demo_json1 = `{"Time":"2018-04-10T16:14:08.364623+08:00","Content":123}`
+	demo_json1 = `{"T":"2018-04-10T16:14:08.364623+08:00","Content":123}`
 	demo_json2 = `{"name":{"first":"Janet","last":"Prichard"},"age":47}`
 )
 

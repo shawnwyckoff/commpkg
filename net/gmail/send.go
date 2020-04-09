@@ -4,7 +4,7 @@ import (
 	"fmt"
 	gomail "github.com/go-mail/mail"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/sys/gclock"
+	"github.com/shawnwyckoff/gpkg/sys/gtime"
 	"strings"
 )
 
@@ -89,7 +89,7 @@ func TestAccount(addr, pwd string, p *Provider) error {
 	evn.From.Showname = "email test"
 	to := AddrEdit{Email: addr, Showname: ""}
 	evn.To = append(evn.To, to)
-	evn.Subject = fmt.Sprintf("email test - %s", gclock.TodayString())
+	evn.Subject = fmt.Sprintf("email test - %s", gtime.TodayString())
 	content := SendContent{}
 	content.BodyString = "email test"
 	content.BodyType = BodyTypePlainText

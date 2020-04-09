@@ -12,7 +12,7 @@ func TestCheckLocalPort(t *testing.T) {
 		} else {
 			t.Error(err)
 		}
-		ls.Close()
+		ls.C()
 	} else {
 		t.Error(err)
 	}
@@ -42,7 +42,7 @@ func TestCheckLocalPort(t *testing.T) {
 		} else {
 			t.Error(err)
 		}
-		conn.Close()
+		conn.C()
 	} else {
 		t.Error(err)
 	}

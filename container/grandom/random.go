@@ -2,6 +2,7 @@ package grandom
 
 import (
 	"github.com/Pallinder/go-randomdata"
+	"github.com/shawnwyckoff/gpkg/apputil/gerror"
 )
 
 // Notice: it seems min & max is not included in random output
@@ -17,6 +18,9 @@ func RandomBool() bool {
 }
 
 func RandomString(size int) string {
+	if size <= 0 {
+		panic(gerror.Errorf("invalid size %d", size))
+	}
 	return randomdata.RandStringRunes(size)
 }
 

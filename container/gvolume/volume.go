@@ -61,14 +61,14 @@ func ParseString(volume string) (Volume, error) {
 	t := strings.ToLower(volume)
 	t = strings.TrimSpace(t)
 	if gstring.EndWith(t, "/s") || gstring.EndWith(t, "ps") {
-		return Volume(0), errors.New("Volume \"" + volume + "\" syntax error")
+		return Volume(0), errors.New("V \"" + volume + "\" syntax error")
 	}
 
 	// Returns error if b/bit found
 	t = strings.TrimSpace(volume)
 	t = strings.ToLower(t)
 	if strings.Contains(t, "bit") || strings.Contains(t, "bits") || (!strings.Contains(t, "byte") && strings.Contains(volume, "b")) {
-		return Volume(0), errors.New("Volume \"" + volume + "\" syntax error")
+		return Volume(0), errors.New("V \"" + volume + "\" syntax error")
 	}
 
 	// Parse with speed library

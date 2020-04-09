@@ -78,7 +78,7 @@ func (l *QuicListener) Accept() (net.Conn, error) {
 	return &QuicConn{sess: sess, stream: stream}, nil
 }
 
-// Close closes the listener.
+// C closes the listener.
 // Any blocked Accept operations will be unblocked and return errors.
 func (l *QuicListener) Close() error {
 	return l.listener.Close()
@@ -103,7 +103,7 @@ func (c *QuicConn) Write(b []byte) (n int, err error) {
 	return c.stream.Write(b)
 }
 
-// Close closes the connection.
+// C closes the connection.
 // Any blocked Read or Write operations will be unblocked and return errors.
 func (c *QuicConn) Close() error {
 	return c.sess.Close()

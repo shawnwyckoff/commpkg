@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-type sheets struct {
+type sheet struct {
 	K string `xorm:"varchar(256) pk not null 'k'"`
 	V string `xorm:"JSON 'v'"`
 }
@@ -31,7 +31,7 @@ func TestSqlDB_SelectOne(t *testing.T) {
 	gtest.Assert(t, err)
 	defer s.Close()
 
-	out := sheets{K:"本季度2"}
+	out := sheet{K:"本季度2"}
 	ok, err := s.SelectOne(&out)
 	gtest.Assert(t, err)
 	t.Log(ok)
@@ -43,7 +43,7 @@ func TestSqlDB_SelectAll(t *testing.T) {
 	gtest.Assert(t, err)
 	defer s.Close()
 
-	out := make([]sheets, 0)
+	out := make([]sheet, 0)
 	err = s.SelectAll(&out)
 	gtest.Assert(t, err)
 	t.Log(out)
@@ -54,11 +54,11 @@ func TestSqlDB_UpsertOne(t *testing.T) {
 	gtest.Assert(t, err)
 	defer s.Close()
 
-	newRecord := sheets{
-		K: "本季度2",
-		V: `{"name":"tom", "age":22}`,
+	newRecord := sheet{
+		K: "本季度22",
+		V: `{"name":"tom", "age":2222}`,
 	}
-	n, err := s.UpsertOne(newRecord, &sheets{K:newRecord.K})
+	n, err := s.UpsertOne(newRecord, &sheet{K:newRecord.K})
 	gtest.Assert(t, err)
 	t.Log(n)
 }
@@ -68,7 +68,7 @@ func TestSqlDB_Exist(t *testing.T) {
 	gtest.Assert(t, err)
 	defer s.Close()
 
-	exist, err := s.Exist(&sheets{K:"本季度"})
+	exist, err := s.Exist(&sheet{K:"本季度"})
 	gtest.Assert(t, err)
 	t.Log(exist)
 }
@@ -78,7 +78,7 @@ func TestSqlDB_Remove(t *testing.T) {
 	gtest.Assert(t, err)
 	defer s.Close()
 
-	n, err := s.Remove(&sheets{K:"本季度2"})
+	n, err := s.Delete(&sheet{K:"本季度2"})
 	gtest.Assert(t, err)
 	t.Log(n)
 }

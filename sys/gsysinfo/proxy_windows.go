@@ -1,5 +1,14 @@
 package gsysinfo
 
+import (
+	"golang.org/x/sys/windows/registry"
+)
+
+const (
+	keyProxyEnable = "ProxyEnable"
+	keyProxyServer = "ProxyServer"
+)
+
 // reference: https://github.com/andreyvit/systemproxy/blob/master/sysproxy_windows.go
 
 func GetGlobalSocks5Proxy() (string, bool, error) {
@@ -36,7 +45,7 @@ func SetGlobalSocks5Proxy(defaultServer string, enabled bool) error {
 	}
 	err = k.SetDWordValue(keyProxyEnable, en)
 	if err != nil {
-		return proxyErr{err}
+		return err
 	}
 
 	err = k.SetStringValue(keyProxyServer, defaultServer)

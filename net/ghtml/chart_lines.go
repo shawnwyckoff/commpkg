@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/container/gnum"
-	"github.com/shawnwyckoff/gpkg/sys/gclock"
+	"github.com/shawnwyckoff/gpkg/sys/gtime"
 	"time"
 )
 
@@ -35,13 +35,13 @@ type (
 	ClOclhMode  ChartLines
 
 	_clJsonLine struct {
-		Times    []gclock.ElegantTime
+		Times    []gtime.ElegantTime
 		LineName string
 		Line     []gnum.ElegantFloat
 	}
 
 	_clJsonLines struct {
-		Times     []gclock.ElegantTime
+		Times     []gtime.ElegantTime
 		LineNames []string
 		Lines     [][]*gnum.ElegantFloat
 
@@ -49,7 +49,7 @@ type (
 	}
 
 	_clJsonOclh struct {
-		Times     []gclock.ElegantTime
+		Times     []gtime.ElegantTime
 		OCLHName  string
 		OCLHs     [][4]gnum.ElegantFloat
 		LineNames []string
@@ -90,7 +90,7 @@ func (cl *ClLineMode) Set(lineName string, times []time.Time, values []float64) 
 	cl.oclh = nil
 
 	line := new(_clJsonLine)
-	line.Times = gclock.NewElegantTimeArray(times, gclock.TimeLayout_FULL)
+	line.Times = gtime.NewElegantTimeArray(times, gtime.TimeLayout_FULL)
 	line.LineName = lineName
 	line.Line = gnum.NewElegantFloatArray(values, -1)
 	cl.line = line
@@ -104,7 +104,7 @@ func (cl *ClLinesMode) Append(lineName string, times []time.Time, values []float
 	_ = cl.lines._sync_x_axis_cache_.AddFloats(lineName, times, values)
 	cl.lines._sync_x_axis_cache_.Sync()
 	cl.lines.LineNames = cl.lines._sync_x_axis_cache_.GetNames()
-	cl.lines.Times = gclock.NewElegantTimeArray(cl.lines._sync_x_axis_cache_.GetTimes(), "")
+	cl.lines.Times = gtime.NewElegantTimeArray(cl.lines._sync_x_axis_cache_.GetTimes(), "")
 	cl.lines.Lines = nil
 	for _, name := range cl.lines.LineNames {
 		vals := cl.lines._sync_x_axis_cache_.GetFloatValuesPanic(name)
@@ -121,7 +121,7 @@ func (cl *ClOclhMode) Init(OCLHName string, times []time.Time, OCLHs [][4]float6
 	//cl.oclh.LineNames = nil
 	//cl.oclh.Lines = nil
 
-	cl.oclh.Times = gclock.NewElegantTimeArray(times, gclock.TimeLayout_FULL)
+	cl.oclh.Times = gtime.NewElegantTimeArray(times, gtime.TimeLayout_FULL)
 	cl.oclh.OCLHName = OCLHName
 	cl.oclh.OCLHs = nil
 	for i := range OCLHs {
@@ -171,7 +171,7 @@ func (cl *ChartLines) Times() []time.Time {
 	return r
 }
 
-func (cl *ChartLines) JSONTimes() []gclock.ElegantTime {
+func (cl *ChartLines) JSONTimes() []gtime.ElegantTime {
 	if cl.line != nil {
 		return cl.line.Times
 	}
@@ -233,7 +233,7 @@ func (cl *ChartLines) SetHumanReadPrec(hrp int) {
 }
 
 func (cl *ChartLines) JSONAutoDetect() ([]byte, error) {
-	layout := gclock.DetectBestLayout(cl.JSONTimes())
+	layout := gtime.DetectBestLayout(cl.JSONTimes())
 	fmt.Println(layout)
 	cl.SetTimeLayout(layout)
 

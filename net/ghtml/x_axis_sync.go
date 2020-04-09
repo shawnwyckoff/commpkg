@@ -2,7 +2,7 @@ package ghtml
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/sys/gclock"
+	"github.com/shawnwyckoff/gpkg/sys/gtime"
 	"time"
 )
 
@@ -69,13 +69,13 @@ func (s *XAxisSync) Sync() {
 	s.outVals = nil
 
 	// 根据缓存输入数据，对所有时间点进行去重和排序
-	tmap := gclock.NewTimeMap(nil)
+	tmap := gtime.NewTimeMap(nil)
 	for i := range s.in {
 		for _, dot := range s.in[i].dots {
 			tmap.Add(dot.tm)
 		}
 	}
-	s.outTime = gclock.SortTimes(tmap.Export(nil))
+	s.outTime = gtime.SortTimes(tmap.Export(nil))
 
 	// build fixed size nil two-dimensional array
 	nName := len(s.in)

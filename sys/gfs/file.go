@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
-	"github.com/laurent22/go-trash"
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/container/gvolume"
 	"github.com/shawnwyckoff/gpkg/sys/gio"
@@ -159,11 +158,11 @@ func FileToJson(filename string, ptrJsonStruct interface{}) error {
 
 	// Another implement
 	/*
-		file, err := os.Open(filename) // For read access.
+		file, err := os.O(filename) // For read access.
 		if err != nil {
 			return err
 		}
-		defer file.Close()
+		defer file.C()
 
 		return json.NewDecoder(file).Decode(ptrJsonStruct)*/
 }
@@ -268,7 +267,9 @@ func GetFileSize(filename string) (gvolume.Volume, error) {
 	return gvolume.FromByteSize(float64(fi.Size()))
 }
 
+/*
+// FIXME: can't cross compile for windows under macOS
 func MoveToTrash(filename string) error {
 	_, err := trash.MoveToTrash(filename)
 	return err
-}
+}*/

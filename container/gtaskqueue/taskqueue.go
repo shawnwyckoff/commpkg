@@ -4,7 +4,7 @@ package gtaskqueue
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/sys/gclock"
+	"github.com/shawnwyckoff/gpkg/sys/gtime"
 	"sync"
 	"time"
 )
@@ -125,7 +125,7 @@ func (q *TaskQueue) GetStatistic() *Statistic {
 	res.LatelySuccessSize = q.tempLatelySuccessSize
 	res.LatelyExecTimeoutSize = q.tempLatelyExecTimeoutSize
 	res.LatelyExecErrorSize = q.tempLatelyExecErrorSize
-	res.LatelyAvgExecDuration = gclock.NsecToDuration(q.tempLatelyExecDurationSum.Nanoseconds() / q.tempLatelyExecCount)
+	res.LatelyAvgExecDuration = gtime.NsecToDuration(q.tempLatelyExecDurationSum.Nanoseconds() / q.tempLatelyExecCount)
 	q.tempDataLock.RUnlock()
 
 	for i := 0; i < PriorityCount; i++ {

@@ -3,7 +3,7 @@ package gmongo
 import (
 	"fmt"
 	"github.com/mongodb/mongo-go-driver/x/bsonx"
-	"github.com/shawnwyckoff/gpkg/sys/gclock"
+	"github.com/shawnwyckoff/gpkg/sys/gtime"
 	"time"
 
 	//"github.com/shawnwyckoff/finance"
@@ -20,34 +20,34 @@ func TestNewConn(t *testing.T) {
 
 	now := time.Now()
 	kl := finance.Kline{}
-	kl.Time = now
+	kl.T = now
 	if err != nil {
 		t.Error(err)
 		return
 	}
-	kl.High = 500
-	kl.Low = 1.00000123
+	kl.H = 500
+	kl.L = 1.00000123
 	err = conn.DB("coins").C("kline").Insert(kl)
 	if err != nil {
 		t.Error(err)
 		return
 	}
 	time.Sleep(time.Second)
-	kl.Low = 1.000001234567
-	err = conn.DB("coins").C("kline").Upsert(bson.M{"Time":kl.Time}, bson.M{"$set": kl})
+	kl.L = 1.000001234567
+	err = conn.DB("coins").C("kline").Upsert(bson.M{"T":kl.T}, bson.M{"$set": kl})
 	if err != nil {
 		t.Error(err)
 		return
 	}
 
-	kl.Time = kl.Time.Add(time.Second)
-	err = conn.DB("coins").C("kline").Upsert(bson.M{"Time":kl.Time}, bson.M{"$set": kl})
+	kl.T = kl.T.Add(time.Second)
+	err = conn.DB("coins").C("kline").Upsert(bson.M{"T":kl.T}, bson.M{"$set": kl})
 	if err != nil {
 		t.Error(err)
 		return
 	}
 
-	maxTime, _, err := conn.DB("coins").C("kline").MaxTime("Time")
+	maxTime, _, err := conn.DB("coins").C("kline").MaxTime("T")
 	if err != nil {
 		t.Error(err)
 		return
@@ -158,12 +158,12 @@ func TestColl_UpsertEntireDoc_UpsertFields(t *testing.T) {
 }
 
 type tmpKline struct {
-	Time      time.Time `json:"Time" bson:"_id"`
-	Open      float64   `json:"Open" bson:"Open"` // open price in USD
-	Close     float64   `json:"Close" bson:"Close"`
-	High      float64   `json:"High" bson:"High"`
-	Low       float64   `json:"Low" bson:"Low"`
-	Volume    float64   `json:"Volume" bson:"Volume"`                           // volume in USD
+	Time      time.Time `json:"T" bson:"_id"`
+	Open      float64   `json:"O" bson:"O"` // open price in USD
+	Close     float64   `json:"C" bson:"C"`
+	High      float64   `json:"H" bson:"H"`
+	Low       float64   `json:"L" bson:"L"`
+	Volume    float64   `json:"V" bson:"V"`                           // volume in USD
 	MarketCap float64   `json:"MarketCap,omitempty" bson:"MarketCap,omitempty"` // exchangeName cap in USD CoinMarketCap接口中用到
 }
 
@@ -174,7 +174,7 @@ func TestColl_FindCmp(t *testing.T) {
 		return
 	}
 
-	date, err := gclock.NewDate(2018, 11, 1)
+	date, err := gtime.NewDate(2018, 11, 1)
 	if err != nil {
 		t.Error(err)
 		return
@@ -202,7 +202,7 @@ func TestColl_RemoveCmp(t *testing.T) {
 		return
 	}
 
-	date, err := gclock.NewDate(2019, 1, 1)
+	date, err := gtime.NewDate(2019, 1, 1)
 	if err != nil {
 		t.Error(err)
 		return

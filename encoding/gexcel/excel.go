@@ -39,7 +39,7 @@ type (
 
 	MemSheet struct {
 		Name    string
-		Content map[string]string // [2]uint32{RowId, CollId}"Cell Content"
+		Content map[string]string // map["RowId,CollId"}"CellContent"
 	}
 
 	MemDoc struct {
@@ -139,8 +139,10 @@ func (d *XlsDoc) GetCell(sheetIdx, rowIdx, colIdx int) (string, bool) {
 	}
 }
 
-func (d *XlsDoc) ToMemDoc() *MemDoc {
+func (d *XlsDoc) ToMemDoc(useFirstCollCount bool) *MemDoc {
 	res := &MemDoc{Sheets: map[uint32]*MemSheet{}}
+
+	_patch_coll_count_of_first_row_ := 0
 
 	sheetCount := d.SheetCount()
 	for sheetIdx := 0; sheetIdx < sheetCount; sheetIdx++ {
@@ -148,6 +150,14 @@ func (d *XlsDoc) ToMemDoc() *MemDoc {
 		rowCount := d.RowCount(sheetIdx)
 		for rowId := 0; rowId < rowCount; rowId++ {
 			collCount := d.CollCount(sheetIdx, rowId)
+			if rowId == 0 {
+				if sheetIdx == 0 {
+					_patch_coll_count_of_first_row_ = collCount
+				}
+			}
+			if useFirstCollCount {
+				collCount = _patch_coll_count_of_first_row_
+			}
 			for collIdx := 0; collIdx < collCount; collIdx++ {
 				cellStr, ok := d.GetCell(sheetIdx, rowId, collIdx)
 				if ok {
@@ -157,6 +167,10 @@ func (d *XlsDoc) ToMemDoc() *MemDoc {
 		}
 	}
 	return res
+}
+
+func NewEmptyMemDoc() *MemDoc {
+	return &MemDoc{Sheets: map[uint32]*MemSheet{}}
 }
 
 func (d *MemDoc) GetSheetName(idx uint32) string {

@@ -1,7 +1,7 @@
 package gmkcp
 
 // TODO
-// Close mkcp's internal logging output.
+// C mkcp's internal logging output.
 
 import (
 	"context"

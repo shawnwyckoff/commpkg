@@ -133,7 +133,7 @@ func (d *Database) C(collName string) *Coll {
 	return &coll
 }
 
-func (d *Database) RemoveC(collName string) error {
+func (d *Database) DeleteC(collName string) error {
 	return d.inDb.Collection(collName).Drop(context.Background())
 }
 
@@ -150,6 +150,15 @@ func (d *Database) Watch() error {
 	//pipeline        := []interface{}{}
 	//opts := options.ChangeStream()
 	//cur, err := d.inDb.Watch(context.Background(), pipeline, opts)
+}
+
+func (d *Database) RenameC(from, to string) error {
+	renameCmd := bson.D{
+		{"renameCollection", d.inDb.Name() + "." + from},
+		{"to", d.inDb.Name() + "." + to},
+	}
+	sr := d.inDb.Client().Database("admin").RunCommand(context.Background(), renameCmd)
+	return sr.Err()
 }
 
 func (c *Coll) Exist() (bool, error) {
@@ -349,6 +358,10 @@ func (c *Coll) RemoveCmp(path string, cmpopt Cmp, value bsonx.Val) (int64, error
 }
 
 func (c *Coll) RemoveAll(selector interface{}) error {
+	if selector == nil {
+		selector = bson.D{} // nil filter not allowed, otherwise will return error: document is nil
+	}
+
 	err := error(nil)
 	_, err = c.inColl.DeleteMany(context.Background(), selector)
 	return err
@@ -399,6 +412,9 @@ func (c *Coll) RemoveCmpIntId(id int64, cmpopt Cmp) error {
 // WARNING:
 // this API is slow but correct if metadata is incorrect
 func (c *Coll) Count(filter interface{}) (int64, error) {
+	if filter == nil {
+		filter = bson.D{} // nil filter not allowed, otherwise will return error: document is nil
+	}
 	return c.inColl.CountDocuments(context.Background(), filter)
 }
 
@@ -504,7 +520,7 @@ const (
 )
 
 // example:
-// FindCmp("_id", mongo.CmpGTE, bsonx.Time(fromTime))
+// FindCmp("_id", mongo.CmpGTE, bsonx.T(fromTime))
 func (c *Coll) FindCmp(path string, cmpopt Cmp, value bsonx.Val) (*Cursor, error) {
 	return c.Find(bsonx.Doc{{path, bsonx.Document(bsonx.Doc{{string(cmpopt), value}})}})
 }

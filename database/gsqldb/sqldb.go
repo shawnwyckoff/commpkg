@@ -1,6 +1,7 @@
 package gsqldb
 
 import (
+	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/shawnwyckoff/gpkg/apputil/gerror"
 	"github.com/shawnwyckoff/gpkg/container/gstring"
@@ -64,6 +65,11 @@ func (s *SqlDB) SelectAll(output interface{}, cond... interface{}) error {
 	return s.ng.Find(output, cond...)
 }
 
+// 插入单条数据
+func (s *SqlDB) InsertOne(data interface{}) (int64, error) {
+	return s.ng.InsertOne(data)
+}
+
 // 根据cond...结构体中存在的非空数据来Upsert单条数据
 func (s *SqlDB) UpsertOne(data, cond interface{}) (int64, error) {
 	n, err := s.ng.InsertOne(data)
@@ -73,6 +79,11 @@ func (s *SqlDB) UpsertOne(data, cond interface{}) (int64, error) {
 	return n, err
 }
 
+// 根据cond...结构体中存在的非空数据来Update单条数据
+func (s *SqlDB) UpdateOne(data, cond interface{}) (int64, error) {
+	return s.ng.Update(data, cond)
+}
+
 // 根据cond结构体中存在的非空数据来查询是否存在，同时cond也是要目标table名
 // table: use to known which table to query
 func (s *SqlDB) Exist(cond interface{}) (bool, error) {
@@ -80,8 +91,19 @@ func (s *SqlDB) Exist(cond interface{}) (bool, error) {
 }
 
 // 根据cond结构体中存在的非空数据来删除记录，同时cond也是要目标table名
-func (s *SqlDB) Remove(cond interface{}) (int64, error) {
+// 此接口只允许根据某个属性的特定值进行删除，不允许空条件或者条件中的字段为空，如果条件中有多个字段，则必须同时满足
+// 如果要删除全部内容，而不是根据某个属性的特定值进行删除，那么应该使用Clear接口
+func (s *SqlDB) Delete(cond interface{}) (int64, error) {
 	return s.ng.Unscoped().Delete(cond)
+}
+
+// 清空表格内容
+func (s *SqlDB) ClearAll(table string) error {
+	if s.dvr == gdriver.MySQL {
+		_, err := s.ng.Unscoped().Exec(fmt.Sprintf("TRUNCATE TABLE %s", table))
+		return err
+	}
+	return gerror.Errorf("Clear function doesn't support %s for now", s.dvr)
 }
 
 func (s *SqlDB) Close() error {

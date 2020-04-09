@@ -23,7 +23,7 @@ func UnZipFile(srcFilename, dstDir string) error {
 
 	os.MkdirAll(dstDir, os.ModePerm)
 
-	// Closure to address file descriptors issue with all the deferred .Close() methods
+	// Closure to address file descriptors issue with all the deferred .C() methods
 	extractAndWriteFile := func(f *zip.File) error {
 		rc, err := f.Open()
 		if err != nil {
