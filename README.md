@@ -43,28 +43,36 @@ func main() {
 
 # Packages
 
-114 packages in total
-
-**net**
-
-addr  ddns  dialers  ftp  htmls  httpserver  httpz  icmp  kcps  listeners  mail  mkcp  mq  mtu  mux  p2pdns  probe  proxy  quic  smux  sniffer  socks5  ssh  tun  tuntap  upnp  utp
-
-**sys**
-
-cache  chans  charset  clock  cmd  concurrent_counter  counter  country  cpulimit  cron  deep_copy  desktop  file_format  firewall  fs  hdd  ios  keyboard  machine_id  mem  proc  routine  signals  syncs  sysinfo  users
+122 packages in total
 
 **apputil**
 
-au  bindata  deploy  dump  errorz  jsonconfig  logger  logz  panic  profile  progress  test
-
-**database**
-
-connect_string  driver  mongo  redis  sqldb
-
-**dsa**
-
-apriori  binaries  bits  bloom  bytez  combinations  crypto  decimals  encrypt  forecast  geo  geometry  gob  hash  interfaces  jsons  list  maps  nonce  num  permutations  poly  queue  randoms  ranges  score  set  sha  speed  state3  stringz  structs  taskqueue  ternary  volume
+gau  gbindata  gdeploy  gdump  gerror  ginstance  gjsonconfig  glog  glogger  glogs  gpanic  gparam  gprofile  gprogress  gtest
 
 **encoding**
 
-barcode  chart  color  csv  excel  ffmpeg  format  multimedia  zip
+gbarcode  gchart  gcolor  gcsv  gexcel  gffmpeg  gformat  gmultimedia  gzip
+
+**sys**
+
+gcache  gcharset  gcmd  gconcurrentcounter  gcounter  gcountry  gcpulimit  gcron  gdesktop  gfileformat  gfirewall  gfs  ghdd  gio  gkeyboard  gmachineid  gmem  gproc  groutine  gsignal  gsync  gsysinfo  gtime  gusers
+
+**container**
+
+gapriori  gbinary  gbit  gbloom  gbyte  gcombination  gdecimal  gforecast  ggeo  ggeometry  ginterface  gjson  glist  gmap  gnonce  gnum  gob  gpermutation  gpoly  gqueue  grandom  grange  gscore  gset  gspeed  gstate3  gstring  gstruct  gtaskqueue  gternary  gtimeseries  gvolume
+
+**crypto**
+
+g2fa  gencrypt  ghash  gsha
+
+**database**
+
+gconnectstring  gdriver  gmongo  gredis  gsqldb  gsqldb_old_to_remove
+
+**net**
+
+gaddr  gdialer  gheadless  ghtml  ghttp  ghttpserver  ghttputils  gicmp  gkcp  glistener  gmail  gmkcp  gmq  gmtu  gmux  gp2pdns  gprobe  gproxy  gquic  gsmux  gsniffer  gsocks5  gssh  gtun  gtuntap  gupnp  gutp  gweb  gzk
+
+**safe**
+
+gchan  gdeepcopy  gwg
