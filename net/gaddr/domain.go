@@ -1,4 +1,4 @@
-package addr
+package gaddr
 
 //github.com/joeguo/tldextract
 //github.com/weppos/publicsuffix-go

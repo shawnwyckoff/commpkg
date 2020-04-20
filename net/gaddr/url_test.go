@@ -1,8 +1,8 @@
-package addr_test
+package gaddr_test
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/net/addr"
+	"github.com/shawnwyckoff/gpkg/net/gaddr"
 	"testing"
 )
 
@@ -19,13 +19,13 @@ import (
 // "ed2k://..."
 // "magnet://..."
 func TestParseUrl(t *testing.T) {
-	_, err := addr.ParseUrl("socks://127.0.0.1:1086")
+	_, err := gaddr.ParseUrl("socks://127.0.0.1:1086")
 	if err != nil {
 		t.Error(err)
 		return
 	}
 
-	us, err := addr.ParseUrl("ss://admin@network:password@me@13.209.69.159:9292")
+	us, err := gaddr.ParseUrl("ss://admin@network:password@me@13.209.69.159:9292")
 	if err != nil {
 		t.Error(err)
 		return

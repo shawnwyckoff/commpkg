@@ -3,7 +3,7 @@ package request
 // Detect as much information as possible from http client request
 
 import (
-	"github.com/shawnwyckoff/gpkg/net/addr"
+	"github.com/shawnwyckoff/gpkg/net/gaddr"
 	"github.com/shawnwyckoff/gpkg/net/ghttp"
 	"github.com/valyala/fasthttp"
 	"strings"
@@ -94,7 +94,7 @@ func parseProxy(headers []Kv) (isViaProxy bool, clientRealIP string) {
 
 			f = strings.ToLower(f)
 			if strings.Contains(k, f) {
-				if addr.IsIPString(hd.Value) {
+				if gaddr.IsIPString(hd.Value) {
 					clientRealIP = hd.Value
 					break
 				}
@@ -102,7 +102,7 @@ func parseProxy(headers []Kv) (isViaProxy bool, clientRealIP string) {
 
 			f = strings.Replace(f, "-", "_", -1)
 			if strings.Contains(k, f) {
-				if addr.IsIPString(hd.Value) {
+				if gaddr.IsIPString(hd.Value) {
 					clientRealIP = hd.Value
 					break
 				}

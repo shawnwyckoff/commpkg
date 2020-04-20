@@ -1,4 +1,4 @@
-package addr
+package gaddr
 
 /*
 func TestCheckLocalPort(t *testing.T) {

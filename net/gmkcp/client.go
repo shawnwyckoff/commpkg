@@ -5,7 +5,7 @@ package gmkcp
 
 import (
 	"context"
-	"github.com/shawnwyckoff/gpkg/net/addr"
+	"github.com/shawnwyckoff/gpkg/net/gaddr"
 	"net"
 	"time"
 	v2net "v2ray.com/core/common/net"
@@ -23,7 +23,7 @@ type Client struct {
 func Dial(raddr string) (*Client, error) {
 	var mc Client
 
-	serverNetIP, serverPort, err := addr.ParseHostAddrOnline(raddr)
+	serverNetIP, serverPort, err := gaddr.ParseHostAddrOnline(raddr)
 	if err != nil {
 		return nil, err
 	}

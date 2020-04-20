@@ -1,4 +1,4 @@
-package addr
+package gaddr
 
 import (
 	"github.com/mohong122/ip2region/binding/golang"

@@ -3,7 +3,7 @@ package tunc
 import (
 	"fmt"
 	"github.com/shawnwyckoff/gpkg/apputil/glogger"
-	"github.com/shawnwyckoff/gpkg/net/dialers"
+	"github.com/shawnwyckoff/gpkg/net/gdialer"
 	"github.com/shawnwyckoff/gpkg/net/gmux"
 	"github.com/shawnwyckoff/gpkg/net/gsmux"
 	"github.com/shawnwyckoff/gpkg/sys/gio"
@@ -73,7 +73,7 @@ func handleClient(muxer gmux.Mux, p1 net.Conn, lg glogger.Logger) {
 	}
 }
 
-func ServeWait(dialer dialers.Dialer, lg glogger.Logger, config ClientOption) error {
+func ServeWait(dialer gdialer.Dialer, lg glogger.Logger, config ClientOption) error {
 	rand.Seed(int64(time.Now().Nanosecond()))
 	xmitBuf.New = func() interface{} {
 		return make([]byte, 4096)

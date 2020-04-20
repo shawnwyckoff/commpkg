@@ -4,7 +4,7 @@ import (
 	"github.com/pkg/errors"
 	// "github.com/GameXG/ProxyClient" // http client using socks5 proxy supported not well
 	"github.com/shawnwyckoff/gpkg/container/gspeed"
-	"github.com/shawnwyckoff/gpkg/net/addr"
+	"github.com/shawnwyckoff/gpkg/net/gaddr"
 	"github.com/shawnwyckoff/gpkg/net/ghttp"
 	"time"
 )
@@ -24,7 +24,7 @@ func CheckProxy(hostAddr string, t string) (*ProxyQuality, error) {
 	if t == "unknown" {
 		return nil, errors.New("Unknown proxy type")
 	}
-	_, _, err := addr.ParseHostAddrOnline(hostAddr)
+	_, _, err := gaddr.ParseHostAddrOnline(hostAddr)
 	if err != nil {
 		return nil, err
 	}

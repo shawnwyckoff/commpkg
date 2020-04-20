@@ -1,4 +1,4 @@
-package addr
+package gaddr
 
 // http://www.baidu.com/news
 // socks5://username[:password]@host:port

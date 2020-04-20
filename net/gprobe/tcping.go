@@ -3,17 +3,17 @@ package gprobe
 import (
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/container/gnum"
-	"github.com/shawnwyckoff/gpkg/net/addr"
+	"github.com/shawnwyckoff/gpkg/net/gaddr"
 	"net"
 	"time"
 )
 
 func TcpingOnline(host string, port int, timeout time.Duration) (opened bool, err error) {
-	if !addr.IsValidPort(port) {
+	if !gaddr.IsValidPort(port) {
 		return false, errors.Errorf("Invalid port " + gnum.ToString(port))
 	}
 
-	ip, _, err := addr.ParseHostAddrOnline(host)
+	ip, _, err := gaddr.ParseHostAddrOnline(host)
 	if err != nil {
 		return false, err
 	}

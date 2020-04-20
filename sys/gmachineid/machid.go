@@ -4,7 +4,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/crypto/ghash"
 	"github.com/shawnwyckoff/gpkg/container/gstring"
-	"github.com/shawnwyckoff/gpkg/net/addr"
+	"github.com/shawnwyckoff/gpkg/net/gaddr"
 	"os/exec"
 	"runtime"
 	"strings"
@@ -27,7 +27,7 @@ func MacosHardwareUUID() (string, error) {
 }
 
 func nonMacosPhysicalMACs() (string, error) {
-	ns, err := addr.GetAllNicNames()
+	ns, err := gaddr.GetAllNicNames()
 	if err != nil {
 		return "", err
 	}
@@ -35,7 +35,7 @@ func nonMacosPhysicalMACs() (string, error) {
 	var macs string
 
 	for _, s := range ns {
-		ni, _ := addr.GetNicInfo(s)
+		ni, _ := gaddr.GetNicInfo(s)
 		if !ni.IsPhysical {
 			continue
 		}

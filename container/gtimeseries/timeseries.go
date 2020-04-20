@@ -1,4 +1,4 @@
-package timeseries
+package gtimeseries
 
 // github.com/codesuki/go-time-series 数据结构、排序，基础工具
 // github.com/timkaye11/goTS
