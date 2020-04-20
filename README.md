@@ -26,7 +26,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/dsa/gvolume"
+	"github.com/shawnwyckoff/gpkg/container/gvolume"
 )
 
 func main() {
