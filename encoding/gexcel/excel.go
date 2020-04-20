@@ -104,7 +104,7 @@ func (d *XlsDoc) RowCount(sheetIdx int) int {
 	}
 
 	if d.xlsx != nil {
-		return d.xlsx.Sheets[sheetIdx].MaxRow+1
+		return d.xlsx.Sheets[sheetIdx].MaxRow + 1
 	} else {
 		return int(d.xls.GetSheet(sheetIdx).MaxRow) + 1
 	}
@@ -200,7 +200,7 @@ func (d *MemDoc) GetRowCount(sheetIdx uint32) uint32 {
 		}
 	}
 
-	return maxRowId+1
+	return maxRowId + 1
 }
 
 func (d *MemDoc) GetCollCount(sheetIdx uint32) uint32 {
@@ -219,7 +219,7 @@ func (d *MemDoc) GetCollCount(sheetIdx uint32) uint32 {
 		}
 	}
 
-	return maxCollId+1
+	return maxCollId + 1
 }
 
 func (d *MemDoc) GetCell(sheetIdx, rowIdx, colIdx uint32) string {

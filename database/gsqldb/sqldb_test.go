@@ -31,7 +31,7 @@ func TestSqlDB_SelectOne(t *testing.T) {
 	gtest.Assert(t, err)
 	defer s.Close()
 
-	out := sheet{K:"本季度2"}
+	out := sheet{K: "本季度2"}
 	ok, err := s.SelectOne(&out)
 	gtest.Assert(t, err)
 	t.Log(ok)
@@ -58,7 +58,7 @@ func TestSqlDB_UpsertOne(t *testing.T) {
 		K: "本季度22",
 		V: `{"name":"tom", "age":2222}`,
 	}
-	n, err := s.UpsertOne(newRecord, &sheet{K:newRecord.K})
+	n, err := s.UpsertOne(newRecord, &sheet{K: newRecord.K})
 	gtest.Assert(t, err)
 	t.Log(n)
 }
@@ -68,7 +68,7 @@ func TestSqlDB_Exist(t *testing.T) {
 	gtest.Assert(t, err)
 	defer s.Close()
 
-	exist, err := s.Exist(&sheet{K:"本季度"})
+	exist, err := s.Exist(&sheet{K: "本季度"})
 	gtest.Assert(t, err)
 	t.Log(exist)
 }
@@ -78,7 +78,7 @@ func TestSqlDB_Remove(t *testing.T) {
 	gtest.Assert(t, err)
 	defer s.Close()
 
-	n, err := s.Delete(&sheet{K:"本季度2"})
+	n, err := s.Delete(&sheet{K: "本季度2"})
 	gtest.Assert(t, err)
 	t.Log(n)
 }

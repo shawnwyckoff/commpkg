@@ -11,7 +11,7 @@ import (
 
 type (
 	ZK struct {
-		conn  *zk.Conn
+		conn *zk.Conn
 	}
 )
 

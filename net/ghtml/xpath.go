@@ -37,7 +37,7 @@ func NewFromString(s string) (*Node, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &Node{raw:node}, nil
+	return &Node{raw: node}, nil
 }
 
 // get attribute value by key
@@ -72,7 +72,7 @@ func (n *Node) Query(xpathExpr string) *Nodes {
 		if v == nil {
 			continue
 		}
-		res.items = append(res.items, &Node{raw:v})
+		res.items = append(res.items, &Node{raw: v})
 	}
 	return res
 }
@@ -88,7 +88,7 @@ func (n *Node) QueryByElementAndFullAttrVal(element, attrKey, fullAttrVal string
 		if v == nil {
 			continue
 		}
-		n := &Node{raw:v}
+		n := &Node{raw: v}
 		if n.Attr(attrKey) == fullAttrVal {
 			res.items = append(res.items, n)
 		}
@@ -107,7 +107,7 @@ func (n *Node) QueryByElementAndPartAttrVal(element, attrKey, partAttrVal string
 		if v == nil {
 			continue
 		}
-		n := &Node{raw:v}
+		n := &Node{raw: v}
 		if strings.Contains(n.Attr(attrKey), partAttrVal) {
 			res.items = append(res.items, n)
 		}
@@ -117,12 +117,12 @@ func (n *Node) QueryByElementAndPartAttrVal(element, attrKey, partAttrVal string
 
 // get father node
 func (n *Node) Parent() *Node {
-	return &Node{raw:n.raw.Parent}
+	return &Node{raw: n.raw.Parent}
 }
 
 // get by index, return nil if index not exist
 func (ns *Nodes) Get(i int) *Node {
-	if ns == nil || len(ns.items) == 0 || i > ns.Len() - 1 {
+	if ns == nil || len(ns.items) == 0 || i > ns.Len()-1 {
 		return nil
 	}
 	return ns.items[i]
@@ -141,7 +141,7 @@ func (ns *Nodes) Last() *Node {
 	if ns == nil || len(ns.items) == 0 {
 		return nil
 	}
-	return ns.items[ns.Len() - 1]
+	return ns.items[ns.Len()-1]
 }
 
 // get length

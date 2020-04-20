@@ -163,7 +163,7 @@ type tmpKline struct {
 	Close     float64   `json:"C" bson:"C"`
 	High      float64   `json:"H" bson:"H"`
 	Low       float64   `json:"L" bson:"L"`
-	Volume    float64   `json:"V" bson:"V"`                           // volume in USD
+	Volume    float64   `json:"V" bson:"V"`                                     // volume in USD
 	MarketCap float64   `json:"MarketCap,omitempty" bson:"MarketCap,omitempty"` // exchangeName cap in USD CoinMarketCap接口中用到
 }
 

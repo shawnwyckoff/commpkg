@@ -79,4 +79,3 @@ func ScreenshotPhantomJS(urlStr, path string) error {
 	defer os.Remove(jsFile)
 	return gcmd.ExecWaitPrintScreen("phantomjs", jsFile, urlStr, path)
 }
-

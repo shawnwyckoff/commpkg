@@ -42,8 +42,6 @@ var (
 	fPid     = flag.Int("p", 0, "pid of the process")
 )
 
-
-
 func getProcesses(processes []*os.Process, targets []string) []*os.Process {
 	dh, err := os.Open("/proc")
 	if err != nil {

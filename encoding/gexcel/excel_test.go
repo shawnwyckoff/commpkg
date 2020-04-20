@@ -17,7 +17,7 @@ func TestMemDoc_ToXlsx(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	gfs.BytesToFile(b, s + "2.xlsx")
+	gfs.BytesToFile(b, s+"2.xlsx")
 }
 
 func TestXlsDoc_ToMemDoc(t *testing.T) {

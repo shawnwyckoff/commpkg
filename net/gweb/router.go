@@ -5,33 +5,31 @@ import (
 	"github.com/shawnwyckoff/gpkg/net/ghttp"
 )
 
-
-
 type (
-	Router struct{
+	Router struct {
 		ng *gin.Engine
 	}
 
- 	HandlerFunc func(*Ctx)
+	HandlerFunc func(*Ctx)
 )
 
 func NewRouter() *Router {
 	gin.SetMode(gin.ReleaseMode)
-	return &Router{ng:gin.Default()}
+	return &Router{ng: gin.Default()}
 }
 
 func (r *Router) Handle(m ghttp.Method, relativePath string, fn HandlerFunc) {
 	fn2 := func(c *gin.Context) {
-		fn(&Ctx{ctx:c})
+		fn(&Ctx{ctx: c})
 	}
 	r.ng.Handle(string(m), relativePath, fn2)
 }
 
-func (r *Router) Static(relativePath, root string)  {
+func (r *Router) Static(relativePath, root string) {
 	r.ng.Static(relativePath, root)
 }
 
-func (r *Router) StaticFile(relativePath, filepath string)  {
+func (r *Router) StaticFile(relativePath, filepath string) {
 	r.ng.StaticFile(relativePath, filepath)
 }
 

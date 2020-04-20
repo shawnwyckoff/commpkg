@@ -15,7 +15,7 @@ type (
 )
 
 var (
-	ErrNil = error(nil)
+	ErrNil      = error(nil)
 	ErrNotFound = errors.Errorf("not found") // this is not a really run error, it means Database/Collection not exist in mongodb.
 )
 

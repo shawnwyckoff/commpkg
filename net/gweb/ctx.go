@@ -27,10 +27,10 @@ type (
 )
 
 const (
-	Head ParamSource = ParamSource("Head")
+	Head     ParamSource = ParamSource("Head")
 	UriSlice ParamSource = ParamSource("UriSlice")
-	Query ParamSource = ParamSource("Query")
-	Body ParamSource = ParamSource("Body")
+	Query    ParamSource = ParamSource("Query")
+	Body     ParamSource = ParamSource("Body")
 )
 
 func (p Param) String() (string, bool) {
@@ -78,7 +78,7 @@ func (c Ctx) GetParam(src ParamSource, key string, idx int) Param {
 			return Param{}
 		}
 		s := values[idx]
-		return Param{Value:&s}
+		return Param{Value: &s}
 	case UriSlice:
 	case Query:
 	case Body:
@@ -89,8 +89,8 @@ func (c Ctx) GetParam(src ParamSource, key string, idx int) Param {
 
 func (c Ctx) PrintHead() {
 	fmt.Println("--- header for", c.ctx.Request.URL, " ---")
-	for k,v :=range c.ctx.Request.Header {
-		fmt.Println(k,v)
+	for k, v := range c.ctx.Request.Header {
+		fmt.Println(k, v)
 	}
 }
 
@@ -148,7 +148,7 @@ func (c Ctx) GetRUriSliceInt(name string) (int, error) {
 	return int(i64), err
 }
 
-func (c Ctx) WriteString(code int, format string, values... interface{}) {
+func (c Ctx) WriteString(code int, format string, values ...interface{}) {
 	c.ctx.String(code, format, values...)
 }
 

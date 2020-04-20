@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-func main()  {
+func main() {
 	goPath := os.Getenv("GOPATH")
 	glog.AssertTrue(goPath != "")
 

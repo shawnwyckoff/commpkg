@@ -2,8 +2,8 @@ package gmachineid
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/crypto/ghash"
 	"github.com/shawnwyckoff/gpkg/container/gstring"
+	"github.com/shawnwyckoff/gpkg/crypto/ghash"
 	"github.com/shawnwyckoff/gpkg/net/gaddr"
 	"os/exec"
 	"runtime"

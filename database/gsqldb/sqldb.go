@@ -11,13 +11,13 @@ import (
 
 type (
 	SqlDB struct {
-		ng *xorm.Engine
+		ng  *xorm.Engine
 		dvr gdriver.Driver
 	}
 )
 
 func Dial(dvr gdriver.Driver, connectString string) (*SqlDB, error) {
-	r := &SqlDB{dvr:dvr}
+	r := &SqlDB{dvr: dvr}
 	err := gerror.ErrNil
 
 	switch dvr {
@@ -61,7 +61,7 @@ func (s *SqlDB) SelectOne(condAndOutput interface{}) (bool, error) {
 }
 
 // 根据cond...结构体中存在的非空数据来查询全部数据
-func (s *SqlDB) SelectAll(output interface{}, cond... interface{}) error {
+func (s *SqlDB) SelectAll(output interface{}, cond ...interface{}) error {
 	return s.ng.Find(output, cond...)
 }
 
