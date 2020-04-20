@@ -7,7 +7,7 @@ import (
 	"github.com/emersion/go-message/mail"
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/container/gstring"
-	"github.com/shawnwyckoff/gpkg/sys/gcharset"
+	"github.com/shawnwyckoff/gpkg/i18n/gcharset"
 	"io"
 	"io/ioutil"
 	"strings"
