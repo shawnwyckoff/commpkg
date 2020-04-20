@@ -31,6 +31,8 @@ type (
 var (
 	Zero = Decimal(decimal.Zero)
 	One  = NewFromInt(1)
+	N0 = Decimal(decimal.Zero)
+	N1 = NewFromInt(1)
 )
 
 func NewFromDecimal(d2 decimal.Decimal) Decimal {
