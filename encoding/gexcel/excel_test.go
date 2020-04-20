@@ -13,7 +13,7 @@ func TestMemDoc_ToXlsx(t *testing.T) {
 		t.Error(err)
 	}
 
-	b, err := xd.ToMemDoc().ToXlsx()
+	b, err := xd.ToMemDoc(true).ToXlsx()
 	if err != nil {
 		t.Error(err)
 	}
