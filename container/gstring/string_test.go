@@ -56,14 +56,14 @@ func TestSplitChunksAscii(t *testing.T) {
 		expect    []string
 	}
 	items := []item{
-		item{src: "123", chunksize: 3, fromleft: true, expect: []string{"123"}},
-		item{src: "123", chunksize: 3, fromleft: false, expect: []string{"123"}},
-		item{src: "123", chunksize: 4, fromleft: true, expect: []string{"123"}},
-		item{src: "123", chunksize: 4, fromleft: false, expect: []string{"123"}},
-		item{src: "1234567", chunksize: 3, fromleft: true, expect: []string{"123", "456", "7"}},
-		item{src: "1234567", chunksize: 3, fromleft: false, expect: []string{"1", "234", "567"}},
-		item{src: "123456", chunksize: 3, fromleft: true, expect: []string{"123", "456"}},
-		item{src: "123456", chunksize: 3, fromleft: false, expect: []string{"123", "456"}},
+		{src: "123", chunksize: 3, fromleft: true, expect: []string{"123"}},
+		{src: "123", chunksize: 3, fromleft: false, expect: []string{"123"}},
+		{src: "123", chunksize: 4, fromleft: true, expect: []string{"123"}},
+		{src: "123", chunksize: 4, fromleft: false, expect: []string{"123"}},
+		{src: "1234567", chunksize: 3, fromleft: true, expect: []string{"123", "456", "7"}},
+		{src: "1234567", chunksize: 3, fromleft: false, expect: []string{"1", "234", "567"}},
+		{src: "123456", chunksize: 3, fromleft: true, expect: []string{"123", "456"}},
+		{src: "123456", chunksize: 3, fromleft: false, expect: []string{"123", "456"}},
 	}
 
 	for _, v := range items {

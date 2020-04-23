@@ -11,8 +11,8 @@ func TestParseYearMonthInt(t *testing.T) {
 	}
 
 	testitems := []testitem{
-		testitem{input: 200007, expectedOutput: "200007"},
-		testitem{input: -200007, expectedOutput: "-200007"},
+		{input: 200007, expectedOutput: "200007"},
+		{input: -200007, expectedOutput: "-200007"},
 	}
 
 	for _, v := range testitems {

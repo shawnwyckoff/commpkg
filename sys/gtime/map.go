@@ -1,6 +1,8 @@
 package gtime
 
-import "time"
+import (
+	"time"
+)
 
 type TimeMap struct {
 	vals map[int64]bool
@@ -32,8 +34,8 @@ func (m *TimeMap) Export(loc *time.Location) []time.Time {
 		loc = time.UTC
 	}
 
-	r := []time.Time{}
-	for v, _ := range m.vals {
+	var r []time.Time
+	for v := range m.vals {
 		r = append(r, EpochNsecToTime(v).In(loc))
 	}
 	return r

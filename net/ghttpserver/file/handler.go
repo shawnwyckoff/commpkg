@@ -2,7 +2,7 @@ package file
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/apputil/log2"
+	"github.com/gogf/gf/os/glog"
 	"html/template"
 	"io"
 	"log"
@@ -18,7 +18,7 @@ import (
 func uploadHandler(w http.ResponseWriter, r *http.Request) {
 
 	requestBeginTime := time.Now()
-	log.Info("New request coming.")
+	glog.Info("New request coming.")
 	targetFile := r.FormValue("file")
 	ip := strings.Split(r.RemoteAddr, ":")[0]
 	uri := strings.NewReplacer("/uploadapi", "").Replace(r.RequestURI)
@@ -64,7 +64,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 			fmt.Fprintln(w, "filename not specified")
 			return
 		}
-		log.Info("New reader")
+		glog.Info("New reader")
 		d := strings.NewReader(data)
 
 		dir := ospath.Dir(fileurl)
@@ -74,7 +74,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		log.Info("Start receive file %s.", fileurl)
+		glog.Info("Start receive file %s.", fileurl)
 		out, err := os.OpenFile(fileurl, flags, 0644)
 		if err != nil {
 			fmt.Fprintf(w, "Unable to create the file for writing")
@@ -114,7 +114,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	for i, _ := range files {
+	for i := range files {
 		file, err := files[i].Open()
 		if err != nil {
 			fmt.Fprintln(w, err)
@@ -145,7 +145,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 			continue
 		}
 
-		log.Info("Start write file %s.", fileurl)
+		glog.Info("Start write file %s.", fileurl)
 		out, err := os.OpenFile(fileurl, flags, 0644)
 		if err != nil {
 			fmt.Fprintf(w, "Unable to create the file for writing")

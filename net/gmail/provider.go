@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gpkg/container/gstring"
-	"github.com/shawnwyckoff/gpkg/xnettils/xnet/xaddr"
+	"github.com/shawnwyckoff/gpkg/net/gaddr"
 	"strings"
 )
 
@@ -42,13 +42,13 @@ func (p Provider) String() string {
 // Get receive server: IMAP / POP3
 func (p *Provider) GetReceiveServer() (address string, port int, ssl bool, err error) {
 	if len(p.IMAPAddress) > 0 {
-		us, err := xaddr.ParseUrl(p.IMAPAddress)
+		us, err := gaddr.ParseUrl(p.IMAPAddress)
 		if err != nil {
 			return "", 0, false, errors.Errorf("GetRecvServer error for %s", p.String())
 		}
 		return us.Host.Domain, us.Host.Port, p.IMAPIsSSL, nil
 	} else if len(p.POP3Address) > 0 {
-		us, err := xaddr.ParseUrl(p.POP3Address)
+		us, err := gaddr.ParseUrl(p.POP3Address)
 		if err != nil {
 			return "", 0, false, errors.Errorf("GetRecvServer error for %s", p.String())
 		}
@@ -61,13 +61,13 @@ func (p *Provider) GetReceiveServer() (address string, port int, ssl bool, err e
 // Get send server: SMTP / IMAP
 func (p *Provider) GetSendServer() (address string, port int, ssl bool, err error) {
 	if len(p.SMTPAddress) > 0 {
-		us, err := xaddr.ParseUrl(p.SMTPAddress)
+		us, err := gaddr.ParseUrl(p.SMTPAddress)
 		if err != nil {
 			return "", 0, false, errors.Errorf("GetSendServer error for %s", p.String())
 		}
 		return us.Host.Domain, us.Host.Port, p.SMTPIsSSL, nil
 	} else if len(p.IMAPAddress) > 0 {
-		us, err := xaddr.ParseUrl(p.IMAPAddress)
+		us, err := gaddr.ParseUrl(p.IMAPAddress)
 		if err != nil {
 			return "", 0, false, errors.Errorf("GetSendServer error for %s", p.String())
 		}
@@ -82,7 +82,7 @@ func (p *Provider) GetSendServer() (address string, port int, ssl bool, err erro
 
 var (
 	InProviders = []Provider{
-		Provider{
+		{
 			SMTPAddress: "smtp.gmail.com:465",
 			SMTPIsSSL:   true,
 			POP3Address: "pop.gmail.com:995",
@@ -91,7 +91,7 @@ var (
 			IMAPIsSSL:   true,
 			EmailDomain: "gmail.com",
 		},
-		Provider{
+		{
 			SMTPAddress: "smtp.qq.com:465",
 			SMTPIsSSL:   true,
 			POP3Address: "pop.qq.com:995",
@@ -100,7 +100,7 @@ var (
 			IMAPIsSSL:   true,
 			EmailDomain: "qq.com",
 		},
-		Provider{
+		{
 			SMTPAddress: "smtp.mail.yahoo.com:465",
 			SMTPIsSSL:   true,
 			POP3Address: "pop.mail.yahoo.com:110",
@@ -109,7 +109,7 @@ var (
 			IMAPIsSSL:   true,
 			EmailDomain: "yahoo.com",
 		},
-		Provider{
+		{
 			SMTPAddress: "smtp.aliyun.com:25",
 			SMTPIsSSL:   false,
 			POP3Address: "pop3.aliyun.com:110",
@@ -118,7 +118,7 @@ var (
 			IMAPIsSSL:   false,
 			EmailDomain: "aliyun.com",
 		},
-		Provider{
+		{
 			SMTPAddress: "smtp.163.com:465",
 			SMTPIsSSL:   true,
 			POP3Address: "pop.163.com:995",
@@ -127,7 +127,7 @@ var (
 			IMAPIsSSL:   true,
 			EmailDomain: "163.com",
 		},
-		Provider{
+		{
 			SMTPAddress: "smtp.126.com:465",
 			SMTPIsSSL:   true,
 			POP3Address: "pop.126.com:995",
