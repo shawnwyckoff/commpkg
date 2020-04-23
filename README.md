@@ -43,7 +43,7 @@ func main() {
 
 # Packages
 
-122 packages in total
+119 packages in total
 
 **apputil**
 
@@ -51,15 +51,15 @@ gau  gbindata  gdeploy  gdump  gerror  ginstance  gjsonconfig  glog  glogger  gl
 
 **encoding**
 
-gbarcode  gchart  gcolor  gcsv  gexcel  gffmpeg  gformat  gmultimedia  gzip
+gbarcode  gchart  gcolor  gcsv  gexcel  gffmpeg  gmultimedia  gzip
 
 **sys**
 
-gcache  gcharset  gcmd  gconcurrentcounter  gcounter  gcountry  gcpulimit  gcron  gdesktop  gfileformat  gfirewall  gfs  ghdd  gio  gkeyboard  gmachineid  gmem  gproc  groutine  gsignal  gsync  gsysinfo  gtime  gusers
+gcache  gcharset  gcmd  gconcurrentcounter  gcounter  gcountry  gcpulimit  gcron  gdesktop  gfirewall  gfs  ghdd  gio  gkeyboard  gmachineid  gmem  gproc  groutine  gsignal  gsync  gsysinfo  gtime  gusers
 
 **container**
 
-gapriori  gbinary  gbit  gbloom  gbyte  gcombination  gdecimal  gforecast  ggeo  ggeometry  ginterface  gjson  glist  gmap  gnonce  gnum  gob  gpermutation  gpoly  gqueue  grandom  grange  gscore  gset  gspeed  gstate3  gstring  gstruct  gtaskqueue  gternary  gtimeseries  gvolume
+gapriori  gbinary  gbit  gbloom  gbyte  gcombination  gdecimal  gforecast  ggeo  ggeometry  ginterface  gjson  glist  gmap  gnonce  gnum  gob  gpermutation  gpoly  gqueue  grandom  grange  gscore  gset  gspeed  gstate3  gstring  gstruct  gtaskqueue  gternary  gtimeseries  gvolume  gfileformat
 
 **crypto**
 
@@ -67,7 +67,7 @@ g2fa  gencrypt  ghash  gsha
 
 **database**
 
-gconnectstring  gdriver  gmongo  gredis  gsqldb  gsqldb_old_to_remove
+gconnectstring  gdriver  gmongo  gredis  gsqldb
 
 **net**
 
