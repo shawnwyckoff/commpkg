@@ -12,7 +12,7 @@ import (
 // TODO 可以用ChartTemplate取代吗
 
 /*
-ChartLines is a Web/Html/eCharts oriented data structure, for good looking when shown Kline & indicators.
+ChartLines is a Web/Html/eCharts oriented data structure, for good looking when shown K & indicators.
 */
 
 /*
