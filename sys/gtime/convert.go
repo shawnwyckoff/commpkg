@@ -63,6 +63,14 @@ func TimeToEpochNsec(t time.Time) int64 {
 	return t.UnixNano()
 }
 
+// tm.UnixNano()的逆运算
+func UnixNanoToTime(un int64, loc *time.Location) time.Time {
+	if loc == nil {
+		loc = time.UTC
+	}
+	return time.Unix(0, un).In(loc)
+}
+
 // time.Duaration.String() = "354h22m3.24s"
 // PrettyFormat() = "2 weeks 18 hours 22 minutes 3 seconds"
 func PrettyFormat(d time.Duration) string {
