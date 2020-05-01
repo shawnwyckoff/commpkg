@@ -19,7 +19,7 @@ func TestNewConn(t *testing.T) {
 	}
 
 	now := time.Now()
-	kl := finance.Kline{}
+	kl := finance.K{}
 	kl.T = now
 	if err != nil {
 		t.Error(err)
