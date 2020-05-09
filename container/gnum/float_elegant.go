@@ -100,6 +100,7 @@ func (t *ElegantFloat) Raw() float64 {
 	return t.val
 }
 
+// TODO: NaN +-Inf会被ParseFloat64认为是错误吗，需要测试一下
 // UnmarshalJSON will unmarshal using 2006-01-02T15:04:05+07:00 layout
 func (t *ElegantFloat) UnmarshalJSON(b []byte) error {
 	val, err := strconv.ParseFloat(string(b), 64)
