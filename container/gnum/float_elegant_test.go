@@ -57,4 +57,14 @@ func TestElegantFloat_JSON(t *testing.T) {
 	if string(b) != "-Inf" {
 		t.Error("f5 format error, should be -Inf")
 	}
+
+	f6 := NewElegantFloat(1.2345, -1)
+	b, err = f6.JSON()
+	if err != nil {
+		t.Error(err)
+		return
+	}
+	if string(b) != "1.2345" {
+		t.Error("f6 format error, should be 1.2345")
+	}
 }
