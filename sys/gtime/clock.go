@@ -9,6 +9,7 @@ type Clock interface {
 	Name() string
 	Now() time.Time
 	Sleep(d time.Duration)
+	Set(tm time.Time) error
 }
 
 func NewClock(clockName string) (Clock, error) {

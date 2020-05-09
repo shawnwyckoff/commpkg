@@ -1,6 +1,9 @@
 package gtime
 
-import "time"
+import (
+	"github.com/shawnwyckoff/gpkg/apputil/gerror"
+	"time"
+)
 
 var _globalSysClock_ *SysClock
 
@@ -21,4 +24,8 @@ func (sc *SysClock) Now() time.Time {
 
 func (sc *SysClock) Sleep(d time.Duration) {
 	time.Sleep(d)
+}
+
+func (sc *SysClock) Set(tm time.Time) error {
+	return gerror.Errorf("system clock doesn't support Set interface")
 }

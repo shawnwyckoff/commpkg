@@ -24,8 +24,9 @@ func NewMockClock(begin time.Time, location *time.Location) *MockClock {
 	return r
 }
 
-func (m *MockClock) Set(t time.Time) {
+func (m *MockClock) Set(t time.Time) error {
 	m.in.Set(t)
+	return nil
 }
 
 func (m *MockClock) SetLocation(location *time.Location) {

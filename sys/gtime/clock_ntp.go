@@ -5,6 +5,7 @@ package gtime
 
 import (
 	"github.com/pkg/errors"
+	"github.com/shawnwyckoff/gpkg/apputil/gerror"
 	"math"
 	"sync"
 	"time"
@@ -74,6 +75,10 @@ func (nc *NtpClock) Sleep(d time.Duration) {
 
 func (nc *NtpClock) IsMock() bool {
 	return false
+}
+
+func (nc *NtpClock) Set(tm time.Time) error {
+	return gerror.Errorf("ntp clock doesn't support Set interface")
 }
 
 func VerifySystemTimeWithNtpOL(intervalAllowed time.Duration) error {
