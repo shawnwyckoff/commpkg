@@ -2,7 +2,7 @@ package gencrypt
 
 import (
 	"bytes"
-	"github.com/shawnwyckoff/gpkg/container/gbinary"
+	"github.com/shawnwyckoff/gopkg/container/gbinary"
 	"testing"
 )
 

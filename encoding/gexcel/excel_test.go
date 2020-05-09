@@ -1,8 +1,8 @@
 package gexcel
 
 import (
-	"github.com/shawnwyckoff/gpkg/container/gjson"
-	"github.com/shawnwyckoff/gpkg/sys/gfs"
+	"github.com/shawnwyckoff/gopkg/container/gjson"
+	"github.com/shawnwyckoff/gopkg/sys/gfs"
 	"testing"
 )
 

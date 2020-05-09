@@ -1,7 +1,7 @@
 package gffmpeg
 
 import (
-	"github.com/shawnwyckoff/gpkg/sys/gcmd"
+	"github.com/shawnwyckoff/gopkg/sys/gcmd"
 	"strings"
 )
 

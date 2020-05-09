@@ -2,7 +2,7 @@ package gmem
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/container/gvolume"
+	"github.com/shawnwyckoff/gopkg/container/gvolume"
 	"github.com/shirou/gopsutil/mem"
 )
 

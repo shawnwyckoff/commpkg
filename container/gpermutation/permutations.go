@@ -11,7 +11,7 @@ package gpermutation
 // reference: https://www.zhangshengrong.com/p/7B1LBqRNwp/
 
 import (
-	"github.com/shawnwyckoff/gpkg/sys/gcounter"
+	"github.com/shawnwyckoff/gopkg/sys/gcounter"
 	"sync/atomic"
 )
 

@@ -10,7 +10,7 @@ package fileserver
 import (
 	"expvar"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/apputil/glog"
+	"github.com/shawnwyckoff/gopkg/apputil/glog"
 	"github.com/valyala/fasthttp"
 	"github.com/valyala/fasthttp/expvarhandler"
 )

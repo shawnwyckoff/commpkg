@@ -2,7 +2,7 @@ package gproxy
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/net/gprobe"
+	"github.com/shawnwyckoff/gopkg/net/gprobe"
 	"time"
 )
 

@@ -1,7 +1,7 @@
 package gbarcode
 
 import (
-	"github.com/shawnwyckoff/gpkg/sys/gfs"
+	"github.com/shawnwyckoff/gopkg/sys/gfs"
 	"os"
 	"testing"
 )

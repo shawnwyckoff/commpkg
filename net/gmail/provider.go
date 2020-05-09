@@ -3,8 +3,8 @@ package gmail
 import (
 	"encoding/json"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/container/gstring"
-	"github.com/shawnwyckoff/gpkg/net/gaddr"
+	"github.com/shawnwyckoff/gopkg/container/gstring"
+	"github.com/shawnwyckoff/gopkg/net/gaddr"
 	"strings"
 )
 

@@ -1,7 +1,7 @@
 package gcron
 
 import (
-	"github.com/shawnwyckoff/gpkg/sys/gtime"
+	"github.com/shawnwyckoff/gopkg/sys/gtime"
 	"time"
 )
 

@@ -2,10 +2,10 @@ package gdeploy
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/net/ghttp/client"
-	"github.com/shawnwyckoff/gpkg/spider/github"
-	"github.com/shawnwyckoff/gpkg/sys/gfs"
-	"github.com/shawnwyckoff/gpkg/sys/gproc"
+	"github.com/shawnwyckoff/gopkg/net/ghttp/client"
+	"github.com/shawnwyckoff/gopkg/spider/github"
+	"github.com/shawnwyckoff/gopkg/sys/gfs"
+	"github.com/shawnwyckoff/gopkg/sys/gproc"
 	"os"
 	"syscall"
 )

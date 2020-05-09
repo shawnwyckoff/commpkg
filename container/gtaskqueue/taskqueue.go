@@ -4,7 +4,7 @@ package gtaskqueue
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/sys/gtime"
+	"github.com/shawnwyckoff/gopkg/sys/gtime"
 	"sync"
 	"time"
 )

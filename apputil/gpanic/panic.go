@@ -2,7 +2,7 @@ package gpanic
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/apputil/log2"
+	"github.com/shawnwyckoff/gopkg/apputil/log2"
 	"os"
 )
 

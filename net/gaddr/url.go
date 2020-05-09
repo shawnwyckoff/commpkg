@@ -6,8 +6,8 @@ package gaddr
 import (
 	"github.com/goware/urlx"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/container/gstring"
-	"github.com/shawnwyckoff/gpkg/encoding/gmultimedia"
+	"github.com/shawnwyckoff/gopkg/container/gstring"
+	"github.com/shawnwyckoff/gopkg/encoding/gmultimedia"
 	"net/url"
 	"path/filepath"
 	"runtime"

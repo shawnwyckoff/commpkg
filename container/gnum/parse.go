@@ -2,7 +2,7 @@ package gnum
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/container/gstring"
+	"github.com/shawnwyckoff/gopkg/container/gstring"
 	"math/big"
 	"strconv"
 	"strings"

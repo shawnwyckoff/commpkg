@@ -1,7 +1,7 @@
 package gtime
 
 import (
-	"github.com/shawnwyckoff/gpkg/apputil/gerror"
+	"github.com/shawnwyckoff/gopkg/apputil/gerror"
 	"time"
 )
 

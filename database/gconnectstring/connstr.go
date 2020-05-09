@@ -3,7 +3,7 @@ package gconnectstring
 import (
 	"github.com/jackc/pgx"
 	"github.com/pkg/errors"
-	. "github.com/shawnwyckoff/gpkg/database/gdriver"
+	. "github.com/shawnwyckoff/gopkg/database/gdriver"
 	"net"
 	"strconv"
 	"upper.io/db.v3/mongo"

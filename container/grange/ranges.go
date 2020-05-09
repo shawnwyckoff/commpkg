@@ -2,7 +2,7 @@ package grange
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/container/gnum"
+	"github.com/shawnwyckoff/gopkg/container/gnum"
 	"sort"
 	"strings"
 )

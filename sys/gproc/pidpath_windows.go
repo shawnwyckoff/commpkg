@@ -1,6 +1,6 @@
 package gproc
 
-import "github.com/shawnwyckoff/gpkg/apputil/gerror"
+import "github.com/shawnwyckoff/gopkg/apputil/gerror"
 
 // TODO
 func GetExePathFromPid(pid int) (path string, err error) {

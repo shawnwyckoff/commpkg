@@ -3,8 +3,8 @@ package request
 // Detect as much information as possible from http client request
 
 import (
-	"github.com/shawnwyckoff/gpkg/net/gaddr"
-	"github.com/shawnwyckoff/gpkg/net/ghttp"
+	"github.com/shawnwyckoff/gopkg/net/gaddr"
+	"github.com/shawnwyckoff/gopkg/net/ghttp"
 	"github.com/valyala/fasthttp"
 	"strings"
 )

@@ -4,7 +4,7 @@ package gencrypt
 
 import (
 	"github.com/jbenet/go-base58"
-	"github.com/shawnwyckoff/gpkg/crypto/ghash"
+	"github.com/shawnwyckoff/gopkg/crypto/ghash"
 )
 
 func SonnefesEncrypt(plainText, key string) (string, error) {

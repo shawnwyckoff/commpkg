@@ -2,7 +2,7 @@ package gaddr_test
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/net/gaddr"
+	"github.com/shawnwyckoff/gopkg/net/gaddr"
 	"testing"
 )
 

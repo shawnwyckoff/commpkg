@@ -1,6 +1,6 @@
 package gproc
 
-// https://github.com/fastly/gpkg/blob/master/executable/executable.go
+// https://github.com/fastly/gopkg/blob/master/executable/executable.go
 // https://github.com/crquan/coremem/blob/master/coremem.go
 // https://github.com/janimo/memchart/blob/master/memchart.go
 

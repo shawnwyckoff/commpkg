@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/samuel/go-zookeeper/zk"
-	"github.com/shawnwyckoff/gpkg/apputil/gerror"
+	"github.com/shawnwyckoff/gopkg/apputil/gerror"
 	"strconv"
 	"time"
 )

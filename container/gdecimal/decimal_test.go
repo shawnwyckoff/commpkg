@@ -3,8 +3,8 @@ package gdecimal
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/apputil/gtest"
-	"github.com/shawnwyckoff/gpkg/container/gjson"
+	"github.com/shawnwyckoff/gopkg/apputil/gtest"
+	"github.com/shawnwyckoff/gopkg/container/gjson"
 	"github.com/shopspring/decimal"
 	"go.mongodb.org/mongo-driver/bson"
 	"testing"

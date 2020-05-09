@@ -2,7 +2,7 @@ package gpoly
 
 import (
 	"github.com/openacid/slim/polyfit"
-	"github.com/shawnwyckoff/gpkg/container/ggeometry"
+	"github.com/shawnwyckoff/gopkg/container/ggeometry"
 	"math"
 )
 

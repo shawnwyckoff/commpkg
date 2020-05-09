@@ -2,7 +2,7 @@ package gaddr
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/container/grandom"
+	"github.com/shawnwyckoff/gopkg/container/grandom"
 	"net"
 	"strconv"
 	"strings"

@@ -3,7 +3,7 @@ package ghtml
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/sys/gtime"
+	"github.com/shawnwyckoff/gopkg/sys/gtime"
 	"sort"
 	"testing"
 	"time"

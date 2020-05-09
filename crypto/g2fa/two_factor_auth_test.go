@@ -2,7 +2,7 @@ package g2fa
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/apputil/gtest"
+	"github.com/shawnwyckoff/gopkg/apputil/gtest"
 	"testing"
 )
 

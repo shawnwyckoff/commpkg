@@ -3,8 +3,8 @@ package gvolume
 import (
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/container/gspeed"
-	"github.com/shawnwyckoff/gpkg/container/gstring"
+	"github.com/shawnwyckoff/gopkg/container/gspeed"
+	"github.com/shawnwyckoff/gopkg/container/gstring"
 	"strings"
 )
 

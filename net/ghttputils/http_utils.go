@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	. "github.com/shawnwyckoff/gpkg/apputil/glogs"
+	. "github.com/shawnwyckoff/gopkg/apputil/glogs"
 	"github.com/valyala/fasthttp"
 	"github.com/valyala/fasthttp/fasthttpproxy"
 )

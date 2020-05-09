@@ -2,7 +2,7 @@ package grandom
 
 import (
 	"github.com/Pallinder/go-randomdata"
-	"github.com/shawnwyckoff/gpkg/apputil/gerror"
+	"github.com/shawnwyckoff/gopkg/apputil/gerror"
 )
 
 // Notice: it seems min & max is not included in random output

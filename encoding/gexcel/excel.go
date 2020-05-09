@@ -5,7 +5,7 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/extrame/xls"
-	"github.com/shawnwyckoff/gpkg/sys/gfs"
+	"github.com/shawnwyckoff/gopkg/sys/gfs"
 	"github.com/tealeg/xlsx"
 	"strconv"
 	"strings"

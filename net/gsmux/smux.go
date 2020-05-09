@@ -1,7 +1,7 @@
 package gsmux
 
 import (
-	"github.com/shawnwyckoff/gpkg/net/gmux"
+	"github.com/shawnwyckoff/gopkg/net/gmux"
 	"github.com/xtaci/smux"
 	"net"
 	"time"

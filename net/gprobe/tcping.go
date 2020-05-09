@@ -2,8 +2,8 @@ package gprobe
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/container/gnum"
-	"github.com/shawnwyckoff/gpkg/net/gaddr"
+	"github.com/shawnwyckoff/gopkg/container/gnum"
+	"github.com/shawnwyckoff/gopkg/net/gaddr"
 	"net"
 	"time"
 )

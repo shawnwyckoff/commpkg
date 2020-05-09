@@ -1,8 +1,8 @@
 package xonline
 
 import (
-	"github.com/shawnwyckoff/gpkg/container/gstring"
-	"github.com/shawnwyckoff/gpkg/net/ghttp"
+	"github.com/shawnwyckoff/gopkg/container/gstring"
+	"github.com/shawnwyckoff/gopkg/net/ghttp"
 	"time"
 )
 

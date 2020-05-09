@@ -3,7 +3,7 @@ package gmongo
 import (
 	"fmt"
 	"github.com/mongodb/mongo-go-driver/x/bsonx"
-	"github.com/shawnwyckoff/gpkg/sys/gtime"
+	"github.com/shawnwyckoff/gopkg/sys/gtime"
 	"time"
 
 	//"github.com/shawnwyckoff/finance"

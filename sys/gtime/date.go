@@ -3,7 +3,7 @@ package gtime
 import (
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/container/gstring"
+	"github.com/shawnwyckoff/gopkg/container/gstring"
 	"math"
 	"time"
 )

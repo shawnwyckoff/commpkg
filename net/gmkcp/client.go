@@ -5,7 +5,7 @@ package gmkcp
 
 import (
 	"context"
-	"github.com/shawnwyckoff/gpkg/net/gaddr"
+	"github.com/shawnwyckoff/gopkg/net/gaddr"
 	"net"
 	"time"
 	v2net "v2ray.com/core/common/net"

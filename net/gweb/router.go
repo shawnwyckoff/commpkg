@@ -2,7 +2,7 @@ package gweb
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/shawnwyckoff/gpkg/net/ghttp"
+	"github.com/shawnwyckoff/gopkg/net/ghttp"
 )
 
 type (

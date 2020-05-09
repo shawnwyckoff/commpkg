@@ -6,7 +6,7 @@ import (
 	"bytes"
 	"github.com/getlantern/appdir"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/sys/gcmd"
+	"github.com/shawnwyckoff/gopkg/sys/gcmd"
 	"os"
 	"os/exec"
 	"os/user"

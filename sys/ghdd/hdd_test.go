@@ -2,7 +2,7 @@ package ghdd
 
 import (
 	"encoding/json"
-	"github.com/shawnwyckoff/gpkg/xsystils/xsys/xproc"
+	"github.com/shawnwyckoff/gopkg/xsystils/xsys/xproc"
 	"log"
 	"testing"
 )

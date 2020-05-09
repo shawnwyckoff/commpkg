@@ -2,10 +2,10 @@ package gaddr
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/container/gstring"
-	"github.com/shawnwyckoff/gpkg/net/ghtml"
-	"github.com/shawnwyckoff/gpkg/net/ghttp"
-	"github.com/shawnwyckoff/gpkg/net/gprobe/xonline"
+	"github.com/shawnwyckoff/gopkg/container/gstring"
+	"github.com/shawnwyckoff/gopkg/net/ghtml"
+	"github.com/shawnwyckoff/gopkg/net/ghttp"
+	"github.com/shawnwyckoff/gopkg/net/gprobe/xonline"
 	"net"
 	"strings"
 	"time"

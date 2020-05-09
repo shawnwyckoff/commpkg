@@ -2,7 +2,7 @@ package gtime
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/sys/gusers"
+	"github.com/shawnwyckoff/gopkg/sys/gusers"
 	"syscall"
 	"time"
 )

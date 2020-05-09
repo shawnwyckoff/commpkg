@@ -1,10 +1,10 @@
 package ghtml
 
 import (
-	"github.com/shawnwyckoff/gpkg/container/gdecimal"
-	"github.com/shawnwyckoff/gpkg/container/gnum"
-	"github.com/shawnwyckoff/gpkg/encoding/gcolor"
-	"github.com/shawnwyckoff/gpkg/sys/gtime"
+	"github.com/shawnwyckoff/gopkg/container/gdecimal"
+	"github.com/shawnwyckoff/gopkg/container/gnum"
+	"github.com/shawnwyckoff/gopkg/encoding/gcolor"
+	"github.com/shawnwyckoff/gopkg/sys/gtime"
 )
 
 type (

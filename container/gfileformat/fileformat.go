@@ -9,8 +9,8 @@ import (
 	"github.com/h2non/filetype"
 	"github.com/pkg/errors"
 	"github.com/ross-spencer/sfclassic"
-	"github.com/shawnwyckoff/gpkg/container/gvolume"
-	"github.com/shawnwyckoff/gpkg/sys/gfs"
+	"github.com/shawnwyckoff/gopkg/container/gvolume"
+	"github.com/shawnwyckoff/gopkg/sys/gfs"
 )
 
 // 不太准，比如ttf、Log4j2Plugins.dat都被认为是unix平台的可执行程序

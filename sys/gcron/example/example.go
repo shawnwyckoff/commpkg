@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/sys/gcron"
+	"github.com/shawnwyckoff/gopkg/sys/gcron"
 	"sync"
 	"time"
 )

@@ -3,7 +3,7 @@ package gbloom
 import (
 	"bufio"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/sys/gfs"
+	"github.com/shawnwyckoff/gopkg/sys/gfs"
 	bloom "github.com/willf/bloom"
 	"os"
 )

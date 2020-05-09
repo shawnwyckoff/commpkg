@@ -3,9 +3,9 @@ package gsqldb
 import (
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/shawnwyckoff/gpkg/apputil/gerror"
-	"github.com/shawnwyckoff/gpkg/container/gstring"
-	"github.com/shawnwyckoff/gpkg/database/gdriver"
+	"github.com/shawnwyckoff/gopkg/apputil/gerror"
+	"github.com/shawnwyckoff/gopkg/container/gstring"
+	"github.com/shawnwyckoff/gopkg/database/gdriver"
 	"xorm.io/xorm"
 )
 

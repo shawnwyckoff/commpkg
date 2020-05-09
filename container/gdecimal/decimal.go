@@ -2,7 +2,7 @@ package gdecimal
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/container/gnum"
+	"github.com/shawnwyckoff/gopkg/container/gnum"
 	"github.com/shopspring/decimal"
 	"go.mongodb.org/mongo-driver/bson/bsontype"
 	"go.mongodb.org/mongo-driver/bson/primitive"

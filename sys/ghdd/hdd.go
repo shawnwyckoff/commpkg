@@ -2,7 +2,7 @@ package ghdd
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/container/gvolume"
+	"github.com/shawnwyckoff/gopkg/container/gvolume"
 	"github.com/shirou/gopsutil/disk"
 )
 

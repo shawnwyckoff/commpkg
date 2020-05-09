@@ -2,7 +2,7 @@ package gtime
 
 import (
 	"encoding/json"
-	"github.com/shawnwyckoff/gpkg/container/gjson"
+	"github.com/shawnwyckoff/gopkg/container/gjson"
 	"testing"
 	"time"
 )

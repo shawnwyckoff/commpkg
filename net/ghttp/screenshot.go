@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/chromedp/cdproto/dom"
-	"github.com/shawnwyckoff/gpkg/apputil/gerror"
+	"github.com/shawnwyckoff/gopkg/apputil/gerror"
 	"io/ioutil"
 	"math"
 	"time"

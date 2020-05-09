@@ -2,10 +2,10 @@ package gffmpeg
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/apputil/std_logger"
-	"github.com/shawnwyckoff/gpkg/sys/gcmd"
-	"github.com/shawnwyckoff/gpkg/sys/gfs"
-	"github.com/shawnwyckoff/gpkg/sys/gproc"
+	"github.com/shawnwyckoff/gopkg/apputil/std_logger"
+	"github.com/shawnwyckoff/gopkg/sys/gcmd"
+	"github.com/shawnwyckoff/gopkg/sys/gfs"
+	"github.com/shawnwyckoff/gopkg/sys/gproc"
 	"strconv"
 	"strings"
 )

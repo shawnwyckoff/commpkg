@@ -9,7 +9,7 @@ import (
 	"crypto/sha1"
 	"encoding/base32"
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/apputil/gerror"
+	"github.com/shawnwyckoff/gopkg/apputil/gerror"
 	"strings"
 	"time"
 )

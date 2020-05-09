@@ -3,8 +3,8 @@ package gdesktop
 import (
 	"github.com/go-vgo/robotgo"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/sys/gfs"
-	"github.com/shawnwyckoff/gpkg/sys/gproc"
+	"github.com/shawnwyckoff/gopkg/sys/gfs"
+	"github.com/shawnwyckoff/gopkg/sys/gproc"
 	"strings"
 )
 

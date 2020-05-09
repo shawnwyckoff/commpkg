@@ -2,8 +2,8 @@ package gau
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/net/ghttp"
-	"github.com/shawnwyckoff/gpkg/spider/util/downloader/xhttpclient"
+	"github.com/shawnwyckoff/gopkg/net/ghttp"
+	"github.com/shawnwyckoff/gopkg/spider/util/downloader/xhttpclient"
 	"sync"
 	"sync/atomic"
 	"time"

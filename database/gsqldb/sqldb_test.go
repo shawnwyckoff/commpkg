@@ -1,8 +1,8 @@
 package gsqldb
 
 import (
-	"github.com/shawnwyckoff/gpkg/apputil/gtest"
-	"github.com/shawnwyckoff/gpkg/database/gdriver"
+	"github.com/shawnwyckoff/gopkg/apputil/gtest"
+	"github.com/shawnwyckoff/gopkg/database/gdriver"
 	"testing"
 )
 

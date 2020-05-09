@@ -2,8 +2,8 @@ package gaddr
 
 import (
 	"github.com/mohong122/ip2region/binding/golang"
-	"github.com/shawnwyckoff/gpkg/net/ghttp"
-	"github.com/shawnwyckoff/gpkg/sys/gfs"
+	"github.com/shawnwyckoff/gopkg/net/ghttp"
+	"github.com/shawnwyckoff/gopkg/sys/gfs"
 	"net"
 	"os"
 	"time"

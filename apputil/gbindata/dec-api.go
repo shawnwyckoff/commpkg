@@ -3,7 +3,7 @@ package gbindata
 import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/sys/gfs"
+	"github.com/shawnwyckoff/gopkg/sys/gfs"
 )
 
 func Dec(fileHexString *string, output_binary_filename string) error {

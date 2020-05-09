@@ -2,11 +2,11 @@ package tuns
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/apputil/glogger"
-	"github.com/shawnwyckoff/gpkg/net/glistener"
-	"github.com/shawnwyckoff/gpkg/net/gmux"
-	"github.com/shawnwyckoff/gpkg/net/gsmux"
-	"github.com/shawnwyckoff/gpkg/sys/gio"
+	"github.com/shawnwyckoff/gopkg/apputil/glogger"
+	"github.com/shawnwyckoff/gopkg/net/glistener"
+	"github.com/shawnwyckoff/gopkg/net/gmux"
+	"github.com/shawnwyckoff/gopkg/net/gsmux"
+	"github.com/shawnwyckoff/gopkg/sys/gio"
 	"io"
 	"math/rand"
 	"net"

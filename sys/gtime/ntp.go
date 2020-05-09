@@ -2,7 +2,7 @@ package gtime
 
 import (
 	"github.com/beevik/ntp"
-	"github.com/shawnwyckoff/gpkg/container/gstring"
+	"github.com/shawnwyckoff/gopkg/container/gstring"
 	"time"
 )
 

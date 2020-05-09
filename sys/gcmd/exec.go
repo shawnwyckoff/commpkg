@@ -2,7 +2,7 @@ package gcmd
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/sys/gproc"
+	"github.com/shawnwyckoff/gopkg/sys/gproc"
 	"os"
 	"os/exec"
 	"strings"

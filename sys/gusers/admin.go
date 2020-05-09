@@ -3,8 +3,8 @@ package gusers
 import (
 	"fmt"
 	"github.com/google/uuid"
-	"github.com/shawnwyckoff/gpkg/sys/gfs"
-	"github.com/shawnwyckoff/gpkg/sys/gsysinfo"
+	"github.com/shawnwyckoff/gopkg/sys/gfs"
+	"github.com/shawnwyckoff/gopkg/sys/gsysinfo"
 	"os"
 )
 

@@ -1,8 +1,8 @@
 package gtime
 
 import (
-	"github.com/shawnwyckoff/gpkg/apputil/gerror"
-	"github.com/shawnwyckoff/gpkg/container/gnum"
+	"github.com/shawnwyckoff/gopkg/apputil/gerror"
+	"github.com/shawnwyckoff/gopkg/container/gnum"
 	"time"
 )
 

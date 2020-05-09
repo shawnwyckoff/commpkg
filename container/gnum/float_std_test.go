@@ -2,7 +2,7 @@ package gnum
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/container/gjson"
+	"github.com/shawnwyckoff/gopkg/container/gjson"
 	"math"
 	"testing"
 )

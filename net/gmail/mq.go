@@ -3,7 +3,7 @@ package gmail
 import (
 	"github.com/mikaa123/imapmq"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/container/random2"
+	"github.com/shawnwyckoff/gopkg/container/random2"
 )
 
 // Used email account to implement a simple message queue

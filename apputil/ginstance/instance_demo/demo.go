@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/shawnwyckoff/gpkg/apputil/ginstance"
+	"github.com/shawnwyckoff/gopkg/apputil/ginstance"
 	"log"
 	"time"
 )

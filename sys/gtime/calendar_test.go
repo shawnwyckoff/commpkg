@@ -1,7 +1,7 @@
 package gtime
 
 import (
-	"github.com/shawnwyckoff/gpkg/apputil/gtest"
+	"github.com/shawnwyckoff/gopkg/apputil/gtest"
 	"testing"
 	"time"
 )

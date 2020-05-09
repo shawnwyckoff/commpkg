@@ -5,7 +5,7 @@ package gtime
 
 import (
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gpkg/apputil/gerror"
+	"github.com/shawnwyckoff/gopkg/apputil/gerror"
 	"math"
 	"sync"
 	"time"
