@@ -1,4 +1,4 @@
-[![Minimum Go version](https://img.shields.io/badge/go-1.13.0+-9cf.svg)](#go-version-requirements)
+[![Minimum Go version](https://img.shields.io/badge/go-1.14.0+-9cf.svg)](#go-version-requirements)
 [![Go Report Card](https://goreportcard.com/badge/github.com/shawnwyckoff/gopkg)](https://goreportcard.com/report/github.com/shawnwyckoff/gopkg)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/shawnwyckoff/gopkg/pulls)
 [![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
