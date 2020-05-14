@@ -39,15 +39,13 @@ func main() {
 
 **gopkg** was developed by [shawnwyckoff](https://github.com/shawnwyckoff) and it requires **a lot of dependencies**.
 
-# In Production
-
 # Packages
 
 119 packages in total
 
 **apputil**
 
-gau  gbindata  gdeploy  gdump  gerror  ginstance  gjsonconfig  glog  glogger  glogs  gpanic  gparam  gprofile  gprogress  gtest
+gbindata  gdeploy   gerror  ginstance  gjsonconfig  glog  glogger  glogs  gpanic  gparam  gprofile  gprogress  gtest
 
 **encoding**
 
@@ -59,7 +57,7 @@ gcache  gcharset  gcmd  gconcurrentcounter  gcounter  gcountry  gcpulimit  gcron
 
 **container**
 
-gapriori  gbinary  gbit  gbloom  gbyte  gcombination  gdecimal  gforecast  ggeo  ggeometry  ginterface  gjson  glist  gmap  gnonce  gnum  gob  gpermutation  gpoly  gqueue  grandom  grange  gscore  gset  gspeed  gstate3  gstring  gstruct  gtaskqueue  gternary  gtimeseries  gvolume  gfileformat
+gapriori  gbinary  gbit  gbloom  gbyte  gcombination  gdecimal  ggeo  ggeometry  ginterface  gjson  glist  gmap  gnonce  gnum  gob  gpermutation  gpoly  gqueue  grandom  grange  gscore  gset  gspeed  gstate3  gstring  gstruct  gtaskqueue  gternary  gtimeseries  gvolume  gfileformat
 
 **crypto**
 
