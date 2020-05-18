@@ -118,6 +118,8 @@ func TestDecimal_UnmarshalJSON(t *testing.T) {
 func TestDecimal_Trunc(t *testing.T) {
 	d, _ := NewFromString("1.23456789")
 
+	fmt.Println(d.Trunc(8, 0.01))
+
 	if d.Trunc(3, 0.02).String() != "1.22" {
 		t.Errorf("Decimal.Trunc error1")
 	}
@@ -145,6 +147,12 @@ func TestDecimal_Trunc(t *testing.T) {
 	if d.Trunc(8, 0.000001).String() != "5141.73181899" {
 		t.Errorf("Decimal.Trunc error8")
 	}
+}
+
+func TestDecimal_Trunc2(t *testing.T) {
+	d, _ := NewFromString("1.23456789")
+
+	fmt.Println(d.Trunc2(NewFromFloat64(0.00001), 0.01))
 }
 
 func TestDecimal_MarshalBSON(t *testing.T) {

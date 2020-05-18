@@ -264,11 +264,23 @@ func (d *Decimal) SetFloat64(val float64) {
 	*d = NewFromFloat64(val)
 }
 
-func (d Decimal) Trunc(prec int, lot float64) Decimal {
-	if lot <= 0 {
+// prec就是小数点后最多支持多少位
+func (d Decimal) Trunc(prec int, step float64) Decimal {
+	if step <= 0 {
 		return d
 	}
-	return NewFromFloat64(math.Trunc(math.Floor(d.Float64()/lot)*lot*math.Pow10(prec)) / math.Pow10(prec))
+	return NewFromFloat64(math.Trunc(math.Floor(d.Float64()/step)*step*math.Pow10(prec)) / math.Pow10(prec))
+}
+
+// min 就是小数点后最多多少位的小数写法，比如，min=0.00001，prec就是5
+func (d Decimal) Trunc2(min Decimal, step float64) Decimal {
+	if min.Float64() <= 0 {
+		return d
+	}
+	prec := int(math.Log10(N1.Div(min).Float64()))
+	//fmt.Println(prec)
+
+	return d.Trunc(prec, step)
 }
 
 func Min(first Decimal, args ...Decimal) Decimal {
