@@ -14,6 +14,7 @@ TODO: 从环境配置中读取并设置代理：https://stackoverflow.com/questi
 import (
 	"context"
 	"crypto/tls"
+	"encoding/json"
 	"github.com/cavaliercoder/grab"
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gopkg/container/gjson"
@@ -123,6 +124,20 @@ func GetString(url string, proxy string, timeout time.Duration) (string, error) 
 		return "", err
 	}
 	return ReadBodyString(resp)
+}
+
+func GetMap(url string, proxy string, timeout time.Duration) (map[string]interface{}, error) {
+	resp, err := Get(url, proxy, timeout, true)
+	if err != nil {
+		return nil, err
+	}
+	buf, err := ReadBodyBytes(resp)
+	if err != nil {
+		return nil, err
+	}
+	var res map[string]interface{}
+	err = json.Unmarshal(buf, &res)
+	return res, nil
 }
 
 /*

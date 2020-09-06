@@ -41,7 +41,7 @@ func main() {
 
 # Packages
 
-119 packages in total
+115 packages in total
 
 **apputil**
 
@@ -69,7 +69,7 @@ gconnectstring  gdriver  gmongo  gredis  gsqldb
 
 **net**
 
-gaddr  gdialer  gheadless  ghtml  ghttp  ghttpserver  ghttputils  gicmp  gkcp  glistener  gmail  gmkcp  gmq  gmtu  gmux  gp2pdns  gprobe  gproxy  gquic  gsmux  gsniffer  gsocks5  gssh  gtun  gtuntap  gupnp  gutp  gweb  gzk
+gaddr  gdialer  gheadless  ghtml  ghttp  ghttpserver  ghttputils  gicmp  gkcp  glistener  gmail  gmkcp  gmq  gmtu  gmux  gprobe  gproxy  gquic  gsmux  gsniffer  gsocks5  gssh  gtun  gtuntap  gupnp  gutp  gweb  gzk
 
 **safe**
 

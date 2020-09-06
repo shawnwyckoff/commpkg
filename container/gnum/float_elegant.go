@@ -15,8 +15,9 @@ import (
 // 0.00883300000000003 -> 0.01          -> 0.0088
 // 0.000012800003      -> 0.00          -> 0.000013
 type ElegantFloat struct {
-	val  float64
-	prec int
+	val          float64
+	prec         int
+	fmtNaNasNull bool // false default. true: format NaN to "NaN"; false: format NaN to null, null is valid in javascript number calc like echarts
 }
 
 func NewElegantFloat(val float64, prec int) ElegantFloat {
@@ -126,16 +127,38 @@ func (t *ElegantFloat) UnmarshalJSON(b []byte) error {
 }
 
 // MarshalJSON will marshal using 2006-01-02T15:04:05+07:00 layout
+//
+// FIXME
+// if t.val = math.NaN and t.JSON(false), json.Marshal(t) will output error:
+// json: error calling MarshalJSON for type *gnum.ElegantFloat: invalid character 'N' looking for beginning of value
+// why and how to fix?
 func (t ElegantFloat) MarshalJSON() ([]byte, error) {
-	return t.JSON()
+	return t.JSON(t.fmtNaNasNull)
 }
 
-func (t *ElegantFloat) JSON() ([]byte, error) {
+// What will happen if value is math.NaN? it will output bytes buffer `"NaN"`
+func (t *ElegantFloat) JSON(fmtNaNasNull bool) ([]byte, error) {
 	if t.prec <= invalidPrec {
 		t.prec = defaultPrec
 	}
-	s := strconv.FormatFloat(t.val, 'f', t.prec, 64)
-	return []byte(s), nil
+
+	if math.IsNaN(t.val) {
+		s := ""
+		if fmtNaNasNull {
+			s = "null"
+		} else {
+			s = strconv.FormatFloat(t.val, 'f', t.prec, 64)
+		}
+		//return []byte(`"` + s + `"`), nil
+		//fmt.Println("->", s)
+		return []byte(s), nil
+	} else if math.IsInf(t.val, -1) || math.IsInf(t.val, 1) {
+		s := strconv.FormatFloat(t.val, 'f', t.prec, 64)
+		return []byte(s), nil
+	} else {
+		s := strconv.FormatFloat(t.val, 'f', t.prec, 64)
+		return []byte(s), nil
+	}
 }
 
 func (t *ElegantFloat) String() string {
