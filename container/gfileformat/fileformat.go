@@ -16,29 +16,29 @@ import (
 // 不太准，比如ttf、Log4j2Plugins.dat都被认为是unix平台的可执行程序
 func IsExecutableUnstable(filename string) (bool, error) {
 
-	mime, ext, err := mimetype.DetectFile(filename)
+	mime, err := mimetype.DetectFile(filename)
 	if err != nil {
 		return false, err
 	}
-	fmt.Println(fmt.Sprintf("%s, mime:%s, ext:%s.", filename, mime, ext))
-	if mime == "application/x-executable" || // linux executable file
-		mime == "application/octet-stream" || // unix(including darwin, plan9) executable file
-		mime == "application/vnd.microsoft.portable-executable" { // windows executable file
+	fmt.Println(fmt.Sprintf("%s, mime:%s.", filename, mime))
+	if mime.String() == "application/x-executable" || // linux executable file
+		mime.String() == "application/octet-stream" || // unix(including darwin, plan9) executable file
+		mime.String() == "application/vnd.microsoft.portable-executable" { // windows executable file
 		return true, nil
 	}
 
 	// linux executable file
-	if mime == "application/x-executable" {
+	if mime.String() == "application/x-executable" {
 		return true, nil
 	}
 
 	// windows executable file
-	if mime == "application/vnd.microsoft.portable-executable" {
+	if mime.String() == "application/vnd.microsoft.portable-executable" {
 		return true, nil
 	}
 
 	// unix(including darwin, plan9) executable file
-	if mime == "application/octet-stream" {
+	if mime.String() == "application/octet-stream" {
 		return true, nil
 	}
 

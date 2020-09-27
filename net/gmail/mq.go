@@ -3,7 +3,7 @@ package gmail
 import (
 	"github.com/mikaa123/imapmq"
 	"github.com/pkg/errors"
-	"github.com/shawnwyckoff/gopkg/container/random2"
+	"github.com/shawnwyckoff/gopkg/container/grandom"
 )
 
 // Used email account to implement a simple message queue
@@ -59,7 +59,7 @@ func NewConn(as []Account) (*MQ, error) {
 }
 
 func (m *MQ) randomServer() inq {
-	return m.inqs[randoms.RandomInt(0, len(m.inqs)-1)]
+	return m.inqs[grandom.RandomInt(0, len(m.inqs)-1)]
 }
 
 func (m *MQ) Pub(subject string, data []byte) {

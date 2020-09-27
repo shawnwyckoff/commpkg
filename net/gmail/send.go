@@ -6,6 +6,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/shawnwyckoff/gopkg/sys/gtime"
 	"strings"
+	"time"
 )
 
 // Provider can be null,
@@ -89,7 +90,7 @@ func TestAccount(addr, pwd string, p *Provider) error {
 	evn.From.Showname = "email test"
 	to := AddrEdit{Email: addr, Showname: ""}
 	evn.To = append(evn.To, to)
-	evn.Subject = fmt.Sprintf("email test - %s", gtime.TodayString())
+	evn.Subject = fmt.Sprintf("email test - %s", gtime.Today(time.Local).String())
 	content := SendContent{}
 	content.BodyString = "email test"
 	content.BodyType = BodyTypePlainText
